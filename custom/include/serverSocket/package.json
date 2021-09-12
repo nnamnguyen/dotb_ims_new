@@ -1,0 +1,11 @@
+{
+  "name": "socket.io-dotbcrm",
+  "version": "1.0.0",
+  "description": "A simple client using socket.io",
+  "dependencies": {
+    "socket.io": "^2.0.4",
+    "fs": "0.0.1-security",
+    "https": "1.0.0",
+    "express": "4.17.1"
+  }
+}

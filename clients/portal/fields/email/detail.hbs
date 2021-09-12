@@ -1,0 +1,7 @@
+{{#each value}}
+    {{#if invalid_email}}
+        <del rel="tooltip"{{#if ../../../dir}} dir="{{../../../../dir}}"{{/if}} title="{{email_address}} ({{flagLabel}})" data-placement="bottom" class="ellipsis_inline">{{email_address}}</del>
+    {{else}}
+        <span rel="tooltip"{{#if ../../../dir}} dir="{{../../../../dir}}"{{/if}} title="{{email_address}}{{#notEq flagLabel ''}} ({{flagLabel}}){{/notEq}}" data-placement="bottom" class="ellipsis_inline">{{email_address}}</span>
+    {{/if}}
+{{/each}}

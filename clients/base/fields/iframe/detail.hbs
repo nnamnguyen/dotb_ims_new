@@ -1,0 +1,5 @@
+{{#if value}}
+    {{#notEq value 'http://'}}
+        <iframe src="{{value}}" height="{{def.height}}" width="100%"{{#if dir}} dir="{{dir}}"{{/if}}></iframe>
+    {{/notEq}}
+{{/if}}

@@ -1,0 +1,59 @@
+<div class="headerpane">
+    <h1>
+        <div class="record-cell">
+            <span class="module-title">{{str "LBL_DEFAULT_PRESET_IMPORT" this.module}}</span>
+        </div>
+        <div class="btn-toolbar pull-right dropdown" style="padding: 3px 6px;">
+            {{#each meta.buttons}}
+                {{field ../this}}
+            {{/each}}
+        </div>
+    </h1>
+</div>
+<div class="record tab-layout">
+    <div class="row-fluid record-panel" data-panelname="panel_body">
+        <div class="row-fluid record-panel-content ">
+            <div class="row-fluid panel_body">
+                <div class="span4 record-cell" data-type="url">
+                    <div class="row-fluid">
+                        <div class="span4">
+                            <div class="record-label" style="padding-top:7px;text-align: right">
+                                {{str "LBL_PROSPECT" this.module}}
+                            </div>
+                        </div>
+                        <div class="span8">
+                            {{generateSelectHtml this.customData.prospect.default this.customData.prospect.option
+                                                 "default_mapping_prospect"}}
+                        </div>
+                    </div>
+                </div>
+                <div class="span4 record-cell" data-type="url">
+                    <div class="row-fluid">
+                        <div class="span4">
+                            <div class="record-label" style="padding-top:7px;text-align: right">
+                                {{str "LBL_LEAD" this.module}}
+                            </div>
+                        </div>
+                        <div class="span8">
+                            {{generateSelectHtml this.customData.lead.default this.customData.lead.option
+                                                 "default_mapping_lead"}}
+                        </div>
+                    </div>
+                </div>
+                <div class="span4 record-cell" data-type="url">
+                    <div class="row-fluid">
+                        <div class="span4">
+                            <div class="record-label" style="padding-top:7px;text-align: right">
+                                {{str "LBL_CONTACT" this.module}}
+                            </div>
+                        </div>
+                        <div class="span8">
+                            {{generateSelectHtml this.customData.contact.default this.customData.contact.option
+                                                 "default_mapping_contact"}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

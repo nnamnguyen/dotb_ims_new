@@ -1,0 +1,37 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: behat-tests-mango-oidc
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: behat-tests-mango-oidc
+    spec:
+      restartPolicy: Always
+      containers:
+        - name: mango
+          image: %%MANGO_INSTALLED_IMAGE%%
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: apache
+              containerPort: 80
+              protocol: TCP
+          volumeMounts:
+            - name: config
+              mountPath: /var/www/dotbcrm-config/
+          env:
+            - name: OP_SERVICE_URL
+              value: %%OP_SERVICE_URL%%
+            - name: IDP_SERVICE_URL
+              value: %%IDP_SERVICE_URL%%
+            - name: IDM_NAMESPACE
+              value: %%IDM_NAMESPACE%%
+      volumes:
+        - name: config
+          configMap:
+            name: mango-config
+            items:
+              - key: config-oidc.php
+                path: config_override.php

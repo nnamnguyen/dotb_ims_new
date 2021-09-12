@@ -1,0 +1,487 @@
+.rtDotbBoards .headerpane {
+    height: 53px;
+}
+
+.rtDotbBoard {
+    display: flex;
+}
+
+.rtDotbBoard .rtDotbBoardColumn {
+    min-width: 250px;
+    max-width: 450px;
+    border: none
+}
+
+.rtDotbBoardColumn .dashlet-header {
+    border: 1px solid #ddd;
+    border-bottom: none;
+    border-radius: 4px;
+}
+
+.rtDotbBoardColumn .dashlet-header h4.dashlet-title.ui-draggable-handle {
+    background: #f6f6f6;
+    padding-right: 10px;
+    color: #000000;
+    border-radius: 4px;
+}
+
+.rtDotbBoardColumn .preview-data .field-row {
+    border-top: none;
+}
+
+.rtDotbBoardColumn .rtDotbBoardCard .secondaryDivrtDotbBoard {
+    display: none;
+    border-top: 1px solid #ebedef;
+    margin-top: 10px;
+}
+
+.rtDotbBoardColumn .preview-data .field-row .field-value {
+    font-size: 12px;
+    margin-bottom: 0px;
+    min-height: 18px;
+}
+
+.field-value.icons {
+    margin-bottom: 4px;
+    border-top: 1px solid #ebedef;
+    padding-top: 10px;
+}
+
+.rtDotbBoardCard {
+    min-height: 50px;
+    background-color: white;
+    position: relative
+
+}
+
+.rtDotbBoardCard.ui-sortable-helper {
+    -ms-transform: rotate(6deg); /* IE 9 */
+    -webkit-transform: rotate(6deg); /* Safari */
+    transform: rotate(6deg); /* Standard syntax */
+}
+
+.rtDotbBoardCard span.details {
+    font-size: 10px;
+}
+
+.rtDotbBoardCard time.date {
+    font-size: 10px;
+}
+
+.rtDotbBoardCard .preview-data {
+    padding: 0px 0px 0px;
+}
+
+.rtDotbBoardCard .profilePic {
+    margin-right: 1px;
+    float: right;
+}
+
+.profilePic .initials.fa-stack-text.fa-inverse {
+    color: #636363;
+}
+
+.rtDotbBoardCard .colorLabel {
+    display: flex;
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
+    height: 4px;
+    min-width: 62px;
+    font-size: 10px;
+    color: #ffffff;
+    line-height: 10.8px;
+    align-items: center;
+    border-radius: 3px 0px 3px 0px;
+    padding-left: 3px;
+    padding-right: 3px;
+    justify-content: center;
+}
+
+.rtDotbBoardCard .colorLabel.popLabel {
+    height: 16px;
+}
+
+.colorLabel .labelText {
+    display: none;
+}
+
+.rtDotbBoardCard .menuIcon {
+    width: 3px;
+    height: 11px;
+    cursor: pointer;
+    margin-right: 4px;
+    margin-top: 1px;
+}
+
+.field-value.title .content {
+    padding: 0px;
+    width: 100%;
+}
+
+.rtDotbBoardCard .dropdown {
+    position: relative;
+    float: right;
+}
+
+.rtDotbBoardCard .activityIcon {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+
+.rtDotbBoardCard .content .dropdown-menu {
+    box-shadow: 0px 1px 1.5px 0px rgba(207, 199, 207, 1);
+    left: auto;
+    right: 0;
+    min-width: 150px;
+}
+
+.main-pane .headerpane .headerpaneContainer .rtSbNav-tabs.pull-left .tab .rtSbStageButton {
+    height: 40px;
+    margin-left: 2px;
+    margin-right: 2px;
+    border-radius: 5px 5px 0 0;
+    line-height: 33px;
+    font-size: 12px;
+    outline: none;
+}
+
+
+.main-pane .headerpane .headerpaneContainer .rtSbNav-tabs.pull-left .tab .rtSbStageButton.selected {
+    background-color: #f6f6f6;
+    background-image: -moz-linear-gradient(top, #fff, #f6f6f6);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#f6f6f6));
+    background-image: -webkit-linear-gradient(top, #fff, #f6f6f6);
+    background-image: -o-linear-gradient(top, #fff, #f6f6f6);
+    background-image: linear-gradient(to bottom, #fff, #f6f6f6);
+    border-bottom: none;
+}
+
+.main-pane .headerpane .headerpaneContainer .rtSbNav-tabs.pull-left .tab {
+    margin-left: 20px;
+}
+
+.main-pane .headerpane .headerpaneContainer .rtSbNav-tabs {
+    margin-bottom: 0;
+    padding-top: 13px;
+    min-height: 39px;
+    border-bottom: none;
+}
+
+.rtSbNav-tabs > li {
+    margin-bottom: -1px;
+}
+
+.rtSbNav-tabs > li, .nav-pills > li {
+    float: left;
+}
+
+.main-pane .headerpane .headerpaneContainer .rtSbNav-tabs.pull-left .tab {
+    margin-left: 20px;
+}
+
+.rtDotbBoards .dashlet-container.span12.ui-droppable {
+    margin-left: 0.12766%;
+}
+
+.main-pane .search-filter .controls.has-refresh.btn-group-fit.controls-two {
+    display: flex;
+    padding-right: 0;
+}
+
+.main-pane .search-filter .filter-view {
+    flex: 1;
+}
+
+.main-pane .search-filter .toggle-actions.actions {
+    margin-left: auto;
+}
+
+.main-pane .search-filter .controls.has-refresh.btn-group-fit .btn-group.refresh {
+    margin: 0 2px 0 4px;
+    position: relative;
+    right: auto !important;
+}
+
+.main-pane .search-filter .controls.btn-group-fit .btn-group {
+    margin-left: 0;
+    position: relative;
+}
+
+button.btn.btn-invisible.dropdown-toggle.rtdotbboard > i:before {
+    content: "\f142";
+}
+
+.rtDotbBoardCard .dropdown:focus, a.rtSbPreviewButton.pull-right.icon-set:focus {
+    outline: none;
+}
+
+/*
+* Tabs CSS
+*/
+.headerpane.rtSbHeaderpane .headerpaneContainer h1 > span.record-cell[data-type='rtSbTabsField'] {
+    padding-top: 0px;
+    padding-left: 0px;
+}
+
+.headerpane.row-fluid.rtSbHeaderpane {
+    border-bottom: 1px solid #ddd;
+}
+
+.headerpane.row-fluid.rtSbHeaderpane .headerpaneContainer span.record-cell {
+    padding-top: 21px;
+}
+
+.headerpane.row-fluid.rtSbHeaderpane .headerpaneContainer span.record-cell[data-type='rtSbTabsField'] span.table-cell-wrapper {
+    display: -webkit-box;
+}
+
+button.btn.btn-invisible.dropdown-toggle.rtdotbboard:focus, a.icon-set .fa:focus {
+    outline: none;
+}
+
+/* UI */
+.rtDotbBoards .rtDotbBoard div[data-dashlet='toolbar'] {
+    min-width: 200px;
+    padding: 2.5px 5px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.rtDotbBoards .rtDotbBoard .dashlet-header {
+    color: #fff;
+    width: 100%;
+    position: relative;
+    text-align: left;
+    font-size: 16px;
+    display: inline-block;
+}
+
+.rtDotbBoardColumn .dashlet-header h4.dashlet-title.ui-draggable-handle {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.rtDotbBoard .rtDotbBoardColumn .rtDotbBoardCard .field-value.title, .rtDotbBoard .rtDotbBoardColumn .rtDotbBoardCard .field-value.icons {
+    margin: 10px 3px;
+}
+
+.rtDotbBoard .rtDotbBoardColumn .rtDotbBoardCard .field-value.title > a.name {
+    font-size: 14px;
+}
+
+.rtDotbBoards .icon-set .fa {
+    font-size: 12px;
+}
+
+button.btn.btn-invisible.dropdown-toggle.rtdotbboard, a.icon-set .fa {
+    padding: 0px;
+    margin-left: 10px;
+    border: 0px;
+}
+
+
+.rtDotbBoards i.fa.fa-chevron-down {
+    position: inherit;
+    width: 6px;
+    color: #4d4d4d;
+}
+
+.rtDotbBoards .rtDotbBoard div.rtDotbBoardCard {
+    padding: 5px;
+    vertical-align: top;
+}
+
+.rtDotbBoardCard .inner-container {
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.rtDotbBoardCard .inner-container h4.primary-info {
+    border: none;
+    font-size: 14px;
+    padding: 8px 0px 0px 0px;
+}
+
+.rtDotbBoardColumn .preview-data .field-row .field-label {
+    margin-bottom: 0px;
+    color: #808080;
+}
+
+.rtDotbBoardColumn .preview-data .field-row .field-value .detail h4 {
+    padding-left: 0px;
+    border: none;
+    padding-bottom: 0px;
+    padding-top: 5px;
+    font-weight: 100;
+}
+
+.rtDotbBoardCard .rtSbActivityButton > span > .far.fa-circle.fa-stack-2x, .rtDotbBoardCard .profilePic .far.fa-circle.fa-stack-2x {
+    color: #bfbfbf;
+    -webkit-text-stroke: 1.2px white;
+}
+
+.rtDotbBoardCard .profilePic .far.fa-circle.fa-stack-2x {
+    font-size: 29px;
+    margin-top: -1px;
+}
+
+.rtDotbBoardCard .rtSbActivityButton > span > .fas.fa-stack-1x.fa-inverse {
+    color: #4d4d4d;
+}
+
+.rtDotbBoardCard span.details {
+    border-radius: 0px 3px 0px 0px;
+/ / background: #ebebeb;
+    color: #808080;
+    font-size: 10px;
+    padding-left: 5px;
+    padding-bottom: 2px;
+    padding-right: 10px;
+    background: none;
+    border: #ebebeb 1px solid;
+}
+
+.rtDotbBoard .rtDotbBoardColumn .rtDotbBoardCard .field-value.title {
+    padding-bottom: 5px;
+}
+
+.rtDotbBoard .rtDotbBoardColumn .rtDotbBoardCard .field-value.basic {
+    font-size: 15px;
+}
+
+.rtDotbBoardCard a.rtSbActivityButton:hover {
+    text-decoration: none;
+}
+
+a.rtSbPreviewButton.pull-right.icon-set .fa, a.rtSbPreviewButton.pull-right.icon-set .fa:hover {
+    color: #4d4d4d;
+}
+
+a.rtSbPreviewButton.pull-right.icon-set:focus {
+    outline: none;
+}
+
+.rtDotbBoard .rtDotbBoardColumn .rtDotbBoardCard .field-value.icons {
+    margin-bottom: 10px;
+}
+
+h6.h6-details {
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+
+a.rtSbPreviewButton.pull-right.icon-set .fas, a.rtSbPreviewButton.pull-right.icon-set .fas:hover {
+}
+
+.rtDotbBoard .rtDotbBoardColumn .rtDotbBoardCard .field-value.title {
+    margin-bottom: 0px;
+}
+
+.rtDotbBoard .rtDotbBoardColumn .rtDotbBoardCard .secondaryDivrtDotbBoard > div.record-cell.field-row {
+    margin: 0px 3px 9px 3px;
+}
+
+/* Success/Failure Stages */
+.rtDotbBoard .successButton {
+    z-index: 2000;
+    font-size: 17px;
+    color: #00aa23;
+    line-height: 79px;
+    background-color: #fff;
+    border-radius: 3px;
+    height: 80px !important;
+    border-style: solid;
+    border-width: 1px;
+    width: 250px;
+    position: fixed;
+    bottom: 161px;
+    text-align: center;
+    right: 8px;
+    display: none;
+}
+
+.rtDotbBoard .failureButton {
+    z-index: 2000;
+    font-size: 17px;
+    color: #ffffff;
+    line-height: 79px;
+    background-color: #ffffff;
+    border-radius: 3px;
+    height: 80px !important;
+    color: #d40000;
+    width: 250px;
+    position: fixed;
+    border-style: solid;
+    border-width: 1px;
+    bottom: 69px;
+    text-align: center;
+    right: 8px;
+    display: none;
+}
+
+.rtDotbBoard .successButton.dashedLine {
+    border-style: dashed;
+    border-width: 2px;
+}
+
+.rtDotbBoard .failureButton.dashedLine {
+    border-style: dashed;
+    border-width: 2px;
+}
+
+.successButton > * {
+    display: none
+}
+
+.failureButton > * {
+    display: none
+}
+
+.span8 .rtDotbBoard .successButton {
+    right: calc(34.5%);
+}
+
+.span8 .rtDotbBoard .failureButton {
+    right: calc(34.5%);
+}
+
+/* Column Summary */
+
+.rtDotbBoardColumn .columnSummary {
+    display: flex;
+    justify-content: center;
+    font-size: 17px;
+    line-height: 28px;
+}
+
+/* Adding Kanban Icon */
+
+i.fa.fa-rt-dotbboards {
+}
+
+.btn.active i.fa.fa-rt-dotbboards {
+    filter: invert(100%);
+}
+
+.rtDotbBoard div.profilePic img.avatar.avatar-btn {
+    height: 29px;
+    width: 29px;
+}
+
+.rtDotbBoard div.profilePic:not(.expanded) img.avatar.avatar-btn {
+    height: 29px;
+    width: 29px;
+}
+
+.rtDotbBoard div.profilePic.expanded img.avatar.avatar-btn {
+    height: 21px;
+    width: 21px;
+}
+
+
+#settingsTab {
+    width: 40px;
+}

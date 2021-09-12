@@ -1,0 +1,66 @@
+<div class="headerpane">
+    <h1>
+        <div class="record-cell">
+            <span class="module-title">{{str "LBL_LICENSE" this.module}}</span>
+        </div>
+    </h1>
+</div>
+<div class="record tab-layout">
+    <div class="row-fluid record-panel" data-panelname="panel_body">
+        <div class="row-fluid record-panel-content ">
+            <div class="row-fluid panel_body">
+                <table class="table table-striped table-bordered table-condensed moduleicon">
+                    <thead>
+                    <tr>
+                        <th style="text-align:right" width="50%">{{str "LBL_LICENSE_NAME" this.module}}</th>
+                        <th style="text-align:left" width="50%">{{str "LBL_LICENSE_VALUE" this.module}}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td style="text-align:right">{{str "LBL_USERS" this.module}}</td>
+                        <td style="text-align:left">
+                            <input type="number" name="lic-users"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:right">{{str "LBL_TEAMS" this.module}}</td>
+                        <td style="text-align:left">
+                            <input type="number" name="lic-teams"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:right">{{str "LBL_TOTAL_STUDENTS" this.module}}</td>
+                        <td style="text-align:left">
+                            <input type="number" name="lic-students"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:right">{{str "LBL_DATA_STORAGE" this.module}}</td>
+                        <td style="text-align:left">
+                            <input type="number" name="lic-storage"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:right">{{str "LBL_LICENSE_TYPE" this.module}}</td>
+                        <td style="text-align:left">
+                            <input type="text" name="lic-package"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:right">{{str "LBL_LICENSE_DATE" this.module}}</td>
+                        <td style="text-align:left">
+                            <input type="text" placeholder="y-m-d" name="lic-date_expired"/>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div style="text-align: center">
+                    <button type="button" id="generate_license" class="btn-primary">Generate</button>
+                    <br/><br/>
+                    <textarea rows="5" cols="150" class="form-control lic-result"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

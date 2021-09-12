@@ -1,0 +1,16 @@
+<div class="record-panel" style="margin-top: 0;">
+    <div class="record-panel-header" style="box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none;">
+        <h3>{{str 'LBL_IMPORT' module}}</h3>
+    </div>
+</div>
+
+{{#each meta.panels}}
+    <div class="padded">
+        <p><b>{{str "LBL_CUSTOMER_JOURNEY_TEMPLATE_IMPORT_TEXT" ../module}}</b></p>
+        {{#each fields}}
+            <div class="span10 controls">
+                {{field ../../this}}
+            </div>
+        {{/each}}
+    </div>
+{{/each}}

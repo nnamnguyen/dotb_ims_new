@@ -1,0 +1,53 @@
+// To regenerate the /styleguide/assets/css/upgrade.css
+// Run static file generator at /styleguide/build/
+// or npm install less, lessc upgrade.less ~/path/to/upgrade.css --compress
+
+// Variables and common
+@baseUrl: "../../assets";
+
+@fa-font-path:          "../../../styleguide/assets/fonts";
+
+@import "../../themes/clients/base/default/variables.less";
+@import "../fixed_variables.less";
+@import "../dotb/mixins.less";
+
+// Third party
+@import "../lib/slider.less";
+@import "../lib/font-awesome/font-awesome.less"; //ext lib: http://fortawesome.github.com/Font-Awesome/
+@import "../lib/datepicker.less"; //ext lib: http://www.eyecon.ro/bootstrap-datepicker
+@import "../lib/select2.less"; //ext lib: http://ivaynberg.github.com/select2/
+@import "../lib/jquery.timepicker.less";
+
+// Dotb addtions and modifications to bootstrap core and third party
+@import "../dotb/reset.less";
+@import "../dotb/labels-badges.less";
+@import "../dotb/tooltip.less";
+@import "../dotb/popovers.less";
+@import "../dotb/progress-bars.less";
+@import "../dotb/slider.less";
+@import "../dotb/alerts.less";
+@import "../dotb/grid.less";
+@import "../dotb/layouts.less";
+@import "../dotb/body.less";
+@import "../dotb/colors.less";
+@import "../dotb/typography.less";
+@import "../dotb/buttons.less";
+@import "../dotb/button-groups.less";
+@import "../dotb/dropdowns.less";
+@import "../dotb/font-awesome.less";
+@import "../dotb/misc.less";
+@import "../dotb/icons.less";
+@import "../dotb/select2.less";
+@import "../dotb/forms.less";
+@import "../dotb/error.less";
+@import "../dotb/modals.less";
+@import "../dotb/scaffolding.less";
+@import "../dotb/tables.less";
+@import "../dotb/login.less";
+@import "../dotb/loader.less";
+@import "../clients/base/components/step-circle.less";
+@import "../clients/base/components/upgrade-modal.less";
+@import "../dotb/responsive-dotb.less";
+@import "../dotb/utilities.less"; // Has to be last to override when necessary
+
+

@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: behat-tests-mango-saml-base
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+  - host: behat-tests-mango-saml-base
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: behat-tests-mango-saml-base
+          servicePort: 80

@@ -1,0 +1,159 @@
+@keyframes heart-burst {
+    0% {
+        background-position: left
+    }
+    100% {
+        background-position: right
+    }
+}
+.heart {
+    margin-top: -5px;
+    cursor: pointer;
+    background: url("../../styleguide/assets/img/heart_animation.png") no-repeat left;
+    background-size: 2900%;
+    height: 40px;
+    width: 50px;
+
+}
+
+.dataTable tbody tr.tr-inline-edit td .heart {
+    display: none;
+}
+
+.heart:hover {
+    background-position: -50px;
+}
+
+.reorderable-columns .heart {
+    margin-left: -5px;
+}
+
+li a .heart{
+    margin: -20px -10px -20px -30px;
+}
+
+.heart.active {
+    background-position: right;
+    animation-timing-function: steps(28);
+    animation-name: heart-burst;
+    animation-duration: .8s;
+    animation-iteration-count: 1;
+    display: inline-block
+}
+
+.heart.is-active {
+    background-position: right;
+    display: inline-block
+}
+
+/*add by TKT*/
+.btn-arrow-right{
+    position: relative;
+    background: #acacac;
+    color: #000 !important;
+    padding:5px !important;
+    font-size:12px !important;
+    text-decoration: none !important;
+    margin:12px !important;
+    font-family: SFUIText !important;
+
+}
+.btn-arrow-right:before{
+    background-color: #acacac;
+    right: 100%;
+    bottom: 50%;
+    border: solid transparent;
+    content: " ";
+    position: absolute;
+    border-color: rgba(136, 183, 213, 0);
+    border-left-color: white;
+    border-width: 12px;
+    margin-bottom: -12px;
+    border-right: 0;
+}
+.btn-arrow-right:after{
+    left: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    position: absolute;
+    border-color: rgba(136, 183, 213, 0);
+    border-left-color: #acacac;
+    border-width: 12px;
+    border-right: 0;
+    margin-top: -12px;
+}
+
+.btn-arrow-right-active{
+    position: relative;
+    background: #193059;
+    color: #fff !important;
+    padding:5px !important;
+    font-size:12px !important;
+    text-decoration: none !important;
+    margin:12px !important;
+    font-family: SFUIText !important;
+}
+.btn-arrow-right-active:before{
+    background-color: #193059;
+    right: 100%;
+    bottom: 50%;
+    border: solid transparent;
+    content: " ";
+    position: absolute;
+    border-color: rgba(136, 183, 213, 0);
+    border-left-color: white;
+    border-width: 12px;
+    margin-bottom: -12px;
+    border-right: 0;
+}
+.btn-arrow-right-active:after{
+    left: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    position: absolute;
+    border-color: rgba(136, 183, 213, 0);
+    border-left-color: #193059;
+    border-width: 12px;
+    border-right: 0;
+    margin-top: -12px;
+}
+
+.btn-arrow-right-success {
+    position: relative;
+    background: #006d75;
+    color: #fff !important;
+    padding: 5px !important;
+    font-size: 12px !important;
+    text-decoration: none !important;
+    margin: 12px !important;
+    font-family: SFUIText !important;
+}
+
+.btn-arrow-right-success:before {
+    background-color: #006d75;
+    right: 100%;
+    bottom: 50%;
+    border: solid transparent;
+    content: " ";
+    position: absolute;
+    border-color: rgba(136, 183, 213, 0);
+    border-left-color: white;
+    border-width: 12px;
+    margin-bottom: -12px;
+    border-right: 0;
+}
+
+.btn-arrow-right-success:after {
+    left: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    position: absolute;
+    border-color: rgba(136, 183, 213, 0);
+    border-left-color: #006d75;
+    border-width: 12px;
+    border-right: 0;
+    margin-top: -12px;
+}

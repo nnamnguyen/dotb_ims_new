@@ -1,0 +1,15 @@
+<?php
+
+$viewdefs['C_SMS']['base']['view']['panel-top']['buttons'] = array(
+    'type' => 'actiondropdown',
+    'name' => 'panel_dropdown',
+    'css_class' => 'pull-right',
+    'buttons' => array(
+
+        array(
+            'type' => 'link-action',
+            'name' => 'select_button',
+            'label' => 'LBL_ASSOC_RELATED_RECORD',
+        ),
+    ),
+);

@@ -1,0 +1,38 @@
+<ul class="nav megamenu">
+    <li class="dropdown notification-list">
+        <div class="btn-group" data-name="notifications-list-button">
+        <a href="#" data-toggle="dropdown">
+        <i class="far fa-bell"></i>
+            <span class="badge {{#if this.collection.length}}btn-danger{{else}}btn-inverse{{/if}} dropdown-toggle"
+                    rel="tooltip"
+                    title="{{str "LBL_NOTIFICATIONS" module}}"
+                    aria-label="{{str "LBL_NOTIFICATIONS" module}}"
+                    data-placement="bottom">
+                {{this.collection.length}}
+                {{#if this.collection.next_offset}}{{#notEq this.collection.next_offset "-1"}}+{{/notEq}}{{/if}}
+            </span>
+        </a>
+            <div class="dropdown-menu scroll pull-right">
+                <ul role="menu">
+                    {{#each this.collection.models}}
+                        <li{{#if this.attributes.is_read}} class="read"{{/if}}><a class="row-fluid"
+                               href="#{{buildRoute model=this action="detail"}}"
+                               data-id="{{this.attributes.id}}"
+                               data-action="is-read-handler"
+                               tabindex="-1"><span
+                                class="span8 ellipsis_inline"
+                                title="{{this.attributes.name}}"
+                                data-placement="bottom">
+                            {{#with ../this.meta.fields.severity}}
+                                {{field ../../this model=../this template="detail"}}
+                            {{/with}}
+                            {{this.attributes.name}}</span>
+                            {{relativeTime this.attributes.date_entered class="span4 pull-right"}}
+                        </a></li>
+                    {{/each}}
+                    <li><a class="row-fluid" href="#{{module}}" tabindex="-1"><i class="fa fa-bars span1"></i><span class="span8 ellipsis_inline">{{str "LBL_SHOW_NOTIFICATIONS" module}}</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </li>
+</ul>

@@ -1,0 +1,8 @@
+<div class="error-message" >
+    <img style="margin: auto;max-width: 400px;" src="styleguide/assets/img/noresults.png"/>
+    {{#with model.attributes}}
+        <h1>{{str title}}</h1>
+        {{#each messages}}<p>{{str this}}</p>{{/each}}
+        {{#if linkText}}<p><a href="javascript:window.history.back()">{{str linkText}}</a></p>{{/if}}
+    {{/with}}
+</div>

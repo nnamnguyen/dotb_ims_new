@@ -1,0 +1,45 @@
+<div class="tab-pane active">
+    {{#if collection.length}}
+        <ul class="unstyled listed">
+            {{#each collection.models}}
+                <li>
+                    {{#if ../../row_actions}}
+                        <div class="actions pull-right">
+                            {{#each ../../row_actions}}
+                                {{field ../../../this model=../this}}
+                            {{/each}}
+                        </div>
+                    {{/if}}
+                    <p  style="padding-left: 0px;">
+
+                        <a href="#{{buildRoute model=this}}">{{fieldValue this "name"}}</a>
+                    </p>
+                    {{#if ../overdueBadge}}
+                        {{#with ../../overdueBadge}}
+                            {{field ../../../this model=../../this template='detail'}}
+                        {{/with}}
+                    {{/if}}
+                    <div class="details"  style="padding-left: 0px;">
+                        {{fieldValue this "base_module_name"}}&#44;&nbsp;
+                        {{#if attributes.assigned_user_id}}
+                            <a href="#{{buildRoute module="Employees" id=attributes.assigned_user_id action="detail"}}">
+                                {{fieldValue this "assigned_user_name"}}
+                            </a>
+                        {{else}}
+                            {{str "LBL_UNASSIGNED" this.module}}
+                        {{/if}}
+                        {{#if useRelativeTime}}
+                            &nbsp;created
+                            <date class="date">{{relativeTime attributes.record_date}}</date>
+                        {{else}}
+                            &nbsp;created on
+                            <date class="date">{{formatDate attributes.record_date}}</date>
+                        {{/if}}
+                    </div>
+                </li>
+            {{/each}}
+        </ul>
+    {{else}}
+        <div class="block-footer">{{#if ../collection.dataFetched}}{{str "LBL_NO_DATA_AVAILABLE" this.module}}{{else}}{{str "LBL_LOADING" this.module}}{{/if}}</div>
+    {{/if}}
+</div>

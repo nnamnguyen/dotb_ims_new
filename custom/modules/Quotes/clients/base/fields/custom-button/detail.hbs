@@ -1,0 +1,26 @@
+{{log this}}
+{{#eq context.attributes.layout 'record'}}
+{{#eq context.attributes.action 'detail'}}
+{{#if model.attributes.total_balance_parent}}
+{{#gt model.attributes.total_balance_parent 0}}
+{{#orEquals model.attributes.status "UnPaid" model.attributes.status "Part Paid"}}
+<link type="text/css" href="custom/include/css/customcss.css" rel="stylesheet" />
+<div>
+    <div class="use-balance">
+       <span>{{str "LBL_HAVE_USE_FREE_BALANCE" "Quotes"}} {{cr_fm model.attributes.total_balance_parent}}</span>
+       <button id="use_balance" type="button" class="btn btn-success">
+       {{str "LBL_APPLY_BALANCE" "Quotes"}}
+       {{#gtAndEq model.attributes.total_balance_parent  model.attributes.unpaid_amount}}
+        {{cr_fm model.attributes.unpaid_amount}}
+       {{else}}
+        {{cr_fm model.attributes.total_balance_parent}}
+       {{/gtAndEq}}
+       {{str "LBL_FOR_ORDER" "Quotes"}}
+       </button>
+   </div>
+</div>
+{{/orEquals}}
+{{/gt}}
+{{/if}}
+{{/eq}}
+{{/eq}}

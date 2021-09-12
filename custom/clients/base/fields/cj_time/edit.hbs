@@ -1,0 +1,10 @@
+{{!--
+/*
+ * @author Emil Kilhage <emil.kilhage@addoptify.com>
+ */
+--}}
+<div class="input-append" style="left: 22px">
+    <input type="text" data-type="time" value="{{value}}" autocomplete="off"{{#if def.tabindex}} tabindex="{{def.tabindex}}"{{/if}}/>
+    <span class="add-on time" data-action="show-timepicker"><i class="fa fa-clock-o icon-time"></i></span>
+    {{#unless hideHelp}}{{#if def.help}}<p class="help-block">{{str def.help module}}</p>{{/if}}{{/unless}}
+</div>

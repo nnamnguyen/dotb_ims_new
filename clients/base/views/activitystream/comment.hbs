@@ -1,0 +1,22 @@
+<li class="comment">
+    <a href="#{{buildRoute module=module id=created_by}}" id="avatar-comment-{{id}}" class="pull-left avatar" rel="tooltip" data-placement="right" title="{{created_by_name}}">
+        {{#if picture_url}}
+            <img src="{{picture_url}}" alt="{{created_by_name}}">
+        {{else}}
+            <i class="fa fa-user"></i>
+        {{/if}}
+    </a>
+    <p>
+        <span class="tagged">{{{str "TPL_COMMENT" "Activities" data}}}</span>
+        <a href="#{{buildRoute module=module id=created_by}}">{{created_by_name}}</a>
+        <date class="date">
+            <span class="relativetime">
+                {{#if @useRelativeTime}}
+                    {{relativeTime date_entered class='date' rel='tooltip'}}
+                {{else}}
+                    {{str "LBL_ACTIVITYSTREAM_RELATIVETIME_ON"}}{{formatDate date_entered}}
+                {{/if}}
+            </span>
+        </date>
+    </p>
+</li>

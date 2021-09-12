@@ -1,0 +1,4 @@
+{*
+
+*}
+{$campaignInactive}

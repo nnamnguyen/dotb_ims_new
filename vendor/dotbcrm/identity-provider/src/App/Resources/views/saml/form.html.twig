@@ -1,0 +1,8 @@
+<h1>LOGIN WITH SAML</h1>
+<p><b>Issuer: {{ issuer }}</b></p>
+
+<a href="{{ url('samlInit') }}">login</a>
+{% if messages is defined %}
+    <br/><br/>
+    {{ messages|join('<br/>')|raw}}
+{% endif %}

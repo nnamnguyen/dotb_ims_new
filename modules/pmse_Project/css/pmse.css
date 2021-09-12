@@ -1,0 +1,31 @@
+
+
+.pmse-form-error {
+    color: #e61718;
+    font-size: 13px;
+}
+
+.pmse-form-error .fa-warning {
+    color: #e61718;
+    font-size: 14px;
+    margin: auto 6px;
+}
+
+.pmse-form-error-off {
+    display: none;
+}
+
+.pmse-form-error-on {
+    display: inline;
+}
+
+.pmse-field-error {
+    border-color: #e61718;
+    border-style: solid;
+    border-width: 2px;
+}
+
+input.pmse-field-error {
+    border-color: #e61718;
+    border-width: 2px;
+}

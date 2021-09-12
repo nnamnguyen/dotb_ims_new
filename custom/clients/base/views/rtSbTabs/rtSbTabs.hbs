@@ -1,0 +1,36 @@
+<div class="headerpane row-fluid rtSbHeaderpane">
+    <div class="headerpaneContainer">
+        <h1>
+        {{#each meta.fields}}
+            {{#eq type 'rtSbTabsField'}}
+            <span class="record-cell" data-type="{{type}}" data-name="{{name}}">
+                <span class="table-cell-wrapper">
+                    <span class="index" data-fieldname="{{name}}">
+                        <ul class="nav rtSbNav-tabs pull-left">
+                            {{#each ../../this.tabsTypes}}
+                                <li class="tab">
+                                    {{field ../../../this model=../../../model template='detail'}}
+                                </li>
+                            {{/each}}
+                        </ul>
+                    </span>
+                </span>
+            </span>
+            {{else}}
+                <span class="record-cell" data-type="{{type}}" data-name="{{name}}">
+                    <span class="table-cell-wrapper">
+                        <span class="index" data-fieldname="{{name}}">
+                            {{field ../../this model=../../model}}
+                        </span>
+                    </span>
+                </span>
+            {{/eq}}
+        {{/each}}
+            <div class="btn-toolbar pull-right dropdown">
+                {{#each meta.buttons}}
+                    {{field ../this}}
+                {{/each}}
+            </div>
+        </h1>
+    </div>
+</div>

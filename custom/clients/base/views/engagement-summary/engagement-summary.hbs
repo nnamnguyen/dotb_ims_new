@@ -1,0 +1,146 @@
+{{!
+/*
+ * Your installation or use of this DotBCRM file is subject to the applicable
+ * terms available at
+ * http://support.dotbcrm.com/06_Customer_Center/10_Master_Subscription_Agreements/.
+ * If you do not agree to all of the applicable terms or do not have the
+ * authority to bind the entity as an authorized representative, then do not
+ * install or use this DotBCRM file.
+ *
+ * Copyright (C) DotBCRM Inc. All rights reserved.
+ *
+ * @package FTE Usage Tracking
+ */
+}}
+
+<style>
+    .text-center {
+        text-align: center;
+    }
+
+    .text-amber {
+        color: orange;
+    }
+
+    .text-red {
+        color: red
+    }
+
+    .text-green {
+        color: green;
+    }
+
+    .engagement-summary .row-fluid.record-panel {
+        margin-bottom: 30px;
+    }
+
+    .engagement-summary h1 {
+        font-size: 50px;
+        line-height: 50px;
+    }
+
+    .engagement-summary .record-label {
+        color: #000;
+    }
+
+    .row-fluid [class*="span"].margin0 {
+        margin: 0px;
+    }
+
+    .tile {
+        font-size: 12px;
+        line-height: 20px;
+    }
+
+    .tile-content {
+        /*left: 38%;*/
+        position: relative;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .completed {
+        color: green;
+    }
+
+    .pending {
+        color: #efefef;
+    }
+
+    .engagement-summary .fa {
+        display: block;
+        font-size: 30px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .engagement-summary .actions {
+        border-top: 1px dotted #ccc;
+    }
+
+    .engagement-summary .actionName {
+        vertical-align: middle;
+    }
+
+    .engagement-summary .moreLink {
+        padding-top:30px;
+    }
+</style>
+{{#if data}}
+    <div class="record engagement-summary">
+        <div class="row-fluid record-panel">
+            <div class="span3 record-cell text-center">
+                <div class="record-label">{{str "LBL_TOTAL_CRUD_ACTIONS"}}</div>
+                <span class="normal index">
+                    <h1>{{data.totalCrudActions.number}}</h1>
+                </span>
+            </div>
+            <div class="span3 record-cell text-center">
+                <div class="record-label">{{str "LBL_TOTAL_LOGONS"}}</div>
+                <span class="normal index">
+                    <h1 class="{{data.totalLogons.css_class}}">{{data.totalLogons.number}}</h1>
+                </span>
+            </div>
+            <div class="span3 record-cell text-center">
+                <div class="record-label">{{str "LBL_MOBILE_LOGONS"}}</div>
+                <span class="normal index">
+                    <h1 class="{{data.mobileLogons.css_class}}">{{data.mobileLogons.number}}</h1>
+                </span>
+            </div>
+            <div class="span3 record-cell text-center">
+                <div class="record-label">{{str "LBL_LAST_LOGON"}}</div>
+                <span class="normal index">
+                    <h1 class="{{data.lastLogon.css_class}}">{{data.lastLogon.label}}</h1>
+                </span>
+            </div>
+        </div>
+        <div class="row-fluid record-panel actions">
+            {{#each data.reportedActions}}
+                <div class="record-panel">
+                    {{#each this}}
+                        <div class="span4 record-cell tile">
+                            <div class="tile-content">
+                                <span>
+                                    <i class="fa {{#if completed}}fa-check completed{{else}} fa-check pending{{/if}}"></i>
+                                    <span class="actionName">{{str name }}</span>
+                                </span>
+                            </div>
+                        </div>
+                    {{/each}}
+                    <div class="clearfix"></div>
+                </div>
+            {{/each}}
+            <div class="record-panel moreLink">
+                <div class="span12 record-cell text-center">
+                <span class="normal index">
+                    <a href="#fte_UsageTracking">{{str "LBL_SEE_ALL_ACTIONS" }}</a>
+                </span>
+                </div>
+            </div>
+        </div>
+    </div>
+{{else}}
+    <div class="block-footer">
+        {{str "LBL_LOADING"}}
+    </div>
+{{/if}}

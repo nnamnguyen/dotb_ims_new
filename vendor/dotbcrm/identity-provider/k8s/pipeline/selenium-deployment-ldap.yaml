@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: selenium-ldap
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: selenium-ldap
+    spec:
+      restartPolicy: Always
+      containers:
+      - name: selenium-ldap
+        image: selenium/standalone-chrome:3.11.0-antimony
+        imagePullPolicy: IfNotPresent
+        ports:
+        - name: selenium-ldap
+          containerPort: 4444
+          protocol: TCP

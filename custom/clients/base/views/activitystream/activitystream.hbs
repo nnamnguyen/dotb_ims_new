@@ -1,0 +1,93 @@
+{{#eq model.attributes.activity_type "post"}}
+    <a href="#{{buildRoute module="Employees" id=model.attributes.created_by}}" id="avatar-post-{{model.attributes.id}}"
+       class="pull-left avatar avatar-md" rel="tooltip" data-title="{{model.attributes.created_by_name}}"
+       data-placement="right">
+        {{#if model.attributes.picture_url}}
+            <img src="{{model.attributes.picture_url}}" alt="{{model.attributes.created_by_name}}">
+        {{else}}
+            <i class="fa fa-user fa-2x" alt="{{model.attributes.created_by_name}}"></i>
+        {{/if}}
+    </a>
+{{else}}
+    {{#eq model.attributes.check_day "0"}}
+        <hr class="hr-top"/>
+        <div class="timeline timeline__date"> {{model.attributes.get_date}}</div>
+        <hr class="hr-right-1 hr-right"/>
+    {{else}}
+        <hr class="hr-top"/>
+        <div class="timeline timeline__date timeline-1"></div>
+        <hr class="hr-right-2 hr-right"/>
+    {{/eq}}
+    <div class="timeline-detail">
+        <div class="label label-module label-module-md pull-left" style="background: none !important;" rel="tooltip"
+             data-placement="right" title="{{moduleIconToolTip model.attributes.display_parent_type}}">
+            <i class="{{model.attributes.icon_module}} icon-custom"></i>
+        </div>
+{{/eq}}
+<p>
+{{#if tpl}}
+        <div><span class="tagged">{{{str tpl "Activities" model.attributes.data}}}</span></div>
+{{/if}}
+{{#if embeds}}
+        <div class="embed">
+            {{#each embeds}}
+                <div>{{{this}}}</div>
+            {{/each}}
+        </div>
+{{/if}}
+    </p>
+    <span class="details">
+    <a href="#{{buildRoute module="Employees" id=model.attributes.created_by}}">{{model.attributes.created_by_name}}</a>
+    <date class="date">
+        <span class="relativetime">
+            {{#if useRelativeTime}}
+                {{relativeTime model.attributes.date_entered class='date' rel='tooltip'}}
+            {{else}}
+                {{str "LBL_ACTIVITYSTREAM_RELATIVETIME_ON"}}{{formatDate model.attributes.date_entered}}
+            {{/if}}
+        </span>
+    </date>
+</span>
+{{#unless readonly}}
+        <div class="actions btn-group">
+<!--            <button class="btn comment-btn" rel="tooltip" title="{{str 'LBL_COMMENT'}}" tabindex="0"-->
+<!--                    aria-label="{{str 'LBL_COMMENT'}}" aria-pressed="false"><i class="far fa-comments"></i></button>-->
+
+            {{#unless nopreview}}
+                <button class="btn preview-btn {{#unless preview.enabled}}disabled{{/unless}}" rel="tooltip"
+                        title="{{str preview.label}}" data-module="{{model.attributes.display_parent_type}}"
+                        data-id="{{model.attributes.display_parent_id}}"
+                        tabindex="{{#if preview.enabled}}0{{else}}-1{{/if}}" aria-label="{{str preview.label}}"
+                        aria-pressed="false"><i class="far fa-search-plus"></i></button>
+            {{/unless}}
+        </div>
+{{/unless}}
+    <ul class="comments">
+        {{#if model.attributes.comment_count}}
+            {{#each model.attributes.comments.models}}
+                {{#with attributes}}
+                    {{{subViewTemplate "activitystream.comment" this useRelativeTime=../../useRelativeTime}}}
+                {{/with}}
+            {{/each}}
+            {{#if remaining_comments}}
+                <li class="comment more-comments">
+                    <a class="more">
+                        {{str more_tpl "Activities" remaining_comments}}
+                    </a>
+                </li>
+            {{/if}}
+        {{/if}}
+        {{#unless readonly}}
+            {{#eq model.attributes.activity_type "create"}}
+                <li class="comment reply-area">
+                    <div class="reply-input">
+                        <div data-placeholder="{{str "LBL_ACTIVITYSTREAM_COMMENT_PLACEHOLDER"}}" class="reply taggable"
+                             contenteditable="true" tabindex="0"></div>
+                        <button class="btn btn-primary reply-btn " tabindex="-1" aria-disabled="false">{{str
+                                "LBL_EMAIL_REPLY"}}</button>
+                    </div>
+                </li>
+            {{/eq}}
+        {{/unless}}
+    </ul>
+</div>

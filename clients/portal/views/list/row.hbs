@@ -1,0 +1,19 @@
+{{#if rowModel}}
+{{#with rowModel}}
+<tr name="{{module}}_{{attributes.id}}" class="single">
+    {{#each ../_fields}}
+        <td{{#if align}} class="{{align}}"{{/if}}>
+            {{field ../../this model=../this template=../../viewName}}
+        </td>
+    {{/each}}
+</tr>
+{{/with}}
+{{else}}
+<tr name="{{module}}_{{model.id}}" class="single">
+    {{#each ../view._fields}}
+        <td{{#if align}} class="{{align}}"{{/if}}>
+            {{field ../view model=../model template=../viewName}}
+        </td>
+    {{/each}}
+</tr>
+{{/if}}

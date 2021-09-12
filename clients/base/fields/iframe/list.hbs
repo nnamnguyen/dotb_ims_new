@@ -1,0 +1,7 @@
+{{#if value}}
+    {{#notEq value 'http://'}}
+        <div class="ellipsis_inline" rel="tooltip" title="" data-placement="bottom" data-original-title="{{value}}" tabindex="-1">
+            {{value}}
+        </div>
+    {{/notEq}}
+{{/if}}

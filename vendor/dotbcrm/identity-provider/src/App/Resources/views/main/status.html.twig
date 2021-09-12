@@ -1,0 +1,22 @@
+{#
+
+#}
+{% extends "index.html.twig" %}
+
+{% block content %}
+    <div class="thumbnail idm-consent">
+        {% include 'logo.html.twig' %}
+        <section class="content">
+            {% if user_name is not empty and provider is not empty and tid is not empty %}
+                You are logged in as <strong>{{ user_name }}</strong><br />
+                Your tenant id is <strong>{{ tid }}</strong><br />
+                Authentication provider - <strong>{{ provider }}</strong><br />
+            {% endif %}
+        </section>
+        <nav class="nav tcenter">
+            <form action="{{ path('logout') }}"  method="post" >
+                <button id="logout_btn" class="btn btn-primary">Log out</button>
+            </form>
+        </nav>
+    </div>
+{% endblock %}

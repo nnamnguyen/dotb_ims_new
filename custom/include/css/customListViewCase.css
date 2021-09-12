@@ -1,0 +1,29 @@
+.custom_avatar{
+    width: 30px;
+    height: 30px;
+    border-radius:50% ;
+}
+.custom_avatar img{
+    width: 30px;
+    height: 30px;
+    border-radius:50%;
+    max-width: 30px !important;
+}
+.flex_row{
+    display: flex;
+}
+.custom_content{
+    padding-left: 15px;
+}
+.custom_title{
+    display: flex;
+}
+.padding_right{
+    padding-right: 10px;
+}
+.last_comment{
+    width: 300px;
+    height: 18px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

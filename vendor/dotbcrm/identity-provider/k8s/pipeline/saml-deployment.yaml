@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: saml-server
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: saml-server
+    spec:
+      restartPolicy: Always
+      containers:
+      - name: saml-server
+        image: registry.dotbcrm.net/identity-provider/samlserver-test:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - name: saml-server
+          containerPort: 80
+          protocol: TCP

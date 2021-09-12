@@ -1,0 +1,27 @@
+<!-- BEGIN: main -->
+			<form name="MailMerge" method="POST" action="index.php">		
+{dotb_csrf_form_token}
+<p>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="edit view">
+<tr>
+<td>
+	<table border="0" cellspacing="0" cellpadding="0">
+	<tr>
+	<th align="left" scope="row" colspan="2"><h4 class="">{MOD.LBL_STEP_5}</h4></th>
+	</tr>
+
+	<tr><td>&nbsp;</td></tr>
+
+</table>
+</p>
+
+<p><table width="100%" cellpadding="2" cellspacing="0" border="0"><tr> 
+	<td align="right">
+	<input title="{MOD.LBL_START}"  class="button" type="button" name="button" value="  {MOD.LBL_START}" onClick="document.location.href='{MAILMERGE_REDIRECT_URL}'"></td>
+</tr>
+</table> </p>
+	</form>
+<iframe src='index.php?entryPoint=mm_get_doc' title='mail_merge_iframe' frameborder=0 width='0px' height='0px'>
+
+</iframe>
+<!-- END: main -->

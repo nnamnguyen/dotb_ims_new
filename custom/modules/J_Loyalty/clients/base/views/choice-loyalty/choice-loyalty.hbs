@@ -1,0 +1,32 @@
+<div class="modal hide choice-loyalty">
+    <div class="modal-header">
+        <a class="close" data-dismiss="modal"><i class="fa fa-times"></i></a>
+        <h3><i class="far fa-id-card"></i>  {{str "LBL_MODULE_TITLE" module}}</h3>
+    </div>
+    <div class="modal-body">
+    <div id="dialog_loyalty" title="Loyalty Point">
+        <table id="table_loyalty" width="100%" style="font-weight: bold; font-size: 13px;">
+            <tr>
+                <td colspan="2" align="left">
+                {{str 'LBL_STUDENT' 'J_Payment'}}: {{student.name}}<span class="loy_student_name"></span> | </span> {{str 'LBL_POINT_HAVE' 'J_Payment'}} <span class="loy_total_points" style="color: #b90000;">{{student.point}} {{str 'LBL_POINTS' 'J_Payment'}}</span>.
+                {{str 'LBL_ENTER_POINTS' 'J_Payment'}}:
+                </td>
+            </tr>
+            <tr>
+                <td align="right">{{str 'LBL_LOYALTY_POINTS' 'J_Payment'}}:   </td>
+                <td align="left"> <input type="text" id="loy_loyalty_points" name="loy_loyalty_points" size="6" maxlength="13" value="{{student.point_input}}" title="{{str 'LBL_LOYALTY_POINTS' 'J_Payment'}}" style="text-align: center;"> {{str 'LBL_POINTS' 'J_Payment'}} (X <span class="loy_loyalty_rate_out_value">{{student.rate}} VNĐ</span>)</td>
+            </tr>
+            <tr>
+                <td colspan="2" align="left">
+                {{str 'LBL_MAX_POINTS' 'J_Payment'}} / {{str 'LBL_POINTS_TO_SPEND' 'J_Payment'}}: <span class="loy_total_points" style="color: #b90000;" >{{student.use_point}} </span> / <span class="loy_points_to_spend" style="font-weight: bold; color: #b90000;">{{student.point}} (<span class="total_amount">{{student.use_amount}}</span> VNĐ)</span>.
+                </td>
+            </tr>
+        </table>
+    </div>
+    </div>
+    <div class="modal-footer">
+{{#each meta.buttons}}
+{{field ../this model=../createModel}}
+{{/each}}
+    </div>
+</div>

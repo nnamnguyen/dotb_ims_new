@@ -1,0 +1,31 @@
+<li data-section="keywords"{{#unless keywords.length}} class="hide"{{/unless}}>
+    <p>
+    {{str 'LBL_SWEETSPOT_KEYWORDS_SECTION'}}
+    </p>
+    <ul>
+        {{#each keywords}}
+            {{partial 'result' ../this this}}
+        {{/each}}
+    </ul>
+</li>
+<li data-section="actions"{{#unless actions.length}} class="hide"{{/unless}}>
+    <p>
+    {{str 'LBL_SWEETSPOT_ACTIONS_SECTION'}}
+    </p>
+    <ul>
+        {{#each actions}}
+            {{partial 'result' ../this this}}
+        {{/each}}
+    </ul>
+</li>
+<li data-section="records"{{#unless records.length}} class="hide"{{/unless}}>
+    <p>
+    {{str 'LBL_SWEETSPOT_RECORDS_SECTION'}}
+    </p>
+    <ul>
+        {{#each records}}
+            {{partial 'result' ../this this}}
+        {{/each}}
+        {{partial 'showmore' this this}}
+    </ul>
+</li>

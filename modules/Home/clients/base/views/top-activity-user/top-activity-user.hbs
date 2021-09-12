@@ -1,0 +1,21 @@
+<div class="control-group dashlet-options">
+    <div class="controls{{#if isManager}} controls-two btn-group-fit{{/if}}">
+        <div class="row-fluid">
+            <div class="span6">
+                {{#each this.dashletConfig.buttons}}
+                    {{field ../this model=../this.settings template="edit"}}
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>
+{{#each this.collection.models}}
+    <div class="news-article">
+        <p>
+            <img src="{{fieldValue this "pictureUrl"}}" class="avatar"> <a href="#{{buildRoute module='Employees' id=this.attributes.user_id}}">{{fieldValue this "name"}}</a>
+        </p>
+        <span class="details">
+            <icon class="fa {{fieldValue this "icon"}}"></icon> {{fieldValue this "label"}}
+        </span>
+    </div>
+{{/each}}

@@ -1,0 +1,22 @@
+<tr name="{{model.module}}_{{model.cid}}" data-group-id="{{groupId}}" record-id="{{model.id}}"
+    class="quote-data-group-list product-bundle-notes-row{{#if model.id}} sortable ui-sortable{{else}} not-sortable{{/if}}">
+    <td>
+        <span class="action-button-wrapper left-column-save-cancel">
+            {{#each view.leftSaveCancelColumn}}
+                {{field ../view model=../model template=../view.viewName}}
+            {{/each}}
+        </span>
+        <span class="action-button-wrapper left-column-buttons">
+            {{#each view.leftColumns}}
+                {{field ../view model=../model template=../view.viewName}}
+            {{/each}}
+        </span>
+    </td>
+    {{#each model.fields}}
+        {{#eq name 'description'}}
+            <td class="description-textarea" colspan="{{../../view.listColSpan}}">
+                {{field ../../view model=../../model template=../../view.viewName}}
+            </td>
+        {{/eq}}
+    {{/each}}
+</tr>

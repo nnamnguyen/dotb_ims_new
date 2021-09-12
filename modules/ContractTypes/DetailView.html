@@ -1,0 +1,25 @@
+<!-- BEGIN: main -->
+<form action="index.php" method="post" name="DetailView" id="form">
+{dotb_csrf_form_token}
+	<input type="hidden" name="module" value="ContractTypes">
+	<input type="hidden" name="record" value="{ID}">
+	<input type="hidden" name="action">
+
+<table width="100%" border="0" cellspacing="{GRIDLINE}" cellpadding="0">
+<tr>
+    <td>
+<table width="100%" align='left' border="0" cellspacing="0" cellpadding="0" class="detail view">
+<tr>
+<td width="15%" scope="row"><slot>{MOD.LBL_NAME}</slot></td>
+<td width="85%"><slot>{NAME}&nbsp;</slot></td>
+</tr><tr>
+<td width="15%" scope="row"><slot>{MOD.LBL_LIST_ORDER}</slot></td>
+<td width="85%"><slot>{LIST_ORDER}&nbsp;</slot></td>
+</tr></table>
+</form>
+</td>
+</tr>
+</table>
+</form>
+{JAVASCRIPT}
+<!-- END: main -->

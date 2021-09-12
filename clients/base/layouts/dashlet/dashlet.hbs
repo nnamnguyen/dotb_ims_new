@@ -1,0 +1,9 @@
+<div class="thumbnail dashlet" data-type="dashlet" data-action="droppable">
+    {{#if meta.preview}}
+        <h4 data-toggle="dashlet" class="dashlet-title">{{meta.label}}</h4>
+    {{else}}
+        <div data-dashlet="toolbar"></div>
+    {{/if}}
+    <div data-dashlet="dashlet" class="dashlet-content"></div>
+    <div class="fa fa-download swappable-dashlet"></div>
+</div>

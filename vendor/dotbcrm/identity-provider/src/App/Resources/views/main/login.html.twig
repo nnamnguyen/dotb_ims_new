@@ -1,0 +1,49 @@
+{% extends "index-with-alerts.html.twig" %}
+
+{% block content %}
+<div class="thumbnail login">
+    <div class="tcenter">
+        {% include 'logo.html.twig' %}
+    </div>
+    <form name="login" id="submit_section" class="tcenter" method="post" action="{{ path('loginProcess') }}">
+        {% if tid %}
+            <input type="hidden" name="tid" value="{{ tid }}">
+        {% endif %}
+        {% if tid is empty %}
+            <div class="control-group">
+            <span class="edit">
+              <input type="text" name="tid" id="tid" value="" placeholder="Tenant" class="inherit-width"
+                     aria-label="tenant">
+            </span>
+            </div>
+        {% endif %}
+        <div class="control-group">
+            <span class="edit">
+              <input type="text" name="user_name" id="username" value="{{ user_name }}" placeholder="User Name"
+                     class="inherit-width" aria-label="username">
+            </span>
+        </div>
+        <div class="control-group">
+            <span class="edit">
+              <input type="password" name="password" id="password" value="" placeholder="Password"
+                     aria-label="password" onkeydown="onInputKeyDown(event);">
+            </span>
+        </div>
+            <p class="help-block">
+                <a href="{{ url('forgotPasswordRender') }}" class="btn btn-link btn-invisible">Forgot Password?</a>
+            </p>
+        <div class="login-footer">
+            <span class="edit">
+              <a href="javascript:void(0);" class="btn btn-primary" role="button" tabindex="0"
+                 name="login_button" id="submit_btn">Log In</a>
+            </span>
+        </div>
+        <input type="hidden" id="csrf_token" name="csrf_token" value="{{ csrf_token }}">
+        <input type="submit" id="submit-from" style="display: none">
+    </form>
+    <div class="tright login-footer">
+        <a href="{{ path('samlInit') }}" class="btn btn-primary" role="button"
+            name="sso_button" id="sso_btn">Single Sign-On</a>
+    </div>
+</div>
+{% endblock %}

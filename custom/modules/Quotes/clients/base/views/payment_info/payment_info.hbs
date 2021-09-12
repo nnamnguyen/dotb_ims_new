@@ -1,0 +1,16 @@
+<div class=" record-cell">
+{{#each renderFields}}
+<div>
+<div class="span12">
+    <div class="span2">
+        <div class="record-label" style="text-align: right">
+           *{{str 'LBL_RECEIPT' 'Quotes'}} {{no}}
+        </div>
+    </div>
+    <div class="span10"></div>
+</div>
+<div>
+{{field ../this model=../model template='edit'}}
+</div>
+{{/each}}
+<div>

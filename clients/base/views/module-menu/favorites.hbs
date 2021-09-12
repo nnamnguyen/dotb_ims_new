@@ -1,0 +1,11 @@
+{{#each collection.models}}
+    <li>
+        <a class="ellipsis_inline" tabindex="-1" href="#{{buildRoute model=this}}"
+           data-route="#{{buildRoute model=this}}" title="{{fieldValue this 'name'}}">
+            <div class="heart is-active">
+                <button type="button" class="btn btn-invisible{{#if value}} active{{/if}}" style="display: none"
+                        aria-pressed="{{#if value}}true{{else}}false{{/if}}"><i class="fa fa-favorite"></i>
+                </button>
+            </div>{{fieldValue this 'name'}}</a>
+    </li>
+{{/each}}

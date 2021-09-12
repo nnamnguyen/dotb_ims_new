@@ -1,0 +1,10 @@
+{{!
+
+}}
+<div class="tristate-checkbox">
+    <input type="checkbox" class="checkbox" id="{{name}}" role="checkbox"
+           aria-checked="{{currentState.ariaState}}" {{#if currentState.checked}}checked{{/if}}>
+    <label for="{{name}}" class="checkbox-label" rel="tooltip" data-html="true" title="{{tooltipText}}">
+        {{label}}
+    </label>
+</div>

@@ -1,0 +1,4 @@
+{*
+
+*}
+{$vardef.value}

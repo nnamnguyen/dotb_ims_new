@@ -1,0 +1,15 @@
+<div class="tooltip-grid">
+    <p><span>{{groupName}}</span> <span>{{groupLabel}}</span></p>
+{{#if seriesName}}
+    <p><span>{{seriesName}}</span> <span>{{seriesLabel}}</span></p>
+{{/if}}
+    <p><span>{{valueName}}</span> <span>{{valueLabel}}</span></p>
+{{#if percent}}
+    <p><span>{{str 'LBL_CHART_PERCENT'}}</span> <span>{{percent}}</span></p>
+{{/if}}
+</div>
+{{#if msg}}
+<div class="tooltip-status">
+    <i>{{msg}}</i>
+</div>
+{{/if}}

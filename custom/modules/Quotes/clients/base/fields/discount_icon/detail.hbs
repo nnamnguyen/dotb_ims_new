@@ -1,0 +1,12 @@
+<div class="quote-footer-item">
+    <span class="quote-footer-label">
+        <a href="javascript:void(0);" class="rowaction  btn {{#orEquals context.attributes.action 'edit' context.attributes.layout 'create'}}{{../def.css_class}}{{/orEquals}}" >
+             <i class="fas fa-gifts" tabindex="-1"></i> {{label}}
+         </a>
+     </span>
+    <span class="quote-footer-value" style="display: inline-flex;justify-content: flex-end;">
+    {{#each fields}}
+        {{placeholder}}{{#if def.percent}}% <span style="margin:0 10px;">|</span> {{/if}}
+    {{/each}}
+    </span>
+</div>

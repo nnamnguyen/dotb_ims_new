@@ -1,0 +1,12 @@
+{{#each models}}
+    <li>
+        <a tabindex="-1" class="favoriteLink actionLink" href="#{{buildRoute model=this}}" data-route="#{{buildRoute model=this}}">
+            <div class="heart is-active">
+                <button type="button" class="btn btn-invisible{{#if value}} active{{/if}}" style="display: none"
+                        aria-pressed="{{#if value}}true{{else}}false{{/if}}"><i class="fa fa-favorite"></i>
+                </button>
+            </div>
+            {{fieldValue this "document_name"}}
+        </a>
+    </li>
+{{/each}}

@@ -1,0 +1,17 @@
+{{#if ellipsis~}}
+    <div class="ellipsis_inline" data-placement="bottom"{{#if dir}}dir="{{dir}}"{{/if}}
+         title="{{#unless value}}{{#if def.placeholder}}{{str def.placeholder
+                                                              this.model.module}}{{/if}}{{/unless}}{{value}}">
+{{/if~}}
+
+{{#if value}}
+    {{value}}
+<!--        <i class="fa fa-spin fa-spinner {{this.def.name}}-icon-spin" style="display: none;font-size:17px"></i>-->
+<!--        <i class="fa fa-phone icon-call-center {{this.def.name}}-icon-call" title="Click to call"-->
+<!--           style="font-size: 17px;cursor: pointer"-->
+<!--           onclick="$('.{{this.def.name}}-icon-spin').show();$('.{{this.def.name}}-icon-call').hide();setTimeout(function(){$('.{{this.def.name}}-icon-call').show();$('.{{this.def.name}}-icon-spin').hide();},3000);CALL_CENTER.dialNumber('{{value}}','{{this.model.module}}','{{this.model.id}}');"></i>-->
+{{/if}}
+
+{{#if ellipsis~}}
+    </div>
+{{/if}}

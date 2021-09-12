@@ -1,0 +1,14 @@
+{{#each values}}
+    <div>
+        <h4>{{title}}</h4>
+        <select data-index="{{@index}}"
+                class="relationship-select"
+                disabled
+                style="width: 100%">
+            {{#each options}}
+                <option {{#eq ../relationship @key}}selected="selected"{{/eq}}
+                        value="{{@key}}">{{this}}</option>
+            {{/each}}
+        </select>
+    </div>
+{{/each}}

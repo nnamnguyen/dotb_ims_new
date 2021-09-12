@@ -1,0 +1,6 @@
+<?php
+//THIS FILE IS AUTO GENERATED, DO NOT MODIFY
+$mod_strings['LBL_CASES_C_COMMENTS_1_FROM_C_COMMENTS_TITLE'] = 'Comments';
+$mod_strings['LBL_CASES_C_COMMENTS_1_FROM_CASES_TITLE'] = 'Comments';
+$mod_strings['LBL_CONTACTS_CASES_1_FROM_CONTACTS_TITLE'] = 'Contacts';
+$mod_strings['LBL_CONTACTS_CASES_1_FROM_CASES_TITLE'] = 'Contacts';

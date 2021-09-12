@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: idm
+spec:
+  restartPolicy: Always
+  containers:
+  - name: idm
+    image: idm
+    imagePullPolicy: Never
+    # This is for keeping pod alive in k8s
+    command: [ "/bin/bash", "-c", "--" ]
+    args: [ "while true; do sleep 30; done;" ]
+    volumeMounts:
+    - mountPath: /var/www/html
+      name: idm-project
+  volumes:
+  - name: idm-project
+    hostPath:
+      path: "%%IDM_FOLDER%%"

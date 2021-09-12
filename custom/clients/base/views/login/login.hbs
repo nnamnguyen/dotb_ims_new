@@ -1,0 +1,88 @@
+<style type="text/css">
+    html, body {
+        margin: 0;
+        padding: 0;
+        background: url(styleguide/less/images/background-mask-20.png) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-position: center bottom;
+    }
+    #content {
+        position: inherit;
+        width: 100%;
+        height: 100%;
+    }
+    #footer {
+        display: none;
+    }
+    .login {
+        background: #e7f2fdb8;
+        margin: 0% auto !important;
+        padding: 10px;
+        overflow: hidden;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    @media (max-width: 768px){
+        .login{
+            width:90% !important;
+        }
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="span3"></div>
+        <div class="span6 login">
+            <div class="tcenter" style="margin-bottom: 20px">
+                <h2 class="brand"><img style="width:40%;" src="{{logoUrl}}" alt="DotBCRM"></h2>
+            </div>
+            <form name='{{name}}' class="tcenter">
+                <div class="control-group">
+                    <select class="form-control change-language" style="height: 38px;line-height: 38px;font-size: 16px;width: 83%;margin-left:0%">
+                        {{#each languageList}}
+                            <option value="{{key}}" {{#eq ../currentLang key}}selected{{/eq}}>{{value}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                {{#if this.loginTrial}}
+                    <div class="control-group">
+                        <select class="form-control" name="username_trial" style="height: 38px;line-height: 38px;font-size: 16px;width: 83%;margin-left:0%">
+                            {{#each this.demoUser}}
+                                <option value="{{this.user}}">{{this.user}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <input type="text" name="verify_key_trial" placeholder="Verify Key" style="height: 33px;line-height: 33px;font-size: 16px;width: 80%;margin-left:0%"/>
+                    </div>
+                    <div style="text-algin:center;margin-top: 20px">
+                        <button style="font-size: 16px;padding-top: 10px;padding-bottom: 10px;width: 82%;margin-left:0%" type="button" class="btn btn-primary login_trial_button" role="button">{{str "LBL_LOGIN_BUTTON_TITLE"}}</button>
+                    </div>
+                {{else}}
+                    <div class="control-group">
+                        <input type="text" name="username" placeholder="{{this.lbl_username}}" style="height: 33px;line-height: 33px;font-size: 16px;width: 80%;margin-left:0%"/>
+                    </div>
+                    <div class="control-group">
+                        <input type="password" name="password" placeholder="{{this.lbl_password}}" style="height: 33px;line-height: 33px;font-size: 16px;width: 80%;margin-left:0%"/>
+                    </div>
+                    <p class="help-block">
+                        {{#if ../showPasswordReset}}
+                            <br/>
+                            <a style="font-size:16px;" href="#forgotpassword" class="btn btn-link btn-invisible">{{str "LBL_LOGIN_FORGOT_PASSWORD"}}</a>
+                            <br/>
+                        {{/if}}
+                    </p>
+                    <div style="text-algin:center;"><br/>
+                        <a style="font-size: 16px;padding-top: 10px;padding-bottom: 10px;width: 82%;margin-left:0%" class="btn btn-primary" role="button" name="login_button">{{this.lbl_btn_login}}</a>
+                    </div>
+                {{/if}}
+            </form>
+            <div class="pull-right"><small>Powered by <a href="https://dotb.vn">DotB.vn</a></small></div>
+        </div>
+        <div class="span3"></div>
+    </div>
+</div>

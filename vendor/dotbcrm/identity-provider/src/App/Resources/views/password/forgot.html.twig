@@ -1,0 +1,42 @@
+{% extends "index-with-alerts.html.twig" %}
+
+{% block content %}
+<div class="thumbnail login">
+    <div class="tcenter">
+        {% include 'logo.html.twig' %}
+    </div>
+    <form name="forgot-password" id="submit_section" class="tcenter" method="post" action="{{ path('forgotPasswordProcess') }}">
+        {% if tid %}
+            <input type="hidden" name="tid" value="{{ tid }}">
+        {% endif %}
+        {% if tid is empty %}
+            <div class="control-group">
+            <span class="edit">
+              <input type="text" name="tid" id="tid" value="" placeholder="Tenant (Required)" class="inherit-width"
+                     aria-label="tenant">
+            </span>
+            </div>
+        {% endif %}
+        <div class="control-group">
+            <span class="edit">
+              <input type="text" name="user_name" id="username" value="" placeholder="User Name (Required)"
+                     class="inherit-width" aria-label="username">
+            </span>
+        </div>
+        <div class="control-group">
+            {% include 'recaptcha.html.twig' %}
+        </div>
+        {% include 'honeypot.html.twig' %}
+        <div class="login-footer">
+            <span class="edit">
+             <a href="{{ path('loginRender') }}" class="btn pull-left" role="button"
+                 name="login_button" id="login_button">Log In</a>
+              <a href="javascript:void(0);" class="btn btn-primary" role="button" tabindex="0"
+                 name="login_button" id="submit_btn">Request Password</a>
+            </span>
+        </div>
+        <input type="hidden" id="csrf_token" name="csrf_token" value="{{ csrf_token }}">
+        <input type="submit" id="submit-from" style="display: none">
+    </form>
+</div>
+{% endblock %}

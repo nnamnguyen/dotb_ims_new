@@ -1,0 +1,11 @@
+{{#if value}}
+    {{#if value.[0]}}
+        {{#each value}}
+            <input type="text" name="{{name}}" value="{{email_address}}"{{#if def.len}} maxlength="{{def.len}}"{{/if}} class="inherit-width">
+        {{/each}}
+    {{else}}
+        <input type="text" name="{{name}}" value="{{value}}"{{#if def.len}} maxlength="{{def.len}}"{{/if}} class="inherit-width">
+    {{/if}}
+{{else}}
+    <input type="text" name="{{name}}" value=""{{#if def.len}} maxlength="{{def.len}}"{{/if}} class="inherit-width">
+{{/if}}

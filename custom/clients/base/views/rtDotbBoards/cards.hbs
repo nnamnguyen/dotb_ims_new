@@ -1,0 +1,152 @@
+{{#each columnArray}}
+
+    {{rt_setIndex @index this}}
+
+    <div class="rtDotbBoardCard" id="{{attributes.id}}" data-status="{{../status}}" data-index="{{@index}}" data-columnSummaryField="{{rt_attValue attributes ../parentContext.columnSummaryField}}">
+        <div class="inner-container">
+            <div class="block preview-data">
+
+                <div class="field-value title">
+
+                <a class="name"
+                 href="#{{buildRoute module=this.module id=attributes.id action='detail'}}"
+                 rel="tooltip"
+                 data-placement="top"
+                 data-original-title="{{#eq ../parentContext.metaTitle 'full_name'}}{{rt_fullName this.attributes}}{{else}}{{rt_attValue this.attributes ../../parentContext.metaTitle}}{{/eq}}">
+                    {{#eq ../parentContext.metaTitle 'full_name'}}
+                        {{rt_limitChars (rt_fullName this.attributes ../../parentContext)}}
+                    {{else}}
+                        {{rt_limitChars (rt_attValue this.attributes ../../parentContext.metaTitle)}}
+                    {{/eq}}
+                </a>
+
+
+                    <div class="dropdown pull-right icon-set">
+                        <button type="button" data-toggle="dropdown" class="btn btn-invisible dropdown-toggle rtdotbboard" title="{{str "LBL_MORE"}}" track="click:navbar-more-modules" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-chevron-down"></i>
+                        </button>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          {{#if ../parentContext.editAllowed}}
+                            <p>
+                                <a class="dropdown-item edit-drawer" data-status="{{../../status}}" data-index="{{../this.index}}" href="javascript:void(0);">{{str "LBL_EDIT_BUTTON"}}</a>
+                            </p>
+                          {{/if}}
+                        </div>
+                    </div>
+
+                    {{#if ../parentContext.favAllowed}}
+                      <a href="javascript:void(0);" class="rtSbFavouriteButton pull-right icon-set" data-status="{{../../status}}" data-index="{{../this.index}}">
+                          <i class="{{#eq ../this.attributes.my_favorite true}}fa{{else}}far{{/eq}} fa-heart" tabindex="-1"></i>
+                      </a>
+                    {{/if}}
+
+                    <!-- Rest of Primary Information in H4 -->
+                </div>
+
+                {{#each ../parentContext.metaBasicFields}}
+                    {{#eq this.currency 'yes'}}
+                        {{#if (rt_hasValue ../../this.attributes this.name)}}
+                            <div class="field-value basic">
+                                <span class="detail">
+                                    <div class="ellipsis_inline">
+                                        <i class="fa {{this.icon}}"></i>
+                                        {{formatCurrency (rt_attValue ../../../this.attributes this.name)}}
+                                    </div>
+                                </span>
+                            </div>
+                        {{/if}}
+                    {{else}}
+                        {{#if (rt_hasValue ../../this.attributes this.name this)}}
+                            <div class="field-value basic">
+                                <span class="detail">
+                                    <div class="ellipsis_inline">
+                                        <i class="fa {{this.icon}}"></i>
+                                        {{rt_attValue ../../../this.attributes this.name this}}
+                                    </div>
+                                </span>
+                            </div>
+                        {{/if}}
+                    {{/eq}}
+                {{/each}}
+
+                <div class="secondaryDivrtDotbBoard">
+                    {{#each ../parentContext.metaSecondaryFields}}
+                        {{#if (rt_hasValue ../this.attributes this)}}
+                            <div class="record-cell field-row">
+                                <h5 class="field-label" >
+                                    {{rt_fLabel ../../this.fields ../this ../../../parentContext}}
+                                </h5>
+                                <div class="field-value">
+                                    <span class="detail">
+                                        <h4 class="ellipsis_inline">
+                                            {{rt_attValue ../../this.attributes ../this}}
+                                        </h4>
+                                    </span>
+                                </div>
+                            </div>
+                        {{/if}}
+                    {{/each}}
+                </div>
+
+                <div class="field-value icons">
+                    {{#each ../parentContext.metaActivityButtons}}
+                        <a href="javascript:void(0);"
+                         class="rtSbActivityButton"
+                         data-activity="{{this.name}}"
+                         data-status="{{../../status}}"
+                         data-index="{{../this.index}}"
+                         rel="tooltip"
+                         data-placement="top"
+                         data-original-title="{{getModuleName this.name}}">
+                            <span class="fa-stack fa-1x">
+                              <i class="far fa-circle fa-stack-2x"></i>
+                              <i class="fas {{this.icon}} fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    {{/each}}
+                    {{#if ../parentContext.asgUserAllowed}}
+                      <div class="profilePic">
+                          <a href="#{{buildRoute module="Employees" id=../attributes.assigned_user_id action='detail'}}" data-original-title="{{../attributes.assigned_user_name}}" rel="tooltip">
+                              {{#has ../attributes.assigned_user_id ../../parentContext.u_ids}}
+                                  <img src="{{rt_getPicture ../attributes.assigned_user_id}}" alt="{{../userName}}" class="avatar avatar-btn">
+                              {{else}}
+                                  <span class="fa-stack fa-1x">
+                                    <i class="far fa-circle fa-stack-2x initials"></i>
+                                    <strong class="fa-stack-1x initials fa-stack-text fa-inverse">{{rt_initialsMaker ../attributes.assigned_user_name}}</strong>
+                                  </span>
+                              {{/has}}
+                          </a>
+                      </div>
+                    {{/if}}
+                </div>
+            </div>
+
+
+            <h6 class='h6-details'>
+                <span class="details">
+                    <date class="date">
+                        <span class="relativetime">
+                            {{rtSBrelativeTime attributes.date_modified class='date' rel='tooltip'}}
+                        </span>
+                    </date>
+                    {{#if ../parentContext.modUserAllowed}}
+                        {{str "LBL_RT_BY"}}
+                    {{/if}}
+                    <a href="#{{buildRoute module="Employees" id=attributes.modified_user_id action='detail'}}">{{attributes.modified_by_name}}</a>
+                </span>
+            </h6>
+
+
+
+            {{#if ../parentContext.metaColorLabelList}}
+                <div class="colorLabel" data-toggle="tooltip" style="background-color: {{rt_colorLabel ../attributes ../../parentContext}}" rel="tooltip" data-original-title="{{rt_attValue ../attributes ../../parentContext.metaColorLabelField}}">
+                    <div class="labelText">
+                        {{rt_attValue ../attributes ../../parentContext.metaColorLabelField}}
+
+                    </div>
+                </div>
+            {{/if}}
+        </div>
+    </div>
+{{/each}}

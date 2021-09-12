@@ -1,0 +1,48 @@
+{% extends "index.html.twig" %}
+
+{% block content %}
+    <div class="thumbnail idm-consent">
+        {% include 'logo.html.twig' %}
+        <section class="content">
+            <form name="password" id="submit_section" class="tcenter" method="post" action="{{ path
+                ('setPassword') }}">
+                <h3>Enter your new password below</h3>
+                <input type="hidden" name="tid" value="{{ tid }}">
+                <input type="hidden" name="token" value="{{ token }}">
+                <div class="control-group">
+                    <span class="edit">
+                      <input type="password" name="newPassword" id="newPassword" placeholder="New password"
+                             class="inherit-width" aria-label="newPassword">
+                    </span>
+                </div>
+                <div class="control-group">
+                    <span class="edit">
+                      <input type="password" name="confirmPassword" id="confirmPassword" value=""
+                             placeholder="Confirm password"
+                             aria-label="confirmPassword">
+                    </span>
+                </div>
+                <input type="hidden" id="csrf_token" name="csrf_token" value="{{ csrf_token }}">
+            </form>
+        </section>
+        <nav class="nav tcenter">
+            <a href="javascript:void(0);" id="submit_btn">
+                <button id="set-new-password-btn" class="btn btn-primary">Set password</button>
+            </a>
+        </nav>
+    </div>
+{% endblock %}
+{% block alert %}
+    {% set alert = app.getSession().getFlashBag().get('error') %}
+    {% if alert is not empty %}
+        <div class="alert alert-danger alert-block closeable">
+            <div class="indicator">
+                <i class="fa fa-exclamation-circle"></i>
+            </div>
+            <button class="close btn btn-link btn-invisible" onclick="javascript:void(0);" id="close_alert_btn">
+                <i class="fa fa-times"></i>
+            </button>
+            <span class="text">{{ alert|join('. ') }}</span>
+        </div>
+    {% endif %}
+{% endblock %}

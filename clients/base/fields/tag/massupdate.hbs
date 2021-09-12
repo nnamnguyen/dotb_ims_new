@@ -1,0 +1,14 @@
+<div class="massupdate row-fluid">
+    <div class="span9">
+        {{! This part is directly from `edit.hbs`
+            FIXME: use the `partial` hbs helper for this once INT-394 is available
+        }}
+
+        <input class="select2field select2-offscreen select2-choices-tags-close">
+    </div>
+    <div class="span3">
+        <label>
+            <input type="checkbox" name="append_tag"{{#if appendTagValue}} checked{{/if}}> {{str 'LBL_SELECT_APPEND_TAGS'}}
+        </label>
+    </div>
+</div>

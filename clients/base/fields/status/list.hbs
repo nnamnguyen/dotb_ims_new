@@ -1,0 +1,6 @@
+<div class="ellipsis_inline {{cssClasses}}" data-placement="bottom"
+    title="{{#unless value}}{{#if def.placeholder}}{{str def.placeholder this.model.module}}{{/if}}{{/unless}}{{value}}">
+    {{#if def.link}}
+        <a href="{{#if def.events}}javascript:void(0);{{else}}{{href}}{{/if}}">{{value}}</a>{{else}}{{value}}
+    {{/if}}
+</div>

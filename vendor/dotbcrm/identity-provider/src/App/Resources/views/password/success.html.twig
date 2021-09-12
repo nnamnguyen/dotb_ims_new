@@ -1,0 +1,15 @@
+{% extends "index.html.twig" %}
+
+{% block content %}
+    <div class="thumbnail idm-consent">
+        {% include 'logo.html.twig' %}
+        <section class="content">
+            <h3>You password has been set. Now you can login in your DotbCRM instance.</h3>
+        </section>
+        <nav class="nav tcenter">
+            <a href="{{ path('loginRender') }}" id="login_link">
+                <button id="set-new-password-btn" class="btn btn-primary">Login</button>
+            </a>
+        </nav>
+    </div>
+{% endblock %}

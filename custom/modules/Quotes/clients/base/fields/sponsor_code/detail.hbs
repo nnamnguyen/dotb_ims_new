@@ -1,0 +1,18 @@
+<div class="quote-footer-item">
+    <span class="quote-footer-label">
+        <a href="javascript:void(0);" class="rowaction  btn {{#orEquals context.attributes.action 'edit' context.attributes.layout 'create'}}{{../def.css_class}}{{/orEquals}}" >
+             <i class="fas fa-gifts" tabindex="-1"></i> {{label}}
+         </a>
+     </span>
+     {{#orEquals context.attributes.action 'edit' context.attributes.layout 'create'}}
+        <span style="display:inline-flex">
+             <input type="text" name="sponsor_code" style="width:100px">
+             <button id="search_sponsor_code"class="button primary"><i class="fa fa-search-dollar"></i></button>
+             </span>
+         {{/orEquals}}
+    <span class="quote-footer-value" style="display: inline-flex;justify-content: flex-end;{{#orEquals context.attributes.action 'edit' context.attributes.layout 'create'}}width:26%{{/orEquals}}">
+    {{#each fields}}
+        {{placeholder}}{{#if def.percent}}% <span style="margin:0 10px;">|</span> {{/if}}
+    {{/each}}
+    </span>
+</div>

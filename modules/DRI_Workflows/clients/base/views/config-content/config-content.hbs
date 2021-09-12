@@ -1,0 +1,98 @@
+<div class="record-panel" style="margin-top: 0;">
+    <div class="record-panel-header" style="box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none;">
+        <h3>{{str 'LBL_CONFIG_LICENSE' module}}</h3>
+    </div>
+</div>
+
+<div class="record">
+    <div class="config_container" style="margin-left: 10px; margin-right: 10px;">
+        <div class="clearfix">
+            <div class="pull-left" style="padding: 5px 0">
+                {{str 'LBL_CONFIG_DESCRIPTION' module}}
+            </div>
+            <div class="pull-right">
+                {{#unless configModel.attributes.disabled}}
+                {{#each meta.buttons}}
+                    {{field ../this}}
+                {{/each}}
+                {{/unless}}
+            </div>
+        </div>
+        {{#unless configModel.attributes.disabled}}
+        <div class="clearfix">
+            <div class="pull-left" style="width: 100%">
+                <div class="config_values">
+                    {{#each meta.fields}}
+                        <h4>{{str label ../module}}</h4>
+                        {{field ../this model=../configModel template="edit"}}
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        {{/unless}}
+        <div class="clearfix">
+            <div class="pull-left" style="width: 25%; text-align: center;">
+                <h4>{{str 'LBL_CONFIG_STATUS' module}}</h4>
+                {{#if configModel.attributes.valid}}
+                    <span class="label label-success" style="position: relative; top: -4px;">{{str 'LBL_CONFIG_VALID' module}}</span>
+                {{else}}
+                    <span class="label label-important" style="position: relative; top: -4px;">{{str 'LBL_CONFIG_INVALID' module}}</span>
+                {{/if}}
+            </div>
+
+            <div class="pull-left" style="width: 25%; text-align: center;">
+                <h4>{{str 'LBL_CONFIG_VALID_UNTIL' module}}</h4>
+                {{#if configModel.attributes.valid_until}}
+                    {{configModel.attributes.valid_until}}<br>
+                {{/if}}
+            </div>
+
+            <div class="pull-left" style="width: 25%; text-align: center;">
+                <h4>{{str 'LBL_CONFIG_LICENSE_USAGE' module}}</h4>
+                {{#if configModel.attributes.user_limit}}
+                    {{configModel.attributes.current_users}}
+                    /
+                    {{configModel.attributes.user_limit}}<br>
+                {{/if}}
+            </div>
+            <div class="pull-left" style="width: 25%; text-align: center;">
+                <h4>{{str 'LBL_CONFIG_VERSION' module}}</h4>
+                {{#if configModel.attributes.version}}
+                    {{configModel.attributes.version}}
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="record-panel" style="margin: -1px 0;">
+    <div class="record-panel-header" style="box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none;">
+        <h3>{{str 'LBL_CONFIG_USERS' module}}</h3>
+    </div>
+</div>
+
+<div class="record">
+    <div class="config_container" style="margin-left: 10px; margin-right: 10px;">
+        <div class="clearfix">
+            <div class="pull-left" style="padding: 5px 0">
+                <div>{{str 'LBL_CONFIG_USERS_DESCRIPTION' module}}.</div>
+            </div>
+            <div class="pull-right">
+                <button class="btn btn-primary add-users-button">{{str 'LBL_CONFIG_ADD_USERS' module}}</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .config_container .config_values input {
+        width: 98%;
+    }
+    .config_container .config_values textarea {
+        width: 98%;
+    }
+    .cj-configuration {
+        overflow-y: scroll;
+        height: 100%;
+    }
+</style>

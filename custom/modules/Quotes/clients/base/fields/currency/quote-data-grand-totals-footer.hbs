@@ -1,0 +1,18 @@
+{{#if def.session}}
+{{#if transactionValue}}
+            <label class="original">{{transactionValue}}</label><div class="converted">{{value}}</div>
+        {{else}}
+            {{value}}
+        {{/if}}
+{{else}}
+<div class="quote-footer-item {{css_class}}">
+    <span class="quote-footer-label">{{label}}</span>
+    <span class="quote-footer-value">
+        {{#if transactionValue}}
+            <label class="original">{{transactionValue}}</label><div class="converted">{{value}}</div>
+        {{else}}
+            {{value}}
+        {{/if}}
+    </span>
+</div>
+{{/if}}

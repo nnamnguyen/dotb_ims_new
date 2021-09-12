@@ -1,0 +1,13 @@
+<div class="quote-data-panel-controls">
+    {{#each meta.buttons}}
+        {{field ../this model=../model template='list-header'}}
+    {{/each}}
+</div>
+<div class="quote-data-header-fields">
+    {{#each meta.panels}}
+        {{#each fields}}
+            {{field ../../this model=../../model template=../../action}}
+        {{/each}}
+    {{/each}}
+</div>
+

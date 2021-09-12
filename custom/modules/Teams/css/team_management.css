@@ -1,0 +1,200 @@
+body {
+    margin:0px;
+    padding:0px;
+    font-family:Helvetica Neue, arial, helvetica, sans-serif;
+    color:#333;
+    font-size: 14px;
+    background-color: #e9eaed;
+}
+a {
+    text-decoration:none;
+}
+
+#Header {
+    /* padding:17px 0px 0px 20px; */
+    /* For IE5/Win's benefit height = [correct height] + [top padding] + [top and bottom border widths] */
+    border: 1px #ccc solid;
+    /* border-width:1px 0px; */ /* top and bottom borders: 1px; left and right borders: 0px */
+    line-height:11px;
+    background-color:#fdfdfd;
+    text-align: center;
+
+    /* Here is the ugly brilliant hack that protects IE5/Win from its own stupidity.
+    Thanks to Tantek Celik for the hack and to Eric Costello for publicizing it.
+    IE5/Win incorrectly parses the "\"}"" value, prematurely closing the style
+    declaration. The incorrect IE5/Win value is above, while the correct value is
+    below. See http://glish.com/css/hacks.asp for details. */
+    voice-family: "\"}\"";
+    voice-family:inherit;
+    height: 46px; /* the correct height */
+}
+/* I've heard this called the "be nice to Opera 5" rule. Basically, it feeds correct
+length values to user agents that exhibit the parsing error exploited above yet get
+the CSS box model right and understand the CSS2 parent-child selector. ALWAYS include
+a "be nice to Opera 5" rule every time you use the Tantek Celik hack (above). */
+body>#Header {height:14px;}
+
+#Content {
+    margin:0px 0px 50px 300px;
+    padding:10px;
+}
+#dotb_spot_search {
+ width: 232px;
+}
+
+    #Menu {
+    position:absolute;
+    top: 50px;
+    width:280px;
+    padding:10px;
+    background-color:#efefef;
+/*    border:1px dashed #999;*/
+    line-height:17px;
+    /* Again, the ugly brilliant hack. */
+    voice-family: "\"}\"";
+    voice-family:inherit;
+    border-radius: 4px;
+}
+/* Again, "be nice to Opera 5". */
+body>#Menu {width:150px;}
+.panel{
+    padding: 20px 40px 60px 60px;
+    margin-bottom: 10px !important;
+    border: 1px #ccc solid;
+    position: relative;
+    margin: 0 0 10px 0;
+    background-color: #efefef !important;
+    min-height: 100px;
+}
+.action_buttons{
+    padding-bottom: 20px;
+}
+#remove-user
+{
+   background:url(../../../../index.php?entryPoint=getImage&imageName=glyphicons-user-remove.png) left top;
+   width:24px;
+   height:24px;
+   display: block;
+   float: left;
+}
+.highlight_blue {
+    background:#115CAB;
+    color: #fff !important;
+    border-radius:5px;
+    padding:2px 5px 2px 5px;
+    font-weight: bold;
+}
+.highlight_bluelight {
+    background:#04ADEC;
+    color: #fff !important;
+    border-radius:5px;
+    padding:2px 5px 2px 5px;
+    font-weight: bold;
+}
+
+.highlight_red {
+    background:#A8141B;
+    color: #fff !important;
+    border-radius:5px;
+    padding:2px 5px 2px 5px;
+    font-weight: bold;
+}
+
+.highlight_redlight {
+    background:#FF0000;
+    color: #fff !important;
+    border-radius:5px;
+    padding:2px 5px 2px 5px;
+    font-weight: bold;
+}
+
+.highlight_black {
+    background:#272727;
+    color: #fff !important;
+    border-radius:5px;
+    padding:2px 5px 2px 5px;
+    font-weight: bold;
+}
+
+.highlight_yellow {
+    background:#F1D44A;
+    color: #fff !important;
+    border-radius:5px;
+    padding:2px 5px 2px 5px;
+    font-weight: bold;
+}
+
+.highlight_yellowlight {
+    background:#e8b71a;
+    color: #fff !important;
+    border-radius:5px;
+    padding:2px 5px 2px 5px;
+    font-weight: bold;
+}
+
+.highlight_green {
+    background:#468931;
+    color: #fff !important;
+    border-radius:5px;
+    padding:2px 5px 2px 5px;
+    font-weight: bold;
+}
+
+.highlight_violet {
+    background:#aa68ff;
+    color: #fff !important;
+    border-radius:5px;
+    padding:2px 5px 2px 5px;
+    font-weight: bold;
+}
+
+.highlight_orange {
+    background:#FF8C00;
+    color: #fff !important;
+    border-radius:5px;
+    padding:2px 5px 2px 5px;
+    font-weight: bold;
+}
+
+.highlight_crimson {
+    background:#DC143C;
+    color: #fff !important;
+    border-radius:5px;
+    padding:2px 5px 2px 5px;
+    font-weight: bold;
+}
+
+.highlight_blood {
+    background:#db3340;
+    color: #fff !important;
+    border-radius:5px;
+    padding:2px 5px 2px 5px;
+    font-weight: bold;
+}
+
+.highlight_dream {
+    background:#32CD32;
+    color: #fff !important;
+    border-radius:5px;
+    padding:2px 5px 2px 5px;
+    font-weight: bold;
+}
+table, div{
+    font-size: 14px !important;
+}
+.glyphicon{
+    font-size: 20px !important;
+}
+a:link, a:visited, a:hover
+{
+    font-size: 14px!important;
+}
+
+.paginate_disabled_next
+{
+    padding-left: 5px;
+}
+.paginate_disabled_previous
+{
+    padding-right: 5px;
+}

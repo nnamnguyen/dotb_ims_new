@@ -1,0 +1,52 @@
+<link rel="stylesheet" type="text/css" href="modules/RT_DotbBoards/css/rtSB.css">
+
+{{#if this.validate}}
+  <div class="dashlet-container
+   span12 ui-droppable">
+      <div class="rtDotbBoard">
+
+          {{#each ../this.kbRecords}}
+              <div class="thumbnail rtDotbBoardColumn dashlet ui-draggable" data-type="dashlet" data-action="droppable" id="{{@key}}">
+                  <div data-dashlet="toolbar">
+                      <div class="dashlet-header">
+                          <h4 data-toggle="dashlet" class="dashlet-title ui-draggable-handle">{{@key}}</h4>
+                      </div>
+                  </div>
+
+                  {{rt_setStatus @key this}}
+
+                  {{#eq ../../this.enableColumnSummary 'true'}}
+                      <div class="columnSummary" rel="tooltip" data-original-title="{{../../../this.colSumLabel}}">
+                          {{#eq ../../../this.showCurrency 'yes'}}
+                              <div class="symbol">
+                                  {{../../../../this.currencySymbol}}
+                              </div>
+
+                          {{/eq}}
+                          <div class="value">
+                              {{log ../this.status}}
+                              {{rt_attValue ../../../this.columnSummary ../this.status}}
+                          </div>
+                      </div>
+                  {{/eq}}
+
+                  {{partial 'cards' ../../this columnArray=this parentContext=../../this status=@key}}
+              </div>
+          {{/each}}
+
+          <div class="successButton" id="{{../this.successColumn}}">{{../this.successColumn}}</div>
+          <div class="failureButton" id="{{../this.failureColumn}}">{{../this.failureColumn}}</div>
+      </div>
+  </div>
+{{else}}
+  {{#eq ../this.validate false}}
+    <div class='headerpane'>
+      <h1>
+        <p class="record-cell">
+          {{str 'LBL_SB_DOTB_BOARDS'}}
+        </p>
+      </h1>
+    </div>
+  {{/eq}}
+
+{{/if}}

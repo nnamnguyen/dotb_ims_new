@@ -1,0 +1,13 @@
+
+
+[
+    "tests/unit-js/clients/base/**/*.js",
+    "tests/unit-js/modules/**/clients/base/**/*.js",
+    "tests/unit-js/include/javascript/dotb7/*.js",
+    "tests/unit-js/include/javascript/dotb7/**/*.js",
+    "tests/unit-js/include/javascript/pmse/*.js",
+    "tests/unit-js/include/javascript/pmse/**/*.js",
+    "tests/unit-js/include/javascript/twitterbootstrap/**/*.js",
+    "tests/unit-js/include/DotbCharts/sucrose/js/*.js",
+    "tests/unit-js/include/Expressions/Expression/**/*.js"
+]

@@ -1,0 +1,13 @@
+<div data-content="chart">
+    <div class="opportunity-metrics-chart sc-chart">
+        <svg class="sucrose" id="{{cid}}"></svg>
+    </div>
+    {{#eachOptions metricsCollection}}
+        <div class="opportunity-metric">
+            <span class="label {{value.cssClass}}">{{value.count}}</span>
+            <div class="deal-amount-metric {{key}}">{{value.formattedAmount}}</div>
+            <div class="opportunity-metric-description">{{value.stageLabel}}</div>
+        </div>
+    {{/eachOptions}}
+</div>
+<div class="block-footer hide" data-content="nodata">{{str "LBL_NO_DATA_AVAILABLE"}}</div>

@@ -1,0 +1,22 @@
+{{#if css_style}}
+    <div style="{{css_style}}">
+{{/if}}
+{{#each fields}}
+        <div class="fieldset-field span6" data-type="{{type}}" data-name="{{name}}">
+            <div class="row-fluid">
+                {{#if ../def.show_child_labels}}
+                    <div class="span4">
+                        <div class="record-label" style="padding-top:7px;text-align: right" data-name="{{name}}">
+                            {{str label ../module}}
+                        </div>
+                    </div>
+                    <div class="span8 normal">
+                        {{placeholder}}
+                    </div>
+                {{else}}
+                    {{placeholder}}
+                {{/if}}
+            </div>
+        </div>
+{{/each}}
+{{#if css_style}}</div>{{/if}}

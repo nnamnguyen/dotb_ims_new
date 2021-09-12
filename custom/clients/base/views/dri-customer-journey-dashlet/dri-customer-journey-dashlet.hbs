@@ -1,0 +1,16 @@
+<div data-content="chart">
+    <div class="nv-chart nv-chart-donut">
+        <svg id="{{cid}}"></svg>
+    </div>
+</div>
+
+<div class="block-footer hide" data-content="nodata">
+    {{#if loaded}}
+        {{str "LBL_NO_DATA_AVAILABLE"}}
+    {{else}}
+        <div class="loading">
+            <span>{{str "LBL_ALERT_TITLE_LOADING"}}</span>
+            <i class="l1">&#46;</i><i class="l2">&#46;</i><i class="l3">&#46;</i>
+        </div>
+    {{/if}}
+</div>

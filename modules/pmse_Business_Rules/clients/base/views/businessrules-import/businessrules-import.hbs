@@ -1,0 +1,15 @@
+{{#each meta.panels}}
+	<div class="padded">
+
+	    <p><b>{{str "LBL_PMSE_BUSINESS_RULES_IMPORT_TEXT" ../module}}</b></p>
+
+	    {{#each fields}}
+	    <div class="span10 controls">
+	        {{field ../../this}}
+	    </div>
+
+	    {{/each}}
+
+    </div>
+
+{{/each}}

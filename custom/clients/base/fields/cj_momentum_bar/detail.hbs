@@ -1,0 +1,11 @@
+{{!--
+/*
+ * @author Emil Kilhage <emil.kilhage@addoptify.com>
+ */
+--}}
+<div class="progress"
+     rel="tooltip"
+     data-placement="top"
+     title="Momentum: {{value}}% ({{model.attributes.momentum_score}}/{{model.attributes.momentum_points}} {{str "LBL_WIDGET_POINTS" "DRI_Workflows"}})">
+    <div class="bar" style="width: {{value}}%; background-color: {{barColor}}; background-image: linear-gradient(to bottom, {{barColor}}, {{barColor}});"></div>
+</div>

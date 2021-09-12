@@ -1,0 +1,7 @@
+<div class="block-footer">
+    {{#eq error.code "not_found"}}
+        {{str "LBL_NO_DATA_AVAILABLE" this.module}}
+    {{else}}
+        {{str error.message}}
+    {{/eq}}
+</div>

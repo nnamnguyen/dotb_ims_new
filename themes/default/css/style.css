@@ -1,0 +1,26 @@
+
+ 
+#ajaxStatusDiv 
+{
+    background: none repeat scroll 0% 0% rgb(255, 255, 255); 
+    color: rgb(198, 12, 48); 
+    position: fixed;
+    opacity: 0.8;
+    -moz-opacity:0.8;
+    filter: alpha(opacity=80);
+    top: 7px;
+}
+
+
+.search_form .view .yui-ac-highlight {
+    text-shadow: none;
+}
+
+/* hack for webkit browsers ( namely Chrome and Safari ) */
+@media screen and (-webkit-min-device-pixel-ratio:0) 
+{
+    #ajaxStatusDiv 
+    {
+        position: absolute;
+    }
+}

@@ -1,0 +1,19 @@
+{{> wizard-page.header }}
+        <!-- Hack: Adding .record here since .record .record-cell contain styles we need :( -->
+        <div class="modal-body record">
+            {{#each meta.panels}}
+                {{#each grid}}
+                    <div class="row-fluid {{../name}}{{#if ../hide}} hide{{/if}}">
+                        {{#each this}}
+                            <div class="span{{span}} record-cell{{#if cell_css_class}} {{cell_css_class}}{{/if}}" data-type="{{type}}" data-name="{{name}}">
+                                <div class="record-label" data-type="{{type}}" data-name="{{name}}">{{#if label}}{{str label module}}{{/if}}</div>
+                                <span class="normal{{#if css}} {{css}}{{/if}}" data-fieldname="{{name}}">
+                                    {{field ../../../this model=../../../model template="edit"}}
+                                </span>
+                            </div>
+                        {{/each}}
+                    </div>
+                {{/each}}
+            {{/each}}
+        </div>
+{{> wizard-page.footer }}

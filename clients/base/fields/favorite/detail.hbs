@@ -1,0 +1,10 @@
+<div class="heart{{#if value}} is-active{{/if}}" rel="tooltip" title="{{str 'LBL_FAVORITE' this.module}}"
+     aria-label="{{str 'LBL_FAVORITE' this.module}}" data-placement="bottom"
+     aria-pressed="{{#if value}}true{{else}}false{{/if}}">
+    <button type="button" class="btn btn-invisible{{#if value}} active{{/if}}" style="display: none"
+            aria-pressed="{{#if value}}true{{else}}false{{/if}}"><i class="fa fa-favorite"></i>
+    </button>
+</div>
+
+
+

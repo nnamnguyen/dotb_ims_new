@@ -1,0 +1,13 @@
+{{#if value}}
+    <div class="ellipsis_inline" data-placement="bottom"{{#if dir}} dir="{{dir}}"{{/if}}>
+        <span class="customPhoneAction">
+            <i class="fa fa-spin fa-spinner" style="display: none;font-size:17px"></i>
+            <i class="fa fa-sms icon-send-sms" data-value="{{value}}" data-module="{{this.model.module}}" data-id="{{this.model.id}}" rel="tooltip" data-original-title="Click to send SMS" style="font-size: 17px;cursor: pointer"></i>
+        </span>
+        <span class="customPhoneAction">
+            <i class="fa fa-spin fa-spinner" style="display: none;font-size:17px"></i>
+            <i class="fa fa-phone-alt callcenter-icon-clicktocall" data-bean="{{this.model.module}}" data-id="{{this.model.id}}" data-phone="{{value}}" rel="tooltip" data-original-title="Click to call" style="font-size: 17px;cursor: pointer"></i>
+        </span>
+        <span style="cursor: pointer" class="customPhoneAction" onclick="$(this).prev().find('.callcenter-icon-clicktocall').click()">{{value}}</span>
+    </div>
+{{/if}}

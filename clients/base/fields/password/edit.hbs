@@ -1,0 +1,2 @@
+<input type="password" name="{{name}}" value="{{value}}"{{#if def.placeholder}} placeholder="{{str def.placeholder this.model.module}}"{{/if}}{{#if def.tabindex}} tabindex="{{def.tabindex}}"{{/if}}>
+{{#unless hideHelp}}{{#if def.help}}<p class="help-block">{{str def.help module}}</p>{{/if}}{{/unless}}

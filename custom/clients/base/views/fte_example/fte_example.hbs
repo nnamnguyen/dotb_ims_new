@@ -1,0 +1,85 @@
+{{!
+/*********************************************************************************
+ * By installing or using this file, you are confirming on behalf of the entity
+ * subscribed to the DotBCRM Inc. product ("Company") that Company is bound by
+ * the DotBCRM Inc. Master Subscription Agreement (“MSA”), which is viewable at:
+ * http://www.dotbcrm.com/master-subscription-agreement
+ *
+ * If Company is not bound by the MSA, then by installing or using this file
+ * you are agreeing unconditionally that Company will be bound by the MSA and
+ * certifying that you have authority to bind Company accordingly.
+ *
+ * Copyright (C) 2004-2014 DotBCRM Inc.  All rights reserved.
+ ********************************************************************************/
+}}
+
+<style>
+
+    a.card-link {
+        padding: 20px;
+        display: block;
+        font-size: 14px;
+    }
+
+    a.card-link:hover {
+        text-decoration: none;
+        background-color: #efefef;
+    }
+
+    .card-row {
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .card {
+        text-align: center;
+        width: 300px;
+    }
+
+    .card-icon {
+        padding: 20px;
+    }
+
+    h4.dashlet-title.card-header{
+        border: none;
+        font-weight: 400;
+        text-align: center;
+        font-size: 16px;
+        padding:10px;
+    }
+</style>
+{{#if demodata}}
+    <div class="dashlet-header">
+        <h4 data-toggle="dashlet"
+            class="dashlet-title ui-draggable-handle card-header">{{str "LBL_FTE_EXAMPLE_CLICK_TO_CHECKOUT"}}</h4>
+    </div>
+    <div class="card-row">
+        {{#each demodata}}
+            {{#each items}}
+                <div class="card">
+                    <a class="card-link" href="#{{module}}/{{id}}">
+                        {{#with ../../dashletConfig.avatar}}
+                            <div class="card-icon">
+                                {{field ../../../this model=../this}}
+                            </div>
+                        {{/with}}
+                        {{#with ../../dashletConfig.name}}
+                            <div class="card-name">
+                                {{field ../../../this model=../this}}
+                            </div>
+                            <p style="font-style:italic;color: #dedede; padding-top:10px;">({{../module}})</p>
+                        {{/with}}
+                    </a>
+                </div>
+            {{/each}}
+        {{/each}}
+    </div>
+{{else}}
+    <div class="block-footer">
+        {{str "LBL_NO_DATA_AVAILABLE"}}
+    </div>
+{{/if}}

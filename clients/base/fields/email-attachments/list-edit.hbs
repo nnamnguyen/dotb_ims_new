@@ -1,0 +1,14 @@
+{{#if ellipsis}}
+    <div class="ellipsis_inline" data-placement="bottom"{{#if dir}} dir="{{dir}}"{{/if}} title="{{tooltip}}">
+{{/if}}
+{{#each value}}
+    {{#if file_url}}
+        <a href="javascript:void(0);" data-url="{{file_url}}" data-action="download">{{name}}</a>
+    {{else}}
+        {{name}}
+    {{/if}}
+    {{#unless @last}}, {{/unless}}
+{{/each}}
+{{#if ellipsis}}
+    </div>
+{{/if~}}

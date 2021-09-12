@@ -1,0 +1,14 @@
+{{#if model.attributes.case_number}}
+    <p>{{model.module}} {{str "LBL_NUMBER" model.module}}: {{model.attributes.case_number}}</p>
+{{/if}}
+{{#if model.attributes.bug_number}}
+    <p>{{model.module}} {{str "LBL_NUMBER" model.module}}: {{model.attributes.bug_number}}</p>
+{{/if}}
+{{model.attributes.number}}
+<p>{{str "LBL_SUBJECT" model.module}}: {{model.attributes.name}}</p>
+{{#notEq model.attributes.description ""}}
+    <p>{{str "LBL_DESCRIPTION" model.module}}: {{model.attributes.description}}</p>
+{{/notEq}}
+{{#notEq model.attributes.resolution ""}}
+    <p>{{str "LBL_RESOLUTION" model.module}}: {{model.attributes.resolution}}</p>
+{{/notEq}}

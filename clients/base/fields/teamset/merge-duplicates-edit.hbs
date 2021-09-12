@@ -1,0 +1,25 @@
+{{#each value}}
+    <div class="merge-row control-group">
+        <div class="controls">
+            {{#if id}}
+                <input type="checkbox" name="copy_{{../../name}}_{{@index}}"
+                       class="copy"
+                       data-action="copy"
+                       data-field-name="{{../../name}}"
+                       data-record-id="{{../../model.attributes.id}}"
+                       data-record-item-id="{{id}}" {{#if checked}}checked="checked"{{/if}} />
+                <label>{{name}}</label>
+                {{#if checked}}
+                    <button type="button"
+                            class="btn fourth {{#if primary}}active{{/if}}" name="primary"
+                            data-index="{{@index}}" rel="tooltip"
+                            data-placement="right"
+                            data-original-title="{{str "LBL_TEAM_PRIMARY"}}">
+                        <i class="fa fa-star"></i>
+                    </button>
+                {{/if}}
+                {{partial 'button-selected' ../../this this index=@index}}
+            {{/if}}
+        </div>
+    </div>
+{{/each}}

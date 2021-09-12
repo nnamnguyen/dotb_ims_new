@@ -1,0 +1,17 @@
+{{#if total}}
+<div class="opportunity-metrics-wrapper">
+    <div class="nv-chart nv-chart-donut">
+        <svg id="{{cid}}"></svg>
+    </div>
+    {{#eachOptions metricsCollection}}
+        <div class="opportunity-metric">
+            <span class="label {{value.cssClass}}">{{value.count}}</span>
+            <div class="deal-amount-metric {{key}}">{{value.formattedAmount}}</div>
+            <div class="opportunity-metric-description">{{value.stageLabel}}</div>
+        </div>
+    {{/eachOptions}}
+</div>
+{{/if}}
+{{#eq total 0}}
+    <div class="block-footer">{{str "LBL_NO_DATA_AVAILABLE"}}</div>
+{{/eq}}

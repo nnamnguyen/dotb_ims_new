@@ -1,0 +1,15 @@
+<div class="dependency-picker">
+    {{#if hasDependencies}}
+        <div>
+            {{str "LBL_BPM_IMPORT_SELECT" ../module}}
+        </div>
+    {{/if}}
+
+    {{#if brCollection.length}}
+        {{#partial "element-table" ../this collection=../brCollection model=../brModel title="LBL_BUSINESS_RULES"}}{{/partial}}
+    {{/if}}
+
+    {{#if etCollection.length}}
+        {{#partial "element-table" ../this collection=../etCollection model=../etModel title="LBL_EMAIL_TEMPLATES"}}{{/partial}}
+    {{/if}}
+</div>

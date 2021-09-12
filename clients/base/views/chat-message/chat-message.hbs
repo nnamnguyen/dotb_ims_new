@@ -1,0 +1,55 @@
+<style>
+    .chat {
+        list-style: none;
+        margin: 0;
+        padding: 15px;
+        -webkit-box-shadow: 0px 5px 3px 2px rgba(153, 153, 153, 0.5);
+        -moz-box-shadow: 0px 5px 3px 2px rgba(153, 153, 153, 0.5);
+        box-shadow: 0px 5px 3px 2px rgba(153, 153, 153, 0.5);
+    }
+
+    .chat > li {
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+        border-bottom: 1px dotted #B3A9A9;
+    }
+
+    .chat li.left .chat-body {
+        margin-left: 45px;
+    }
+
+    .chat li .chat-body div.content {
+        margin: 0;
+    }
+</style>
+<div class="row-fluid">
+    <div class="span12" style="padding-left:15px;padding-right:15px">
+        <ul class="chat-message-list chat"></ul>
+    </div>
+</div><br/>
+<div class="row-fluid">
+    <div class="span2" style="text-align: right">
+        Content:
+    </div>
+    <div class="span10">
+        <textarea rows="7" id="chat-messge-content" style="width: 95%"></textarea>
+    </div>
+</div>
+<br/>
+<div class="row-fluid">
+    <div class="span2" style="text-align: right">
+        Attachment:
+    </div>
+    <div class="span10">
+        <input type="file" id="chat-messge-content-attachment" name="chat-messge-content-attachment"/>
+    </div>
+</div>
+<br/>
+<div class="row-fluid">
+    <div class="span10 offset2">
+        <button type="button" class="btn btn-primary chat-message-btn-reply">
+            <i class="far fa-send"></i> Submit
+        </button>
+    </div>
+</div>
+<br/>

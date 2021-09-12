@@ -1,0 +1,53 @@
+<h2>Overview</h2>
+<span class="lead">
+    Verifies whether the Process Definition has any pending processes
+</span>
+
+<h2>Summary</h2>
+<span class="lead">
+    This endpoint will verify whether the Process Definition identified by the
+    <code>record</code> input parameter has any currently pending processes
+    based on it.
+</span>
+
+<h2>Request Arguments</h2>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Required</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>record</td>
+            <td>String</td>
+            <td>The Process Definition record ID</td>
+            <td>True</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Response Arguments</h2>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>N/A</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>Response</h3>
+<strong>Note:</strong> The response is a string of either "true" or "false"
+indicating whether any pending processes exist.

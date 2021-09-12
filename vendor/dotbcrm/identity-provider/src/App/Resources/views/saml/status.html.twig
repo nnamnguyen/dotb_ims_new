@@ -1,0 +1,21 @@
+{% if user_name is not empty %}
+    {{ user_name }}
+    <br/>
+    <b>User is authenticated successfully.</b><br/>
+    <b>IDP Session index:</b> {{ IdPSessionIndex }}
+{% endif %}
+{% if user_attributes is not empty %}
+    </br>
+    <b>User attributes:</b>
+    <ul>
+        {% for key, value in user_attributes %}
+            <li><i>{{ key }}</i>: {{ value }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+<br/>
+<br/>
+<a href="{{ url('samlRender') }}">back</a>
+{% if samlLogout %}
+    <a id="logout_btn" href="{{  url('samlLogoutInit', {'sessionIndex': IdPSessionIndex, 'nameId': user_name}) }}">logout</a>
+{% endif %}

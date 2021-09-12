@@ -1,0 +1,8 @@
+<?php
+//THIS FILE IS AUTO GENERATED, DO NOT MODIFY
+$mod_strings['LBL_J_DISCOUNT_QUOTES_1_FROM_QUOTES_TITLE'] = 'Quotes/Orders';
+$mod_strings['LBL_J_DISCOUNT_QUOTES_1_FROM_J_DISCOUNT_TITLE'] = 'Quotes/Orders';
+$mod_strings['LBL_J_DISCOUNT_PRODUCTS_1_FROM_PRODUCTS_TITLE'] = 'Quoted Line Items';
+$mod_strings['LBL_J_DISCOUNT_PRODUCTS_1_FROM_J_DISCOUNT_TITLE'] = 'Quoted Line Items';
+$mod_strings['LBL_J_DISCOUNT_J_DISCOUNT_1_FROM_J_DISCOUNT_R_TITLE'] = 'Discounts';
+$mod_strings['LBL_J_DISCOUNT_J_DISCOUNT_1_FROM_J_DISCOUNT_L_TITLE'] = 'Discounts';

@@ -1,0 +1,4 @@
+<input type="text" data-type="date" name="{{name}}" value="{{value}}"
+    {{#if def.placeholder}} placeholder="{{str def.placeholder module}}"{{/if}}
+    disabled>
+{{#unless hideHelp}}{{#if def.help}}<p class="help-block">{{str def.help module}}</p>{{/if}}{{/unless}}

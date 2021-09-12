@@ -1,0 +1,87 @@
+<style>
+    .timeline{
+        position: absolute;
+        left: 10px;
+        top: 15px;
+        width:80px;
+        height:50px;
+        text-align: center;
+        color: #ffffff;
+        font-size: 13px;
+        font-weight: bold;
+        font-family: SFUIText;
+        padding-top:15px;
+        border-radius: 5px;
+    }
+    .timeline-1{
+        width: 15px;
+        height: 15px;
+        top: 23px;
+        left: 41px;
+        border-radius: 50%;
+    }
+    .activitystream-posts-comments-container .label-module {
+        position: relative;
+        left: -10px;
+        top: 5px;
+    }
+    .timeline-detail{
+        margin-left:100px;
+    }
+    .timeline__date{
+        box-sizing: border-box;
+        background-color:#193059;
+    }
+    .hr-top{
+        position: absolute;
+        width: 3px;
+        height: 100%;
+        background:#193059;
+        top: -19px;
+        left: 47px;
+        border-top: 1px solid #193059;
+        border-bottom: 1px solid #193059;
+    }
+    .hr-right{
+        position: relative;
+        height: 1px;
+        background:#193059;
+        border-top: 0px solid #193059;
+        border-bottom: 0px solid #193059;
+        float: left;
+        top:1px;
+    }
+    .hr-right-1{
+        width: 53px;
+        left:37px;
+    }
+    .hr-right-2{
+        width: 92px;
+        left:-2px;
+    }
+    .activitystream-posts-comments-container .comments {
+        margin-left: 50px;
+    }
+    .activitystream-posts-comments-container {
+        min-height: 70px;
+    }
+    .icon-custom{
+        font-size: 25px;
+        color:#000;
+    }
+    .preview-pane .activitystream-posts-comments-container .label-module{
+        left: -5px !important;
+        top: 6px !important;
+    }
+    .preview-pane .activitystream-posts-comments-container .comments .comment {
+        padding: 8px 8px 4px 54px;
+        margin-left: 50px;
+    }
+</style>
+{{#if this.isActivtyStreamsEnabled}}
+    <ul class="activitystream-list results"></ul>
+{{else}}
+    <div class="record">
+        {{str 'LBL_ACTIVITY_STREAM_DISABLED' module}}
+    </div>
+{{/if}}

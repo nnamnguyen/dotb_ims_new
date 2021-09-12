@@ -1,0 +1,25 @@
+<?php
+
+$mod_strings=array (
+  'LBL_ASCENDING' => 'Tăng dần',
+  'LBL_DELETE_BUTTON_TITLE' => 'Xóa tìm kiếm đã lưu này',
+  'LBL_DELETE_CONFIRM' => 'Bạn có chắc chắn muốn xóa Tìm kiếm đã lưu?',
+  'LBL_DESCENDING' => 'Giảm dần',
+  'LBL_DIRECTION' => 'Hướng:',
+  'LBL_LIST_FORM_TITLE' => 'Danh sách Tìm kiếm đã lưu của tôi',
+  'LBL_LIST_MODULE' => 'Mô-đun',
+  'LBL_LIST_NAME' => 'Tên',
+  'LBL_MODIFY_CURRENT_SEARCH' => 'Sửa đổi tìm kiếm hiện tại',
+  'LBL_MODULE_TITLE' => 'Tìm kiếm đã lưu của tôi',
+  'LBL_ORDER_BY_COLUMNS' => 'Sắp xếp theo cột:',
+  'LBL_PREVIOUS_SAVED_SEARCH' => 'Tìm kiếm đã lưu trước đó:',
+  'LBL_PREVIOUS_SAVED_SEARCH_HELP' => 'Chỉnh sửa hoặc xóa Tìm kiếm đã lưu.',
+  'LBL_SAVE_BUTTON_TITLE' => 'Lưu tìm kiếm hiện tại',
+  'LBL_SAVE_SEARCH_AS' => 'Lưu tìm kiếm dưới dạng:',
+  'LBL_SAVE_SEARCH_AS_HELP' => 'Điều này sẽ lưu cài đặt chế độ xem của bạn và mọi bộ lọc trên tab Tìm kiếm nâng cao.',
+  'LBL_SEARCH_FORM_TITLE' => 'Tìm kiếm đã lưu của tôi : Tìm kiếm',
+  'LBL_TEAM' => 'Chi nhánh',
+  'LBL_TEAMS' => 'Chi nhánh',
+  'LBL_TEAM_ID' => 'Team Id',
+  'LBL_UPDATE_BUTTON_TITLE' => 'Cập nhật Tìm kiếm đã lưu này',
+);

@@ -1,0 +1,184 @@
+/*Tuan Anh custom headerpane action button in listview*/
+
+
+
+.megamenu > .dropdown .btn-group:not(.open) > .btn:active, .megamenu > .dropdown .btn-group:not(.open) .btn:active:focus {
+    outline: none!important;
+}
+.btn:not(.disabled):not(:active):focus{
+    outline: none !important;
+}
+.moduleIcon {
+    font-size: 18px !important;
+    padding-right: 5px !important;
+    color: #fff !important;
+    width: 16px !important;
+    height: 16px !important;
+}
+
+.moduleIconBlack {
+    font-size: 18px !important;
+    padding-right: 5px !important;
+    width: 16px !important;
+    height: 16px !important;
+}
+
+.iconHover:hover {
+    color: white !important;
+}
+
+.customListView {
+    display: flex;
+    justify-content: left;
+    width: fit-content !important;
+    padding-right:4px !important;
+    padding-left:4px !important;
+}
+
+/*.customActionRight {*/
+/*    margin-left: -1px !important;*/
+/*    font-size: 16px;*/
+/*    color: #ACACAC;*/
+/*    background-color: transparent!important;*/
+/*    background-image: none!important;*/
+/*    padding: 9px 9px;*/
+/*    border-top: none !important;*/
+/*    border-bottom: none !important;*/
+/*    border-left: none !important;*/
+/*    border-radius: 0;*/
+/*    margin-top:-4px;*/
+/*}*/
+/*.customActionRight:hover {*/
+
+/*    color: #1815ac!important;*/
+/*    background-color: transparent!important;*/
+/*    background-image: none!important;*/
+/*    box-shadow: none!important;*/
+
+/*}*/
+
+/*.flex-list-view.left-actions.scroll-width .dataTable th:first-child > span, .flex-list-view.left-actions.scroll-width .dataTable td:first-child > span {*/
+/*    border-right: none !important;*/
+/*}*/
+
+/*.flex-list-view.left-actions .dataTable td:first-child > span, .flex-list-view.right-actions .dataTable td:last-child > span {*/
+/*    border-bottom: none !important;*/
+/*}*/
+
+/*.customDropdownRecord {*/
+/*    padding: 9px 5px 8.5px 5px !important;*/
+/*}*/
+
+/*.customDropdownRecord .far {*/
+/*     font-size: 16px;*/
+/*}*/
+/*.customDropdownRecord span {*/
+/*    font-size: 18px;*/
+/*}*/
+
+.module-list .megamenu > .dropdown {
+    height: 44px!important;
+    float: none;
+    display: inline-block;
+    vertical-align: middle;
+}
+.navbar .megamenu > .dropdown.active:not(:first-child) {
+    background-color: #132545;
+}
+.navbar .megamenu > .dropdown.active .btn-group:not(.open):not(.home) {
+    background-color: transparent!important;
+}
+.fa.moduleIcon{
+    line-height: unset!important;
+}
+.smallerFont {
+    font-size: 13px !important;
+}
+
+.tooltip > .tooltip-inner {
+    background-color: #000;
+    border-radius: 2px !important;
+
+}
+
+
+/* Tooltip on bottom */
+.tooltip.bottom > .tooltip-arrow {
+    border-bottom: 5px solid #000;
+}
+.navbar .megamenu > .dropdown .btn-group.open .btn.btn-invisible:hover{
+    color: white!important;
+}
+.customPhoneAction{
+    color: #0679c8;
+    margin-right: 2px;
+}.customPhoneAction>i{
+     color: #0679c8;
+
+ }
+.customPhoneNumber:hover{
+    text-decoration: underline;
+}
+
+/* Tooltip */
+.tool-tip {
+    position: relative;
+    margin-left: 0.5em;
+    top: 25px;
+    width: 22px;
+    font-weight: 400;
+}
+.tool-tip .tool-tip__icon {
+    background: #5ac28c;
+    border-radius: 10px;
+    cursor: pointer;
+    display: inline-block;
+    height: 20px;
+    line-height: 1.3em;
+    text-align: center;
+    width: 20px;
+}
+.tool-tip .tool-tip__info {
+    display: none;
+    background: #00000024;
+    border: 1px solid #5ac28c;
+    border-radius: 3px;
+    font-size: 12px;
+    padding: 1em;
+    position: absolute;
+    left: 30px;
+    top: -20px;
+    width: 250px;
+    z-index: 2;
+}
+.tool-tip .tool-tip__info:before, .tool-tip .tool-tip__info:after {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 20px;
+    border-style: solid;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #5ac28c;
+    border-radius: 6px;
+}
+.tool-tip .tool-tip__info:after {
+    left: -8px;
+    border-right-color: #d3d3d3;
+}
+.tool-tip .tool-tip__info .info {
+    display: block;
+}
+.tool-tip .tool-tip__info .info__title {
+    font-weight: 500;
+    color: #198cc6;
+}
+.tool-tip:hover .tool-tip__info, .tool-tip:focus .tool-tip__info {
+    display: inline-block;
+}
+
+a:focus + .tool-tip .tool-tip__info {
+    display: inline-block;
+}
+.nosort .morecol{
+    min-width: 55px;
+}

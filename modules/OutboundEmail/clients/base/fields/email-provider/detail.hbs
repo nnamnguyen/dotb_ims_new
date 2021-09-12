@@ -1,0 +1,11 @@
+{{#eachOptions items}}
+    {{#has this.key ../value}}
+    <p class="email-provider{{#eq key 'other'}} other{{/eq}}">
+        {{#eq key 'other'}}
+            <span>Other</span>
+        {{else}}
+            <image src="include/images/{{key}}-logo.png"/>
+        {{/eq}}
+    </p>
+    {{/has}}
+{{/eachOptions}}

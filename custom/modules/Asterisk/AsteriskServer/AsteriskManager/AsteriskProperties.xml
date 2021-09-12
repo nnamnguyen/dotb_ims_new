@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<AsteriskProperties>
+  <AsteriskProperty>
+    <Asterisk>203.162.2.186|</Asterisk>
+    <username>Dotb|</username>
+    <password>Dotb@123!@#|</password>
+    <internalchannel>SIP|</internalchannel>
+    <externalchannel>DAHDI|</externalchannel>
+    <dbname>none|</dbname>
+    <dbusername>none|</dbusername>
+    <dbpassword>none|</dbpassword>
+    <url>http://crm.tomato.edu.vn|</url>
+    <crmusername>none|</crmusername>
+    <crmpassword>none|</crmpassword>
+    <sc>?</sc>
+  </AsteriskProperty>
+</AsteriskProperties>

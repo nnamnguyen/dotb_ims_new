@@ -1,0 +1,63 @@
+<h2>Overview</h2>
+<span class="lead">
+    Imports a Process Email Templates definition from a .pet file
+</span>
+
+<h2>Summary</h2>
+<span class="lead">
+    This endpoint will import a Process Email Templates definition from the
+    uploaded .pet file containing JSON encoded data.
+</span>
+
+<h2>Request Arguments</h2>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Required</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>N/A</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>Request</h3>
+<strong>Note:</strong> A JSON encoded .pet file attachment should be included with
+the request as part of the form-data.
+
+<h2>Response Arguments</h2>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>emailtemplates_import</td>
+            <td>Object</td>
+            <td>Result of the import operation</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>Response</h3>
+<pre class="pre-scrollable">
+{
+    "emailtemplates_import":
+    {
+         "success":true,
+         "id":"aa5f7fd9-73a9-8338-fd1a-573635ce5c51"
+    }
+}
+</pre>

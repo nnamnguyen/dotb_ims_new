@@ -1,0 +1,30 @@
+<div class="headerpane">
+    <h1>
+        <span class="record-cell" data-type="label" data-name="title">
+            <span class="table-cell-wrapper">
+                <span class="index" data-fieldname="title" data-index="">
+                    <div class="ellipsis_inline" data-placement="bottom" title="" >
+                        {{str 'LBL_SEARCH_RESULTS_FOR'}}
+                            {{#if searchTerm.term}}"{{searchTerm.term}}"{{/if}}
+                            {{#if searchTerm.tags}}&nbsp;<i class="fa fa-tag"></i>"{{searchTerm.tags}}"{{/if}}
+                            {{#unless searchTerm.term}}{{#unless searchTerm.tags}}""{{/unless}}{{/unless}}
+                    </div>
+                </span>
+            </span>
+        </span>
+        {{#each meta.fields}}
+            <span class="record-cell" data-type="{{type}}" data-name="{{name}}">
+                <span class="table-cell-wrapper">
+                    <span class="index" data-fieldname="{{name}}" data-index="">
+                        {{field ../this model=../this.model}}
+                    </span>
+                </span>
+            </span>
+        {{/each}}
+        <div class="btn-toolbar pull-right dropdown">
+            {{#each meta.buttons}}
+                {{field ../this}}
+            {{/each}}
+        </div>
+    </h1>
+</div>

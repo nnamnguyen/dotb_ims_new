@@ -1,0 +1,70 @@
+.last_comment{
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.index .quote-discount-percent{
+    position: fixed !important;
+}
+td .quote-discount-percent{
+    left: auto !important;
+}
+.use-balance{
+    text-align: end;
+    background-color: rgba(0, 255, 0, 0.3);
+    padding: 20px;
+    margin: 30px 30px 30px 50%;
+    border-radius: 5px;
+}
+.use-balance button{
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 100;
+    font-style: italic;
+}
+
+.use-balance span{
+    font-size: 14px;
+    font-weight: 600;
+    font-style: italic;
+}
+.choice-loyalty{
+    border:none;
+    top:30%
+}
+.choice-loyalty .modal-header h3 {
+    font-size:15px;
+    font-weight: normal;
+}
+.choice-loyalty .modal-header{
+    background: #1f3b6d;
+    color: #FFF;
+}
+.choice-loyalty .modal-body{
+    padding: 5px 0 58px 12px;
+}
+.choice-loyalty .modal-body .row-fluid {
+    margin-top: 10px;
+}
+.choice-loyalty label.span3{
+    font-size: 13px;
+    color: #797979;
+}
+.choice-loyalty .fa-book{
+    color: #FFF;
+}
+.layer_highlight_paid div {
+    background: #468931;
+    color: white;
+    font-weight: bold;
+    padding-right: 5px;
+}
+
+.layer_highlight_unpaid div{
+    background: #FF8C00;
+    color: white;
+    font-weight: bold;
+    padding-right: 5px;
+}
+.hidden_nodata .nodata{
+    display: none;
+}

@@ -1,0 +1,8 @@
+source: src/
+destination: build/apidocs
+title: Rhumsaa\Uuid 2.8
+main: Ramsey
+deprecated: true
+templateTheme: bootstrap
+todo: true
+sourceCode: true

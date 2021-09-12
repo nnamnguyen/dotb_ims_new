@@ -1,0 +1,9 @@
+<div class="control-group email">
+    <input type="text" class="newEmail input-append" maxlength="{{def.len}}" placeholder="{{str "LBL_EMAIL_ADD"}}"{{#if def.tabindex}} tabindex="{{def.tabindex}}"{{/if}}>
+    <div class="btn-toolbar prevent-mousedown">
+       <div class="btn-group">
+          <a href="javascript:void(0)" class="btn addEmail" rel="tooltip" title="{{str "LBL_EMAIL_ADD"}}"><i class="far fa-plus"></i></a>
+       </div>
+    </div>
+</div>
+{{#unless hideHelp}}{{#if def.help}}<p class="help-block">{{str def.help module}}</p>{{/if}}{{/unless}}

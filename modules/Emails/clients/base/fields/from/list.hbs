@@ -1,0 +1,15 @@
+<div class="ellipsis_inline" rel="tooltip" data-placement="bottom" title="{{tooltip}}">
+    {{#if value.nameIsErased}}
+        <span class="label">{{str 'LBL_VALUE_ERASED' module}}</span>
+    {{else}}
+        {{#if value.attributes.parent_name}}
+            {{value.attributes.parent_name}}
+        {{else}}
+            {{#if value.emailIsErased}}
+                <span class="label">{{str 'LBL_VALUE_ERASED' module}}</span>
+            {{else}}
+                {{value.attributes.email_address}}
+            {{/if}}
+        {{/if}}
+    {{/if}}
+</div>

@@ -1,0 +1,7 @@
+.fixed {
+    position: fixed;
+    top:0;
+    width: 100%; }
+.fixed tr td{
+    background-color: #ccc;
+}

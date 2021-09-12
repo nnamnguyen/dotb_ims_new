@@ -1,0 +1,106 @@
+.textbg_blue {
+    background:#115CAB;
+    color: #fff;
+    border-radius:2px;
+    padding:2px 5px 2px 5px;
+    font-weight: bold;
+}
+.textbg_bluelight {
+    background:#04ADEC;
+    color: #fff;
+    border-radius:2px;
+    padding:2px 5px 2px 5px;
+    font-weight: bold;
+}
+.textbg_red {
+    background:#A8141B;
+    color: #fff;
+    border-radius:2px;
+    padding:2px 5px 2px 5px;
+    font-weight: bold;
+}
+.textbg_redlight {
+    background:#FF0000;
+    color: #fff;
+    border-radius:2px;
+    padding:2px 5px 2px 5px;
+    font-weight: bold;
+}
+.textbg_black {
+    background:#272727;
+    color: #fff;
+    border-radius:2px;
+    padding:2px 5px 2px 5px;
+    font-weight: bold;
+}
+.textbg_yellow {
+    background:#F1D44A;
+    color: #fff;
+    border-radius:2px;
+    padding:2px 5px 2px 5px;
+    font-weight: bold;
+}
+.textbg_green {
+    background:#468931;
+    color: #fff;
+    border-radius:2px;
+    padding:2px 5px 2px 5px;
+    font-weight: bold;
+}
+.textbg_violet {
+    background:#aa68ff;
+    color: #fff;
+    border-radius:2px;
+    padding:2px 5px 2px 5px;
+    font-weight: bold;
+}
+.textbg_orange {
+    background:#FF8C00;
+    color: #fff;
+    border-radius:2px;
+    padding:2px 5px 2px 5px;
+    font-weight: bold;
+}
+.textbg_crimson {
+    background:#DC143C;
+    color: #fff;
+    border-radius:2px;
+    padding:2px 5px 2px 5px;
+    font-weight: bold;
+}
+.textbg_yellow_light {
+    background:#e8b71a;
+    color: #3c3c3b;
+    border-radius:2px;
+    padding:2px 5px 2px 5px;
+    font-weight: bold;
+}
+.textbg_blood {
+    background:#db3340;
+    color: #fff;
+    border-radius:2px;
+    padding:2px 5px 2px 5px;
+    font-weight: bold;
+}
+.textbg_dream {
+    background:#32CD32;
+    color: #fff;
+    border-radius:2px;
+    padding:2px 5px 2px 5px;
+    font-weight: bold;
+}
+.textbg_greenDotB {
+    background:#5ac28c;
+    color: #fff;
+    border-radius:2px;
+    padding:2px 5px 2px 5px;
+    font-weight: bold;
+}
+.textbg_roselight {
+    color: #fff;
+    background-color: #FFB6C1;
+    border: 1px solid #FFB6C1;
+    border-radius: 2px;
+    box-sizing: border-box;
+    padding: 2px 4px;font-weight: 600;
+}

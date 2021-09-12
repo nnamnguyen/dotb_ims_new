@@ -1,0 +1,26 @@
+{{> wizard-page.header }}
+<div class="modal-body">
+
+{{#eq wizardName "admin"}}
+    <ul class="thumbnails row-fluid">
+        <li class="span2">
+            <a class="thumbnail" href="#bwc/index.php?module=Administration&action=Locale&view=default"><i class="fa fa-globe"></i>{{str "LBL_WIZ_SYSTEM_LOCALE_SETTINGS" module}}</a>
+        </li>
+        <li class="span2">
+            <a class="thumbnail" href="#bwc/index.php?module=EmailMan&action=config"><i class="fa fa-envelope"></i>{{str "LBL_WIZ_EMAIL_SETTINGS" module}}</a>
+        </li>
+        <li class="span2">
+            <a class="thumbnail" href="#bwc/index.php?module=Users&action=index"><i class="far fa-plus-square"></i>{{str "LBL_WIZ_CREATE_USERS" module}}</a>
+        </li>
+        <li class="span2">
+            <a class="thumbnail" href="#bwc/index.php?module=Import&action=step1&import_module=Administration"><i class="fa fa-arrow-circle-o-up"></i>{{str "LBL_WIZ_IMPORT_DATA" module}}</a>
+        </li>
+    </ul>
+{{/eq}}
+    <ul class="thumbnails row-fluid">
+        <li class="span3">
+            <a class="thumbnail" target="_blank" href="https://help.dotb.vn"><i class="fa fa-info-circle"></i>{{str "LBL_WIZ_DOCUMENTATION" module}}</a>
+        </li>
+    </ul>
+</div>
+{{> wizard-page.footer }}

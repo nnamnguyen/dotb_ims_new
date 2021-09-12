@@ -1,0 +1,348 @@
+@dri-workflow-default-color: #cdcccb;
+@dri-workflow-in-progress-color: #0679c8; // old: #176de5
+@dri-workflow-not-started-color: #cccccc;
+@dri-workflow-completed-color: #51cd15; // old: 33800d
+@dri-workflow-stopped-color: #fa3e3e;
+@dri-workflow-not-completed-color: #fbc02d; // old: e5a117 - #e4263b
+
+@dri-workflow-completed-background-color: #ceecc0; // old: #d3e8c9
+@dri-workflow-not-completed-background-color: #fff1d4;
+@dri-workflow-stopped-background-color: #f9ddd9;
+@dri-workflow-in-progress-background-color: #dfecff;
+@dri-workflow-not-started-background-color: #e9e9e9;
+
+.rounded(@radius: 2px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+
+.dri-subworkflow-arrow(@color) {
+  background: @color;
+  &:before {
+    border-top: 20px solid @color;
+    border-bottom: 20px solid @color;
+    border-left: 20px solid transparent;
+  }
+  &:after {
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid @color;
+  }
+}
+
+.dri-workflow-wrapper {
+  .dri-workflow-card {
+    margin: 10px;
+    padding: 24px;
+    min-height: 20px;
+    border: 1px solid #e4e4e4;
+    border-radius: 3px;
+    background-color: #f6f6f6;
+  }
+  .block-footer {
+    border-top: 0;
+  }
+  .well {
+    margin-bottom: 0;
+    box-shadow: none;
+  }
+  .dri-workflow-info {
+    margin-bottom: 10px;
+  }
+  .loading-wrapper {
+    .span {
+      margin-left: 5px;
+    }
+  }
+  .lead {
+    margin: 0;
+  }
+  .dri-subworkflow {
+    margin-top: 10px;
+    position: relative;
+    .dri-activity-show-children,.dri-activity-hide-children {
+      cursor: pointer;
+    }
+    .dri-stage-activities {
+      min-height: 60px;
+    }
+    .dri-activity-children {
+      padding-left: 10px;
+    }
+    .dri-subworkflow-arrow {
+      height: 40px;
+      position: relative;
+      margin-left: 20px;
+      margin-right: 5px;
+
+      .dri-subworkflow-arrow(@dri-workflow-default-color);
+    }
+    .dri-subworkflow-arrow:before {
+      width: 0;
+      height: 0;
+      position: absolute;
+      content: "";
+      top: 0;
+      left: -20px;
+    }
+    .dri-subworkflow-arrow:after {
+      width: 0;
+      height: 0;
+      position: absolute;
+      content: "";
+      top: 0;
+      right: -20px;
+    }
+    .dri-subworkflow-arrow-not_started {
+      .dri-subworkflow-arrow(@dri-workflow-not-started-color);
+    }
+    .dri-subworkflow-arrow-in_progress {
+      .dri-subworkflow-arrow(@dri-workflow-in-progress-color);
+    }
+    .dri-subworkflow-arrow-ready_for_next_step {
+      .dri-subworkflow-arrow(@dri-workflow-stopped-color);
+    }
+    .dri-subworkflow-arrow-completed {
+      .dri-subworkflow-arrow(@dri-workflow-completed-color);
+    }
+    .dri-subworkflow-arrow-not_completed {
+      .dri-subworkflow-arrow(@dri-workflow-not-completed-color);
+    }
+    .dri-subworkflow-arrow-info {
+      padding: 10px 0 10px 10px;
+      color: #fff;
+      a {
+        color: #fff;
+      }
+    }
+    .dri-subworkflow-activity {
+      margin: 5px 0;
+      border-bottom: 1px solid #e4e4e4;
+      padding: 6px;
+      background: #e9e9e9;
+      border-top: @dri-workflow-not-started-color 4px solid;
+      color: #555;
+      position: relative;
+      line-height: 2.5em;
+      .dri-subworkflow-activity-buttons {
+        width: 55px;
+        display: inline-block;
+      }
+      .btn-group {
+        text-align: left;
+      }
+      .dri-subworkflow-activity-actions {
+        text-align: right;
+      }
+      .activity-form {
+        margin-left: 0;
+      }
+      .activity-url {
+        margin-left: 0;
+      }
+      .activity-due-date {
+        color: #fff;
+        white-space: nowrap;
+        border-radius: 3px;
+        padding: 0 5px 0 5px;
+        display: inline-block;
+        background: #949494;
+        line-height: 2.0em;
+        i {
+          color: #fff;
+        }
+        &.overdue {
+          background: @dri-workflow-stopped-color;
+        }
+        &.tomorrow, &.today {
+          background: #0f7799;
+        }
+      }
+      .dri-activity-info {
+        .assigned-user-wrapper {
+          position: relative;
+        }
+        .activity-type-icon.assigned {
+          position: absolute;
+          left: 20px;
+          top: 11px;
+        }
+        a {
+          color: #555;
+        }
+        i.assigned-user-icon {
+          color: #555;
+        }
+        img.assigned-user-icon {
+          height: 24px;
+          width: 24px;
+          margin-right: 6px;
+          margin-top: -12px;
+          position: relative;
+          top: 8px;
+        }
+      }
+      &.customer_task {
+        .dri-activity-info i.activity-type-icon {
+          color: @dri-workflow-completed-color;
+        }
+      }
+      &.milestone {
+        .dri-activity-info i.activity-type-icon {
+          color: @dri-workflow-stopped-color;
+        }
+      }
+      &.internal_task {
+        .dri-activity-info i.activity-type-icon {
+          color: #863FE8;
+        }
+      }
+      &.agency_task {
+        .dri-activity-info i.activity-type-icon {
+          color: #555;
+        }
+      }
+      &.automatic_task {
+        .dri-activity-info i.activity-type-icon {
+          color: #555;
+        }
+      }
+      &.blocked {
+        .fa-ban {
+          cursor: pointer;
+        }
+      }
+      .fa-link {
+        color: @dri-workflow-in-progress-color;
+      }
+      .activity-preview-icon {
+        cursor: pointer;
+        display: none;
+      }
+      &:hover {
+        .activity-preview-icon {
+          display: inline;
+          position: absolute;
+          top: 1px;
+          left: 4px;
+        }
+      }
+    }
+    .add-stage-button-wrapper {
+      position: absolute;
+      z-index: 1000;
+      right: 36px;
+      top: 6px;
+      height: 28px;
+      width: 28px;
+      display: none;
+    }
+    &:hover {
+      .add-stage-button-wrapper {
+        display: block;
+      }
+    }
+    .dri-activity-child {
+      border-left: @dri-workflow-not-started-color 4px solid;
+    }
+    .dri-subworkflow-activity-not-started, .dri-subworkflow-activity-planned {
+      background: @dri-workflow-not-started-background-color;
+      border-top: @dri-workflow-not-started-color 4px solid;
+    }
+    .dri-subworkflow-activity-in-progress {
+      background: @dri-workflow-in-progress-background-color;
+      border-top: @dri-workflow-in-progress-color 4px solid;
+      &.dri-activity-child { border-left: @dri-workflow-in-progress-color 4px solid; }
+    }
+    .dri-subworkflow-activity-deferred, .dri-subworkflow-activity-pending-input {
+      background: @dri-workflow-stopped-background-color;
+      border-top: @dri-workflow-stopped-color 4px solid;
+      &.dri-activity-child { border-left: @dri-workflow-stopped-color 4px solid; }
+    }
+    .dri-subworkflow-activity-completed, .dri-subworkflow-activity-held {
+      background: @dri-workflow-completed-background-color;
+      border-top: @dri-workflow-completed-color 4px solid;
+      &.dri-activity-child { border-left: @dri-workflow-completed-color 4px solid; }
+    }
+    .dri-subworkflow-activity-not-held, .dri-subworkflow-activity-not-applicable {
+      background: @dri-workflow-not-completed-background-color;
+      border-top: @dri-workflow-not-completed-color 4px solid;
+      &.dri-activity-child { border-left: @dri-workflow-not-completed-color 4px solid; }
+    }
+  }
+}
+
+.record-panel {
+  .record-panel-header {
+    .panel-inactive {
+      .pull-left {
+        font-weight: normal;
+      }
+    }
+    .panel-active {
+      .pull-left {
+        font-weight: normal;
+      }
+    }
+  }
+}
+
+div.customer-journey-chart-wrapper {
+  padding: 0;
+  .nv-chart {
+    min-width: 250px;
+    .completed {
+      fill: @dri-workflow-completed-color;
+    }
+    .not_completed {
+      fill: @dri-workflow-not-completed-color;
+    }
+    .in_progress {
+      fill: @dri-workflow-in-progress-color;
+    }
+    .not_started {
+      fill: @dri-workflow-not-started-color;
+    }
+  }
+}
+
+.dri-workflows-header-wrapper {
+  margin-bottom: -3px;
+  position: relative;
+  .block-footer {
+    border-top: 0;
+  }
+  .no-workflows {
+    text-align: center;
+  }
+  .record-panel-header {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+  }
+  .dri-workflows-actions {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    .dri-workflows-actions-buttons {
+      width: 45px;
+      min-height: 1px;
+    }
+    .dri-workflows-actions-fields {
+      @media (min-width: 501px) {
+        width: 250px;
+      }
+      @media (min-width: 401px) and (max-width: 500px) {
+        width: 200px;
+      }
+      @media (max-width: 400px) {
+        width: 120px;
+      }
+    }
+    .dri-workflows-actions-spinner {
+      margin-top: 1px;
+      margin-right: 5px;
+    }
+  }
+}

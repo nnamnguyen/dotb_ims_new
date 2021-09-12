@@ -1,0 +1,31 @@
+{{#each fields}}
+    <span class="record-cell{{#if span}} span{{span}}{{/if}}" data-name="{{name}}" data-type="{{type}}">
+        {{#unless dismiss_label}}
+            <div class="record-label" data-name="{{name}}">{{str label ../../../module}}
+
+            </div>
+
+        {{/unless}}
+        <span data-fieldname="{{name}}">
+            {{placeholder}}
+        </span>
+    </span>
+{{/each}}
+
+<div class="tool-tip">
+    <i class="tool-tip__icon">?</i>
+    <p class="tool-tip__info">
+        <span style="display: block">
+            <span id="example" class="info__title"></span>
+            : Nguyễn Trân Trung Hiếu
+        </span>
+        <span>
+            <span id="last" class="info__title"></span>
+            : Nguyễn Trân Trung
+        </span>
+        <span>
+            <span id="first" class="info__title"></span>
+            : Hiếu
+        </span>
+    </p>
+</div>

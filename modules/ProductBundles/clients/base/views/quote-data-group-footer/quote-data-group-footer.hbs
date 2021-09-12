@@ -1,0 +1,11 @@
+<tr class="quote-data-group-footer ui-not-droppable">
+    <td class="quote-data-group-footer" colspan="{{listColSpan}}">
+        <div class="footer-fields">
+            {{#each meta.panels}}
+                {{#each fields}}
+                    {{field ../../this model=../../model template=../../action}}
+                {{/each}}
+            {{/each}}
+        </div>
+    </td>
+</tr>

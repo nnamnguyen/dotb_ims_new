@@ -1,0 +1,7 @@
+<tr name="{{module}}_{{model.id}}" class="single">
+    {{#each fields}}
+        <td{{#if align}} class="{{align}}"{{/if}}>
+            {{field ../view model=../view.model template=../view.viewName}}
+        </td>
+    {{/each}}
+</tr>

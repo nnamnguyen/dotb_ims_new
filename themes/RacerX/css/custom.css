@@ -1,0 +1,127 @@
+.input_readonly, .input_readonly:focus{
+    background-color: rgb(221, 221, 221);
+    color: rgb(165, 42, 42);
+}
+option[value='not_empty'] {
+    font-weight: bold;
+}
+.curency_readonly, .curency_readonly:focus{
+    font-weight: bold;
+    color: rgb(165, 42, 42);
+    text-align: right;
+    background-color: rgb(221, 221, 221);
+}
+.vr {
+    display: inline;
+    height: 30px;
+    width: 0px;
+    border: 1px dashed #cccccc;
+    margin-left: 10px;
+    margin-right: 10px;
+    float: left;
+}
+/* CSS: Cool color backgrond for text*/
+.textbg_blue {
+    color: #fff;
+    background-color: #115CAB;
+    border: 1px solid #115CAB;
+    border-radius: 2px;
+    box-sizing: border-box;
+    padding: 2px 4px;font-weight: 600;
+}
+.textbg_bluelight {
+    color: #fff;
+    background-color: #04ADEC;
+    border: 1px solid #04ADEC;
+    border-radius: 2px;
+    box-sizing: border-box;
+    padding: 2px 4px;font-weight: 600;
+}
+.textbg_red {
+    color: #fff;
+    background-color: #A8141B;
+    border: 1px solid #A8141B;
+    border-radius: 2px;
+    box-sizing: border-box;
+    padding: 2px 4px;font-weight: 600;
+}
+.textbg_redlight {
+    color: #fff;
+    background-color: #FF0000;
+    border: 1px solid #FF0000;
+    border-radius: 2px;
+    box-sizing: border-box;
+    padding: 2px 4px;font-weight: 600;
+}
+.textbg_black {
+    color: #fff;
+    background-color: #272727;
+    border: 1px solid #272727;
+    border-radius: 2px;
+    box-sizing: border-box;
+    padding: 2px 4px;font-weight: 600;
+}
+.textbg_yellow {
+    color: #fff;
+    background-color: #F1D44A;
+    border: 1px solid #F1D44A;
+    border-radius: 2px;
+    box-sizing: border-box;
+    padding: 2px 4px;font-weight: 600;
+}
+.textbg_green {
+    color: #fff;
+    background-color: #468931;
+    border: 1px solid #468931;
+    border-radius: 2px;
+    box-sizing: border-box;
+    padding: 2px 4px;font-weight: 600;
+}
+.textbg_violet {
+    color: #fff;
+    background-color: #aa68ff;
+    border: 1px solid #aa68ff;
+    border-radius: 2px;
+    box-sizing: border-box;
+    padding: 2px 4px;font-weight: 600;
+}
+.textbg_orange {
+    color: #fff;
+    background-color: #FF8C00;
+    border: 1px solid #FF8C00;
+    border-radius: 2px;
+    box-sizing: border-box;
+    padding: 2px 4px;font-weight: 600;
+}
+.textbg_crimson {
+    color: #fff;
+    background-color: #DC143C;
+    border: 1px solid #DC143C;
+    border-radius: 2px;
+    box-sizing: border-box;
+    padding: 2px 4px;font-weight: 600;
+}
+.textbg_yellow_light {
+    color: #3c3c3b;
+    background-color: #e8b71a;
+    border: 1px solid #e8b71a;
+    border-radius: 2px;
+    box-sizing: border-box;
+    padding: 2px 4px;font-weight: 600;
+}
+.textbg_blood {
+    color: #fff;
+    background-color: #db3340;
+    border: 1px solid #db3340;
+    border-radius: 2px;
+    box-sizing: border-box;
+    padding: 2px 4px;font-weight: 600;
+}
+.textbg_dream {
+    color: #fff;
+    background-color: #32CD32;
+    border: 1px solid #32CD32;
+    border-radius: 2px;
+    box-sizing: border-box;
+    padding: 2px 4px;font-weight: 600;
+}

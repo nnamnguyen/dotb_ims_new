@@ -1,0 +1,34 @@
+<table class="table">
+    <thead>
+        <tr>
+        {{#each templateComponent.leftColumns}}
+            <th{{#if name}} data-fieldname="{{name}}"{{/if}}>
+                <span>
+                    {{field ../templateComponent model=../model template="list-header"}}
+                </span>
+            </th>
+        {{/each}}
+            <th>
+                <span>
+                    {{str title templateComponent.module}}
+                </span>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+    {{#each collection.models}}
+        <tr name="{{module}}_{{attributes.id}}" data-fieldname="{{attributes.field_name}}" class="single">
+            {{#each ../templateComponent.leftColumns}}
+                <td>
+                    {{field ../../templateComponent model=../this template="list"}}
+                </td>
+            {{/each}}
+            {{#each fields}}
+                <td{{#if align}} class="{{align}}"{{/if}}>
+                    {{field ../../templateComponent model=../this template="list"}}
+                </td>
+            {{/each}}
+        </tr>
+    {{/each}}
+    </tbody>
+</table>

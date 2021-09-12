@@ -1,0 +1,13 @@
+{{#if isForecastSetup}}
+    {{#if forecastsConfigOK}}
+        <div class="forecast-details"></div>
+    {{else}}
+        <div class="opportunity-pipeline-wrapper">
+            {{{str "LBL_FORECASTS_MISSING_SALES_STAGE_VALUES" 'Forecasts'}}}
+        </div>
+    {{/if}}
+{{else}}
+    <div class="opportunity-pipeline-wrapper">
+        {{{forecastsNotSetUpMsg}}}
+    </div>
+{{/if}}

@@ -1,0 +1,8 @@
+<div class="add-row empty" target="click:addDashletRow">
+    <p>{{str "LBL_DASHBOARD_ADD_ROW" module}}</p>
+    <p class="options">
+        {{#each columnOptions}}
+        <a class="add-dashlet" data-value="{{index}}" target="click:addDashletRow{{index}}Col"><small>{{label}}</small></a>
+        {{/each}}
+    </p>
+</div>

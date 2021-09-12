@@ -1,0 +1,4 @@
+{*
+
+*}
+{{dotbvar key='value'}}

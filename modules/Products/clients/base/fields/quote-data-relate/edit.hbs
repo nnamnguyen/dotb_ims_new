@@ -1,0 +1,22 @@
+{{#eq this.context.parent.attributes.layout "create"}}
+<input type="hidden" name="{{name}}" class="select2 inherit-width" value="{{formattedIds}}"{{#if def.tabindex}} tabindex="{{def.tabindex}}"{{/if}} data-rname="{{formattedRname}}">
+{{#unless hideHelp}}{{#if def.help}}<p class="help-block">{{str def.help module}}</p>{{/if}}{{/unless}}
+{{/eq}}
+
+{{#eq this.context.parent.attributes.layout "record"}}
+    {{#if ../formattedIds}}
+       <div class="ellipsis_inline" data-placement="bottom" data-container="body"
+            title="{{#unless ../value}}{{#if ../def.placeholder}}{{../str ../def.placeholder ../this.model.module}}{{/if}}{{/unless}}{{../value}}">
+           {{# if ../href}}
+               <a href="{{../href}}">{{../value}}</a>
+           {{else}}
+               {{../value}}
+           {{/if}}
+       </div>
+    {{else}}
+    <input type="hidden" name="{{../name}}" class="select2 inherit-width" value="{{../formattedIds}}"{{#if ../def.tabindex}} tabindex="{{../def.tabindex}}"{{/if}} data-rname="{{../formattedRname}}">
+    {{#unless ../hideHelp}}{{#if ../def.help}}<p class="help-block">{{../str ../def.help module}}</p>{{/if}}{{/unless}}
+
+    {{/if}}
+
+{{/eq}}

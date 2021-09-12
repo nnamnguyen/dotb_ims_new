@@ -1,0 +1,81 @@
+{{!--
+/**
+ * The file used to set custom dashlet for Survey Status Report
+ *
+ * LICENSE: The contents of this file are subject to the license agreement ("License") which is included
+ * in the installation package (LICENSE.txt). By installing or using this file, you have unconditionally
+ * agreed to the terms and conditions of the License, and you may not use this file except in compliance
+ * with the License.
+ *
+ * @author     Biztech Consultancy
+ */
+--}}
+<style>
+.survey-response-status-wrapper div.opportunity-metric {
+  text-align: right;
+  text-align: center;
+  width: 50%;
+  position: relative;
+  border-top: @borderWidgetLight;
+  border-right: @borderWidgetLight;
+  float: left;
+  padding: 20px 0 10px;
+  box-sizing: border-box;
+
+  &:last-child {
+    border-right: none;
+  }
+
+  div.opportunity-metric-description {
+    span {
+      float: none;
+      display: inline-block;
+      font-weight: bold;
+      font-size: 10px;
+      text-align: center;
+      text-shadow: 0 1px 0 #636363;
+      margin-right: 3px !important;
+    }
+  }
+
+  div.deal-amount-metric {
+    font-size: 16px;
+    font-weight: bold;
+    box-sizing: border-box;
+  }
+}
+
+.survey-response-status-wrapper div.opportunity-metric span.label {
+    width: auto;
+    height: 28px;
+    font-size: 14px;
+    padding: 3px;
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    margin-left: 0;
+    line-height: 22px;
+    border: none;
+    transform: translateX(-50%);
+  }
+@media screen and (max-width: 767px){
+.survey-response-status-wrapper div.opportunity-metric span.label{
+    font-size: 12px;
+    padding: 3px 5px;
+    line-height: 18px;
+    height: 23px;
+}
+
+</style>
+<div data-content="chart">
+    <div class="surveystatus-chart sc-chart" style="height: 275px;margin-bottom: 14px;">
+        <svg class="sucrose" id="{{cid}}"></svg>
+    </div>
+    {{#each tabData}}
+        <div class="opportunity-metric">
+            <span class="label" style="background-color:{{cssStyle}}">{{models}}</span>
+            <div class="opportunity-metric-description {{status}}">{{statusLabel}}</div>
+        </div>
+    {{/each}}
+</div>
+<div class="block-footer hide" data-content="nodata">{{str "LBL_NO_DATA_AVAILABLE"}}</div>

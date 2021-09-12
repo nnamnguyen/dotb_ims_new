@@ -1,0 +1,4 @@
+{*
+
+*}
+{html_options name="field" id="field" selected=$selectedField values=$fieldsForSelectedModule options=$fieldsForSelectedModule onChange="DOTB.PdfManager.loadFields(YAHOO.util.Dom.get('base_module').value, this.value)"}{if $fieldsForSubModule} {html_options name="subField" id="subField" values=$fieldsForSubModule options=$fieldsForSubModule}{/if} <input type="button" class="button" name="pdfManagerInsertField" id="pdfManagerInsertField" value="{dotb_translate module="PdfManager" label="LBL_BTN_INSERT"}" onclick="DOTB.PdfManager.insertField(YAHOO.util.Dom.get('field'), YAHOO.util.Dom.get('subField'));" />

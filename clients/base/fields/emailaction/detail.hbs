@@ -1,0 +1,11 @@
+<a class="{{#if def.button}} btn{{/if}}{{#if def.primary}} btn-primary{{/if}} "
+   data-action="email" href="javascript:void(0);"
+    {{#if def.tooltip}}
+   rel="tooltip"
+   data-placement="bottom"
+   title="{{str def.tooltip module}}"
+    {{/if}}
+    {{#if ariaLabel}}aria-label="{{ariaLabel}}"{{/if}}
+   role="button" tabindex="{{tabIndex}}" name="{{name}}"
+   track="click:{{#if name}}{{name}}{{else}}{{label}}{{/if}}">
+    {{#if def.icon}}<i class="far {{def.icon}}"></i>{{/if}}{{str label}}</a>

@@ -1,0 +1,178 @@
+<head>
+    <style>
+        .rtSbSettingsMainDiv {
+            display: none;
+        }
+
+        .rtSbSettingsMainDiv .headerpane {
+            display: none;
+        }
+
+        .rtSbSettingsMainDiv .rtSbSettingsPage {
+            width: -webkit-fill-available;
+            position: absolute;
+            bottom: 0;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding-top: 0 !important;
+            background: #fff;
+            overflow-x: visible;
+            top: 51px;
+        }
+
+        .rtSbSettingsPage > .container {
+            border-width: 1px;
+            border: 1px solid transparent;
+            border-color: #ddd;
+        }
+
+        .rtSbSettingsPage .record-panel-header {
+            padding: 10px 15px;
+        }
+
+        .rtSbSettingsPage .h4 {
+            font-size: 16px;
+        }
+
+        .rtSbSettingsPage .h4.danger {
+            color: red;
+        }
+
+        .rtSbSettingsPage .panel-body {
+            padding: 12px;
+        }
+
+        .rtSbTable {
+            width: 100%;
+            text-align: center;
+        }
+
+        .rtSbTable th {
+            font-weight: 100;
+        }
+
+        .rtSbAccordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 12px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+            margin-bottom: 10px;
+        }
+
+        .rtSbAccordion.active, .rtSbAccordion:hover {
+            background-color: #ccc;
+        }
+
+        .rtSbPanel {
+            padding: 0 18px;
+            display: none;
+            background-color: white;
+            overflow: hidden;
+        }
+
+        .rtSbAlert {
+            width: auto;
+            margin-right: 410px;
+            margin-left: 410px;
+            margin-top: 20px;
+        }
+
+        .rtSbLicInput {
+            display: flex;
+            align-items: center;
+        }
+
+        .rtSbLicErrorMsg {
+            margin-left: 10px;
+            color: red;
+        }
+
+        .panel-body.rtLogo {
+            display: flex;
+            align-items: end;
+            justify-content: flex-end;
+        }
+
+        .rtpBy {
+            font-size: 14px;
+        }
+
+        a.logo.rt {
+            margin-left: 7px;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<div class="rtSbSettingsMainDiv">
+    <div>
+        <div class="headerpane">
+            <h1>
+                <div class="record-cell">
+                    <span class="module-title">{{str "LBL_SB_DOTBBOARDS_CONFIGURATION"}}</span>
+                </div>
+            </h1>
+        </div>
+    </div>
+    <div class="rtSbSettingsPage">
+    <div class="container">
+        {{#if isAdministrator}}
+            {{#if this.configMenu}}
+                <div class="row-fluid record-panel" data-panelname="header">
+                    <div class="row-fluid record-panel-header ">
+                        <h4 class="pull-left">{{str "LBL_SB_SF_CONFIG"}}</h4>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    {{#if ../this.inSettings}}
+                        <p>{{str "LBL_SB_SUCC/FAIL_DESCRIPTION"}}</p>
+                    {{else}}
+                        <p>{{str "LBL_SB_SUCC/FAIL_DESCRIPTION_SINGLE"}}</p>
+                    {{/if}}
+                    {{#each ../this.stepTwoDom}}
+                        {{#if ../../this.inSettings}}
+                            <button class="rtSbAccordion">{{@key}}</button>
+                        <div class="rtSbPanel">
+                        {{/if}}
+                        <table class="rtSbTable" data-module="{{@key}}">
+                            <tr>
+                                <th>{{str "LBL_GROUP_BY"}}</th>
+                                <th>{{str "LBL_SUCCESS_STAGE"}}</th>
+                                <th>{{str "LBL_FAILURE_STAGE"}}</th>
+                            </tr>
+                            {{#each this}}
+                                <tr>
+                                    <td>{{@key}}</td>
+                                    <td>
+                                        <select class="successDom" data-groupby="{{this.groupBy}}" data-module="{{this.mod}}">
+                                            {{#each this.dom}}
+                                                <option {{#eq ../this.success @key}}selected{{/eq}} value="{{@key}}">{{this}}</option>
+                                            {{/each}}
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select class="failureDom" data-groupby="{{this.groupBy}}" data-module="{{this.mod}}">
+                                            {{#each this.dom}}
+                                                <option {{#eq ../this.failure @key}}selected{{/eq}} value="{{@key}}">{{this}}</option>
+                                            {{/each}}
+                                        </select>
+                                    </td>
+                                </tr>
+                            {{/each}}
+                        </table>
+                        {{#if ../../this.inSettings}}
+                        </div>
+                        {{/if}}
+                    {{/each}}
+                </div>
+            {{/if}}
+        </div>
+        {{/if}}
+    </div>
+</div>

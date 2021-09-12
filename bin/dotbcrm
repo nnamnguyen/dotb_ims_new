@@ -1,0 +1,69 @@
+#!/usr/bin/env php
+<?php
+
+
+use Dotbcrm\Dotbcrm\Console\Application;
+use Dotbcrm\Dotbcrm\Console\CommandRegistry\CommandRegistry;
+use Dotbcrm\Dotbcrm\DependencyInjection\Container;
+use Dotbcrm\Dotbcrm\Security\Context;
+use Dotbcrm\Dotbcrm\Security\Subject\Cli;
+
+if (PHP_SAPI !== 'cli') {
+    die('This command can only be invoked from the command line.' . PHP_EOL);
+}
+
+if (!file_exists(__DIR__ . '/../vendor/composer/autoload_classmap.php')) {
+    die('Run "composer install" before using DotBCRM Console' . PHP_EOL);
+}
+
+/**
+ * Below code was part of `Dotbcrm\Dotbcrm\Console\Bootstrap::run()`. However
+ * because of entryPoint requiring direct access to globals this has been moved
+ * temporary to this spot until entryPoint gets its facts straight.
+ */
+ 
+define('dotbEntry', true);
+
+// use dotb root as base directory
+$dotbBaseDir = str_replace('\\', '/', realpath(__DIR__ . '/..'));
+chdir($dotbBaseDir);
+
+// try to load config as we ship an empty one
+if (file_exists('config.php')) {
+    include 'config.php';
+}
+
+if (file_exists('config_override.php')) {
+    include 'config_override.php';
+}
+
+// determine if dotb has been installed or not
+if (!empty($dotb_config['dbconfig']['db_name'])) {
+    define('ENTRY_POINT_TYPE', 'api');
+    require_once 'include/entryPoint.php';
+    $GLOBALS['current_user']->getSystemUser();
+
+    $context = Container::getInstance()->get(Context::class);
+    $subject = new Cli();
+    $context->activateSubject($subject);
+
+    $mode = CommandRegistry::MODE_INSTANCE;
+} else {
+    define('DOTB_BASE_DIR', $dotbBaseDir);
+    require_once 'include/utils/autoloader.php';
+    DotbAutoLoader::init(false);
+    $mode = CommandRegistry::MODE_STANDALONE;
+}
+
+// load custom commands from extension framework regardless of mode
+if ($extension = DotbAutoLoader::loadExtension('console')) {
+    require $extension;
+}
+
+$application = Application::create($mode);
+$application->setAutoExit(false);
+$exitCode = $application->run();
+
+if (isset($context, $subject)) {
+    $context->deactivateSubject($subject);
+}

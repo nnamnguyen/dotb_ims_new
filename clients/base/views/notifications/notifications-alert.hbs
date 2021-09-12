@@ -1,0 +1,36 @@
+{{#eq module "Tasks"}}
+
+    {{name}}<br/>
+    {{str "MSG_JS_ALERT_MTG_REMINDER_START"}} {{dateStart}}<br>
+    {{#if parentName}}{{str "LBL_RELATED_TO" module}} {{parentName}}{{/if}}<br>
+    {{#if description}}{{str "MSG_JS_ALERT_MTG_REMINDER_DESC"}} {{description}}{{/if}}<br>
+    {{str "MSG_JS_ALERT_MTG_REMINDER_TASKS_MSG"}}
+    <br><br>
+    {{#if datetime}}{{str "MSG_JS_NOW"}}: {{datetime}}{{/if}}
+
+{{else}}
+
+    {{#eq module "Calls"}}
+
+        {{name}}<br/>
+        {{str "MSG_JS_ALERT_MTG_REMINDER_START"}} {{dateStart}}<br>
+        {{#if parentName}}{{str "LBL_RELATED_TO" module}} {{parentName}}{{/if}}<br>
+        {{#if description}}{{str "MSG_JS_ALERT_MTG_REMINDER_DESC"}} {{description}}{{/if}}<br>
+        {{str "MSG_JS_ALERT_MTG_REMINDER_CALL_MSG"}}
+        <br><br>
+        {{#if datetime}}{{str "MSG_JS_NOW"}}: {{datetime}}{{/if}}
+
+    {{else}}
+
+        {{title}}<br>
+        {{name}}<br>
+        {{str "MSG_JS_ALERT_MTG_REMINDER_START"}} {{dateStart}}<br>
+        {{#if parentName}}{{str "LBL_RELATED_TO" module}} {{parentName}}{{/if}}<br>
+        {{#if location}}{{str "MSG_JS_ALERT_MTG_REMINDER_LOC"}} {{location}}<br>{{/if}}
+        {{str "MSG_JS_ALERT_MTG_REMINDER_MEETING_MSG"}}
+        <br><br>
+        {{#if datetime}}{{str "MSG_JS_NOW"}}: {{datetime}}{{/if}}
+
+    {{/eq}}
+
+{{/eq}}

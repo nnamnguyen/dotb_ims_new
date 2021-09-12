@@ -1,0 +1,92 @@
+<style>
+.Initial_Popup_Survey_List{
+    border:none;
+}
+.Initial_Popup_Survey_List .modal-header h3 {
+    font-size:15px;
+    font-weight: normal;
+}
+.Initial_Popup_Survey_List .modal-header{
+    background-color:#e8e8e8;
+    padding:5px; 
+    font-size:16px; 
+    color:#666;
+}
+.Initial_Popup_Survey_List .modal-body{
+    padding: 5px 0px 6px 5px;
+}
+.Initial_Popup_Survey_List .table {
+    margin-bottom: 0;
+}
+.Initial_Popup_Survey_List .input-append .add-on {background-color:transparent;}
+
+.Initial_Popup_Survey_List .modal-body .row-fluid {
+    margin-top: 10px;
+}
+.Initial_Popup_Survey_List label.span3{
+    font-size: 13px;
+    color: #797979;
+}
+.Initial_Popup_Survey_List .fa-book{
+    color: #FFF;
+}
+.Initial_Popup_Survey_List .modal-footer{
+    padding: 5px;
+    bottom: -38px;
+}
+
+</style>
+
+<script src="custom/include/js/survey_js/jquery.datetimepicker.js"></script>
+<script type="text/javascript" src="custom/include/js/survey_js/jquery.multiple.select.js"></script>
+<link rel="stylesheet" href="custom/include/css/survey_css/multiple-select.css" type="text/css">
+<div class="modal hide Initial_Popup_Survey_List" >
+    <div class="modal-header">
+        <h3 style="width:94%;display: inline-block; vertical-align: top;" class="pop_upName">Send {{send_type}}</h3>
+        <a class="" data-dismiss="modal" style="margin-top:5px; width:4%;"><i class="fa fa-times" style="color:#555;margin-top:7px;margin-left:4px;"></i></a>
+    </div>
+    <div class="modal-body" >
+        <div id="survey_main_div" >
+        <input name="send_records" id="send_records" value="{{selected_record_ids}}" type="hidden">
+        <input name="send_module_name" id="send_module_name" value="{{module}}" type="hidden">
+        <div id="survey_content">
+          <div id="button_div">
+             <table class="zebra" style="width: 100%;" cellpadding="0" cellspacing="0">
+             <tbody style="height: 65px;">
+                  <tr>
+                      <td style="width: 33%; padding: 25px;" align="center">  
+                        <div style="width:26%; white-space: nowrap;" class="send_survey_through_email" name="open_Initial_Popup_Survey_List_email">
+                           <img src="custom/include/images/email.png" alt="Smiley face" height="42" width="42" style="cursor: pointer;">
+                        </div>Email
+                      </td>
+                      <td style="width: 33%; padding: 25px;" align="center">
+                        <div style="width:26%; white-space: nowrap;" class="send_survey_through_email" name="open_Initial_Popup_Survey_List_sms">
+                           <img src="custom/include/images/sms.png" alt="Smiley face" height="42" width="42" style="cursor: pointer;">
+                        </div>SMS
+                      </td>
+                      <td style="width: 33%; padding: 25px;" align="center">
+                        <div style="width:26%; white-space: nowrap;" class="send_survey_through_email" name="open_Initial_Popup_Survey_List_whatsapp">
+                           <img src="custom/include/images/whatsapp.png" alt="Smiley face" height="42" width="42" style="cursor: pointer;">
+                        </div>WhatsApp
+                      </td>
+                  </tr>
+             </tbody>
+         </table>
+        </div>
+        </div>
+    </div>
+<div  id="survey_initialpopup_content" style="display:none;">
+<div id='survey_list'>
+        
+</div>
+</div>
+<div  id="survey_list_content" style="display:none;">
+</div>
+        
+<div id="customerMailPopup" style="display:"none">
+</div>
+
+</div>
+<div class="modal-footer" style="display:none;">
+      <input class='btn' type='button' value='Back' name='back_button' style="float:left;">
+</div>

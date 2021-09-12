@@ -1,0 +1,18 @@
+{{#if associatedModels.length}}
+<table class="table dataTable converted-results">
+        <tbody role="alert" aria-live="polite" aria-relevant="all">
+            {{#each associatedModels.models}}
+            <tr name="{{module}}_{{attributes.id}}" class="single">
+                <td>
+                    <div>{{attributes.row_title}}: <a href="#{{buildRoute model=this}}">{{attributes.name}}</a></div>
+                </td>
+                <td class="preview-list-cell">
+                    <a class="preview-list-item btn pull-right" rel="tooltip" data-placement="bottom" title="{{str "LBL_PREVIEW"}}" data-module="{{module}}" data-id="{{attributes.id}}">
+                        <i class="far fa-search-plus"></i>
+                    </a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+</table>
+{{/if}}

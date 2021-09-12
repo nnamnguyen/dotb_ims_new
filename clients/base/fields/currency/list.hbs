@@ -1,0 +1,7 @@
+<div class="currency-field ellipsis_inline" data-placement="bottom" data-original-title="{{value}}"{{#if dir}} dir="{{dir}}"{{/if}} rel="tooltip" title="{{#if transactionValue}}{{transactionValue}} | {{value}}{{else}}{{value}}{{/if}}">
+{{#if transactionValue}}
+    <label class="original">{{transactionValue}}</label><div class="converted">{{value}}</div>
+{{else}}
+    {{value}}
+{{/if}}
+</div>

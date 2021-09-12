@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'SFUIText';
+    font-style: normal;
+    font-weight: 400;
+    src:
+    url('../fonts/SFUIText/SFUIText-light.woff2') format('woff2'),
+    url('../fonts/SFUIText/SFUIText-light.woff') format('woff');
+}
+@font-face {
+    font-family: 'SFUIText-bold';
+    src:
+    url('../fonts/SFUIText/SFUIText-bold.woff2') format('woff2'),
+    url('../fonts/SFUIText/SFUIText-bold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'SFUIText-medium';
+    src:
+    url('../fonts/SFUIText/SFUIText-medium.woff2') format('woff2'),
+    url('../fonts/SFUIText/SFUIText-medium.woff') format('woff');
+
+}

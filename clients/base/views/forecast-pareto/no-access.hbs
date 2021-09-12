@@ -1,0 +1,8 @@
+<div class="forecasts-chart-wrapper">
+    {{#unless isForecastSetup}}
+        {{{forecastsNotSetUpMsg}}}
+    {{/unless}}
+    {{#unless forecastsConfigOK}}
+        {{{str "LBL_FORECASTS_MISSING_SALES_STAGE_VALUES" 'Forecasts'}}}
+    {{/unless}}
+</div>

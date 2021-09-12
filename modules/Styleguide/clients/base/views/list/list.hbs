@@ -1,0 +1,15 @@
+{{#each meta.panels}}
+<table class="table table-striped dataTable">
+    <thead>
+        {{partial 'row-header' ../this view=../this fields=fields}}
+    </thead>
+    <tbody>
+    {{#each ../collection.models}}
+        {{partial 'row' ../../this view=../../this model=this module=this.module fields=../fields}}
+    {{/each}}
+    </tbody>
+    <tfoot>
+        {{partial 'row-footer' ../this view=../this}}
+    </tfoot>
+</table>
+{{/each}}

@@ -1,0 +1,14 @@
+<style>
+    #forgot-recaptcha div { margin-left: auto; margin-right: auto; }
+</style>
+<script type="text/javascript">
+    var onloadRecaptcha = function() {
+        grecaptcha.render('forgot-recaptcha', {
+            'sitekey': '{{ recaptcha_sitekey }}',
+            'theme': 'light',
+            'size': Math.max(document.documentElement.clientWidth, window.innerWidth || 0) > 480 ? 'compact' : 'normal'
+        });
+    };
+</script>
+<div id="forgot-recaptcha"></div>
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadRecaptcha&render=explicit" async defer></script>

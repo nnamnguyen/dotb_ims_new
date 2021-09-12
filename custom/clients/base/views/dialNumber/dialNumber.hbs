@@ -1,0 +1,61 @@
+<style>
+    .phone_key_number ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 3px;
+        display: inline-block;
+    }
+
+    .phone_key_number li {
+        text-align: center;
+        vertical-align: middle;
+        display: inline-block;
+        width: 50px;
+        height: 22px;
+        padding: 5px;
+        margin: 3px;
+        border: solid 1px #ccc;
+    }
+
+    .phone_key_number li:hover {
+        border: solid 1px #000;
+        cursor: pointer;
+    }
+</style>
+<a class="fa fa-times pull-right custom-popover-close" data-action="close"></a>
+<div class="row-fluid control-group">
+    <div class="controls span12">
+        <input class="phone_number" style="width:96%;height:30px;font-size:20px;text-align:center" type="text" />
+    </div>
+    <div class="controls span12 text-center phone_key_number" style="margin-top:5px;text-align: center;font-size:18px">
+        <ul>
+            <li data-action="addNumber">1</li>
+            <li data-action="addNumber">2</li>
+            <li data-action="addNumber">3</li>
+            <li data-action="delNumber"><i class="fa fa-arrow-left"></i></li>
+        </ul>
+        <ul>
+            <li data-action="addNumber">4</li>
+            <li data-action="addNumber">5</li>
+            <li data-action="addNumber">6</li>
+            <li data-action="delAllNumber"><i class="fa fa-trash-alt"></i></li>
+        </ul>
+        <ul>
+            <li data-action="addNumber">7</li>
+            <li data-action="addNumber">8</li>
+            <li data-action="addNumber">9</li>
+            <li data-action="addNumber">*</li>
+        </ul>
+        <ul>
+            <li data-action="addNumber">-</li>
+            <li data-action="addNumber">0</li>
+            <li data-action="addNumber">+</li>
+            <li data-action="addNumber">#</li>
+        </ul>
+    </div>
+</div>
+<div class="row-fluid custom-popover-footer">
+    <span class="span12">
+        <button class="btn btn-primary pull-right span12" data-action="dialNumber">{{str "LBL_DIALNUMBER"}}</button>
+    </span>
+</div>

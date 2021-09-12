@@ -1,0 +1,10 @@
+<form method="{{ method }}" action="{{ url }}" id="form">
+    {% if params is defined and params is not empty %}
+        {% for name, value in params %}
+            <input type="hidden" name="{{ name }}" value="{{ value }}"/>
+        {% endfor %}
+    {% endif %}
+</form>
+<script>
+    document.getElementById("form").submit();
+</script>

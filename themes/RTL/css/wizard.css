@@ -1,0 +1,10 @@
+
+ 
+button,button[selected],button:focus 
+{
+	background-image: none;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	text-shadow: none;
+}

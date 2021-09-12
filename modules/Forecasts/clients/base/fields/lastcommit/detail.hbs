@@ -1,0 +1,24 @@
+<div class='row-fluid last-commit'>
+    <div class="span8 datapoints">
+        <div class="pull-right">
+            {{#each this.data_points}}
+                <div class="datapoint pull-left">
+                    {{#if this.value}}
+                        {{formatCurrency this.value}}
+                    {{else}}
+                        {{{this.error}}}
+                    {{/if}}
+                </div>
+            {{/each}}
+        </div>
+    </div>
+    <div class="hr hide"></div>
+    <div class="span4 commit-date">
+        {{#if this.commit_date}}
+            <span class="relativetime">
+                {{str 'LBL_LAST_COMMIT'}}{{relativeTime commit_date class='date'}}
+                &nbsp;<i id="show_hide_history_log" class="fa fa-angle-down fa-sm"></i>
+            </span>
+        {{/if}}
+    </div>
+</div>

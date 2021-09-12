@@ -1,0 +1,7 @@
+<div class="currency-field"{{#if dir}} dir="{{dir}}"{{/if}}>
+{{#if transactionValue}}
+    <label class="original">{{transactionValue}}</label><div class="converted">{{value}}</div>
+{{else}}
+    {{value}}
+{{/if}}
+</div>

@@ -1,0 +1,5 @@
+
+({
+    plugins: ['Prettify'],
+    extendsFrom: 'StyleguideDocsIndexView'
+})

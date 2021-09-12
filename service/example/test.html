@@ -1,0 +1,289 @@
+<!-- Dependency -->
+<script src="http://yui.yahooapis.com/2.6.0/build/yahoo/yahoo-min.js"></script>
+<!-- Used for Custom Events and event listener bindings -->
+<script src="http://yui.yahooapis.com/2.6.0/build/event/event-min.js"></script>
+<!-- Source file -->
+<script src="http://yui.yahooapis.com/2.6.0/build/connection/connection-min.js"></script>
+<script src="http://yui.yahooapis.com/2.6.0/build/json/json-min.js"></script>
+<script>
+var DotbRest = function(){}
+
+DotbRest.callCount = -1;
+DotbRest.startTest = function(name, password){
+	DotbRest.callCount = 1;
+	DotbRest.login(name, password, 'JAVASCRIPT TEST');
+}
+DotbRest.test = function(o){
+	data = DotbRest.logResponse(o);
+	switch(DotbRest.callCount){
+		case 1:
+			DotbRest.callCount++;
+			DotbRest.getServerInfo();
+			DotbRest.session = data['id'];
+			break;
+		case  2:
+			DotbRest.callCount++;
+			DotbRest.getUserId();
+			break;
+		case  3:
+			DotbRest.callCount++;
+			DotbRest.getEntry('Contacts', '17700cb1-9da0-f511-f9d7-490b635b9ead');
+			break;
+		case  4:
+			DotbRest.callCount++;
+			DotbRest.getEntryList('Contacts');
+			break;
+		case  5:
+			DotbRest.callCount++;
+			DotbRest.getModuleFields('Contacts', []);
+			break;
+		case  6:
+			DotbRest.callCount++;
+			DotbRest.getEntries('Contacts', ['17700cb1-9da0-f511-f9d7-490b635b9ead', '177cf935-e488-04c3-7af3-490b632b4ab0']);
+			break;
+		case  7:
+			DotbRest.callCount++;
+			DotbRest.setRelationship('Accounts', 'mastd368-c7er-cof8-16pu-47d57b16pets', 'contacts', ['2f043319-7cb0-6bfa-75d3-490b63fa6c08', 'c57d7598-42e6-cca8-a302-490b63118b48']);
+			break;
+		case  8:
+			DotbRest.callCount++;
+			DotbRest.setRelationships(['Accounts', 'Contacts'], ['mastd368-c7er-cof8-16pu-47d57b16pets', '2f043319-7cb0-6bfa-75d3-490b63fa6c08'], ['contacts', 'opportunities'], [['2f043319-7cb0-6bfa-75d3-490b63fa6c08'], ['52acdc25-6a6e-a574-6936-490b63fbc1df']]);
+			break;
+		case  9:
+			DotbRest.callCount++;
+			DotbRest.getRelationships('Accounts', 'mastd368-c7er-cof8-16pu-47d57b16pets', 'contacts', '', ['first_name', 'last_name', 'primary_address_city'], [{'name' : 'opportunities', 'value' : ['name', 'type', 'lead_source']}, {'name' : 'email_addresses', 'value' : ['id', 'email_address', 'opt_out', 'primary_address']}], 0);
+			break;
+		case  10:
+			DotbRest.callCount++;
+			DotbRest.setEntry('Accounts', [{'name' : 'city', 'value' : 'SFO'},
+										   {'name' : 'name', 'value' : 'DCE Puppet Master111'}]);
+			break;
+		case  11:
+			DotbRest.callCount++;
+			DotbRest.setEntries('Accounts', [[{'name' : 'city', 'value' : 'SFO'},
+										   {'name' : 'name', 'value' : 'Acc1'}], [{'name' : 'city', 'value' : 'SFO'},
+										   {'name' : 'name', 'value' : 'Acc2'}]]);
+			break;
+		case  12:
+			DotbRest.callCount++;
+			DotbRest.seamlessLogin();
+			break;
+		case  13:
+			DotbRest.callCount++;
+			DotbRest.setNoteAttachment({'id' : 'bb79c0f3-78e1-c6fc-2c41-490b636653c0', 'related_module_id' : '3d921d14-047f-cc7d-1988-490b63592ae8', 'related_module_name' : 'Accounts'});
+			break;
+		case  14:
+			DotbRest.callCount++;
+			DotbRest.getNoteAttachment('bb79c0f3-78e1-c6fc-2c41-490b636653c0');
+			break;
+		case  15:
+			DotbRest.callCount++;
+			DotbRest.getDocumentRevision('ab18578e-17f5-5fc0-96ba-4925a9baaa20');
+			break;
+		case  16:
+			DotbRest.callCount++;
+			DotbRest.search('admin', '21232f297a57a5a743894a0e4a801fc3', 'a', ['Accounts', 'Contacts'], 0, 5);
+			break;
+			/*
+		case  17:
+			DotbRest.callCount++;
+			DotbRest.setDocumentRevision({'id' : '8d7f0917-19d3-9f88-80d7-49121ddb62e2','document_name' : 'test doc',
+																					   		 'revision' : 'D',
+																					   		 'filename' : 'code1.txt',
+																					   		 'file' : 'JHFzID0gJyc7DQppZiAoaXNzZXQoJF9TRVJWRVJbJ1FVRVJZX1NUUklORyddKSkgew0KCSRxcyA9ICRfU0VSVkVSWydRVUVSWV9TVFJJTkcnXTsNCn0gZWxzZWlmIChpc3NldCgkSFRUUF9TRVJWRVJfVkFSU1snUVVFUllfU1RSSU5HJ10pKSB7DQoJJHFzID0gJEhUVFBfU0VSVkVSX1ZBUlNbJ1FVRVJZX1NUUklORyddOw0KfSBlbHNlIHsNCgkkcXMgPSAnJzsNCn0NCg0KJHQxID0gc3RydG90aW1lKCJub3ciKTsNCg0KaWYgKGVyZWcoJ3dzZGwnLCAkcXMpICl7DQoJZ2xvYmFsICRzdWdhcl9jb25maWc7DQoJJHVwbG9hZERpciA9ICRzdWdhcl9jb25maWdbJ3VwbG9hZF9kaXInXTsNCgkkd3NkbFVSTCA9ICRzdWdhcl9jb25maWdbJ3NpdGVfdXJsJ10uJy9zb2FwLnBocD93c2RsJzsNCgkkd3NkbENhY2hlRmlsZSA9ICR1cGxvYWREaXIuJy93c2RsY2FjaGUtJyAuIG1kNSgkd3NkbFVSTCk7DQoJaWYoZmlsZV9leGlzdHMoJHdzZGxDYWNoZUZpbGUpKSB7CQ0KCSAgICBpZigkZmggPSBAc3VnYXJfZm9wZW4oJHdzZGxDYWNoZUZpbGUsICJyIikpIHsNCgkgICAgCSRjb250ZW50cyA9IGZyZWFkKCRmaCwgZmlsZXNpemUoJHdzZGxDYWNoZUZpbGUpKTsNCgkgICAgCWZjbG9zZSgkZmgpOw0KCQkJaGVhZGVyKCJDb250ZW50LVR5cGU6IHRleHQveG1sOyBjaGFyc2V0PUlTTy04ODU5LTFcclxuIik7DQoJCQlwcmludCAkY29udGVudHM7CSAgICAJDQoJICAgIH0gLy8gaWYJCQ0KCX0gZWxzZSB7DQoJCSRzZXJ2ZXItPnNlcnZpY2UoJEhUVFBfUkFXX1BPU1RfREFUQSk7DQoJICAgIGlmKCRmaCA9IEBzdWdhcl9mb3Blbigkd3NkbENhY2hlRmlsZSwgInciKSkgew0KCSAgICAJZnB1dHMoJGZoLCBvYl9nZXRfY29udGVudHMoKSk7DQoJICAgIAlmY2xvc2UoJGZoKTsNCgkgICAgfSAvLyBpZg0KCX0NCn0gZWxzZSB7DQoJJEdMT0JBTFNbJ2xvZyddLT5kZWJ1ZygiZGF0YSA9ICIgLiAkSFRUUF9SQVdfUE9TVF9EQVRBKTsNCgkkc2VydmVyLT5zZXJ2aWNlKCRIVFRQX1JBV19QT1NUX0RBVEEpOw0KfQ0KDQoNCg0KDQoJCQlpZiAoaXNzZXQoJHRoaXMtPm1ldGhvZHBhcmFtcykgJiYgaXNzZXQoJHRoaXMtPm1ldGhvZHBhcmFtc1snc2Vzc2lvbiddKSkgew0KCQkJCSRHTE9CQUxTWydsb2cnXS0+ZGVidWcoIkluIHNlcnZpY2UsIGRhdGEgPSAiIC4gJHRoaXMtPm1ldGhvZHBhcmFtc1snc2Vzc2lvbiddKTsNCgkJCX0NCg=='});
+			break;
+			*/
+	}
+
+}
+
+console = false;
+if(!console){
+	console = {};
+	console.log = function(){
+
+	}
+}
+
+DotbRest.getRequestData = function(method_name, data) {
+	var returndata = 'method=' + method_name + '&input_type=json&response_type=json';
+	if (data != '') {
+		returndata = returndata + '&rest_data=' + data;
+	}
+	return returndata
+}
+DotbRest.logResponse = function(o){
+
+	data = YAHOO.lang.JSON.parse(o.responseText);
+	console.log(data);
+	return data;
+}
+
+DotbRest.getServerInfo =  function(){
+	console.log('Getting Server Info');
+	YAHOO.util.Connect.asyncRequest('POST', 'v2/rest.php' , {success:DotbRest.test, failure:DotbRest.test}, DotbRest.getRequestData('get_server_info'));
+}
+
+DotbRest.getModuleFields =  function(module, fields){
+	console.log('Getting Server Info');
+	var data = [DotbRest.session, module, fields];
+	m = YAHOO.lang.JSON.stringify(data);
+	YAHOO.util.Connect.asyncRequest('POST', 'v2/rest.php' , {success:DotbRest.test, failure:DotbRest.test}, DotbRest.getRequestData('get_module_fields', m));
+}
+
+DotbRest.login =  function(name, password, application){
+	console.log('Logging In');
+	var loginData = [{
+		user_name: 'admin',
+		password: '21232f297a57a5a743894a0e4a801fc3'
+	},'javascriptTest'];
+	m = YAHOO.lang.JSON.stringify(loginData);
+	YAHOO.util.Connect.asyncRequest('POST', 'v2/rest.php' , {success:DotbRest.test, failure:DotbRest.test}, DotbRest.getRequestData('login', m));
+}
+
+DotbRest.getUserId =  function(){
+	console.log('Getting User Id ');
+	m = YAHOO.lang.JSON.stringify(DotbRest.session);
+	YAHOO.util.Connect.asyncRequest('POST', 'v2/rest.php' , {success:DotbRest.test, failure:DotbRest.test}, DotbRest.getRequestData('get_user_id', m));
+}
+
+
+DotbRest.getEntryList = function(module){
+	var data = [DotbRest.session, module, "", '', 0, [], [{
+		'name': 'email_addresses',
+		'value': ['id', 'email_address', 'opt_out', 'primary_address',]
+	}], 10, 0];
+	m = YAHOO.lang.JSON.stringify(data);
+	YAHOO.util.Connect.asyncRequest('POST', 'v2/rest.php', {
+		success: DotbRest.test,
+		failure: DotbRest.test
+	}, DotbRest.getRequestData('get_entry_list', m));
+}
+
+
+DotbRest.getEntry = function(module, id){
+	var data = [DotbRest.session, module, id, ['last_name', 'email1', 'date_modified','description'], [{
+		'name': 'email_addresses',
+		'value': ['id', 'email_address', 'opt_out', 'primary_address',]
+	}]];
+	m = YAHOO.lang.JSON.stringify(data);
+	YAHOO.util.Connect.asyncRequest('POST', 'v2/rest.php', {
+		success: DotbRest.test,
+		failure: DotbRest.test
+	}, DotbRest.getRequestData('get_entry', m));
+}
+
+DotbRest.getEntries = function(module, ids){
+	var data = [DotbRest.session, module, ids, ['last_name', 'email1', 'date_modified','description'], [{
+		'name': 'email_addresses',
+		'value': ['id', 'email_address', 'opt_out', 'primary_address',]
+	}]];
+	m = YAHOO.lang.JSON.stringify(data);
+	YAHOO.util.Connect.asyncRequest('POST', 'v2/rest.php', {
+		success: DotbRest.test,
+		failure: DotbRest.test
+	}, DotbRest.getRequestData('get_entries', m));
+}
+
+DotbRest.setRelationship = function(module, module_id, link_field_name, related_ids){
+	var data = [DotbRest.session, module, module_id, link_field_name, related_ids];
+	m = YAHOO.lang.JSON.stringify(data);
+	YAHOO.util.Connect.asyncRequest('POST', 'v2/rest.php', {
+		success: DotbRest.test,
+		failure: DotbRest.test
+	}, DotbRest.getRequestData('set_relationship', m));
+}
+
+DotbRest.setRelationships = function(modules, module_ids, link_field_names, related_ids){
+	var data = [DotbRest.session, modules, module_ids, link_field_names, related_ids];
+	m = YAHOO.lang.JSON.stringify(data);
+	YAHOO.util.Connect.asyncRequest('POST', 'v2/rest.php', {
+		success: DotbRest.test,
+		failure: DotbRest.test
+	}, DotbRest.getRequestData('set_relationships', m));
+}
+
+DotbRest.getRelationships = function(module, module_id, link_field_name, related_module_query, related_fields, related_module_link_name_to_fields_array, deleted){
+	var data = [DotbRest.session, module, module_id, link_field_name, related_module_query, related_fields, related_module_link_name_to_fields_array, deleted];
+	m = YAHOO.lang.JSON.stringify(data);
+	YAHOO.util.Connect.asyncRequest('POST', 'v2/rest.php', {
+		success: DotbRest.test,
+		failure: DotbRest.test
+	}, DotbRest.getRequestData('get_relationships', m));
+}
+
+DotbRest.setEntry = function(module, name_value_list){
+	var data = [DotbRest.session, module, name_value_list];
+	m = YAHOO.lang.JSON.stringify(data);
+	YAHOO.util.Connect.asyncRequest('POST', 'v2/rest.php', {
+		success: DotbRest.test,
+		failure: DotbRest.test
+	}, DotbRest.getRequestData('set_entry', m));
+}
+
+DotbRest.setEntries = function(module, name_value_lists){
+	var data = [DotbRest.session, module, name_value_lists];
+	m = YAHOO.lang.JSON.stringify(data);
+	YAHOO.util.Connect.asyncRequest('POST', 'v2/rest.php', {
+		success: DotbRest.test,
+		failure: DotbRest.test
+	}, DotbRest.getRequestData('set_entries', m));
+}
+
+DotbRest.seamlessLogin = function(){
+	var data = [DotbRest.session];
+	m = YAHOO.lang.JSON.stringify(data);
+	YAHOO.util.Connect.asyncRequest('POST', 'v2/rest.php', {
+		success: DotbRest.test,
+		failure: DotbRest.test
+	}, DotbRest.getRequestData('seamless_login', m));
+}
+
+DotbRest.setNoteAttachment = function(noteObject){
+	var data = [DotbRest.session, noteObject];
+	m = YAHOO.lang.JSON.stringify(data);
+	YAHOO.util.Connect.asyncRequest('POST', 'v2/rest.php', {
+		success: DotbRest.test,
+		failure: DotbRest.test
+	}, DotbRest.getRequestData('set_note_attachment', m));
+}
+
+DotbRest.getNoteAttachment = function(noteId){
+	var data = [DotbRest.session, noteId];
+	m = YAHOO.lang.JSON.stringify(data);
+	YAHOO.util.Connect.asyncRequest('POST', 'v2/rest.php', {
+		success: DotbRest.test,
+		failure: DotbRest.test
+	}, DotbRest.getRequestData('get_note_attachment', m));
+}
+
+DotbRest.setDocumentRevision = function(revisionObject){
+	var data = [DotbRest.session, revisionObject];
+	m = YAHOO.lang.JSON.stringify(data);
+	YAHOO.util.Connect.asyncRequest('POST', 'v2/rest.php', {
+		success: DotbRest.test,
+		failure: DotbRest.test
+	}, DotbRest.getRequestData('set_document_revision', m));
+}
+
+DotbRest.getDocumentRevision = function(docRevId){
+	var data = [DotbRest.session, docRevId];
+	m = YAHOO.lang.JSON.stringify(data);
+	YAHOO.util.Connect.asyncRequest('POST', 'v2/rest.php', {
+		success: DotbRest.test,
+		failure: DotbRest.test
+	}, DotbRest.getRequestData('get_document_revision', m));
+}
+
+DotbRest.search = function(username, password, search_string, modules_to_search, offset, maxresults){
+	var data = [username, password, search_string, modules_to_search, offset, maxresults];
+	m = YAHOO.lang.JSON.stringify(data);
+	YAHOO.util.Connect.asyncRequest('POST', 'v2/rest.php', {
+		success: DotbRest.test,
+		failure: DotbRest.test
+	}, DotbRest.getRequestData('search_by_module', m));
+}
+DotbRest.startTest();
+</script>
+
+

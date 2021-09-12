@@ -1,0 +1,63 @@
+<?php
+
+
+$params['db_driver'] = 'pdo_mysql';
+$params['db_host'] = '127.0.0.1';
+$params['db_port'] = 3306;
+$params['db_name'] = 'idm_db';
+$params['db_user'] = 'root';
+$params['db_password'] = 'Dotb123';
+$params['db_charset'] = 'utf8';
+
+$params['logdir'] = null; // null means use default log directory (<app_dir>/var/logs)
+
+//Setup a default logging mechanism. For more options see http://silex.sensiolabs.org/doc/2.0/providers/monolog.html
+$params['monolog'] = [
+    'monolog.name' => 'IdentityProvider',
+    'monolog.level' => \Monolog\Logger::NOTICE,
+    'monolog.bubble' => true,
+];
+
+// Configuration for Hydra client.
+$params['sts'] = [
+    'host' => getenv('HYDRA_URL'),
+    'clientId' => getenv('CLIENT_ID'),
+    'clientSecret' => getenv('CLIENT_SECRET'),
+    'accessTokenFile' => getenv('CLIENT_ACCESS_TOKEN_FILE'),
+    'accessTokenRefreshUrl' => getenv('ACCESS_TOKEN_REFRESH_URL'),
+];
+
+$params['idm'] = [
+    // The partition the login service is operating in
+    'partition' => getenv('IDM_PARTITION'),
+    // The region the login service is serving
+    'region' => getenv('IDM_REGION'),
+    'password_reset' => [
+        'endpoint' => '/password/reset/email',
+    ],
+];
+
+$params['session.storage.options'] = [
+    'cookie_secure' => getenv('COOKIE_SECURE'),
+    'cookie_httponly' => true,
+    'cookie_domain' => getenv('COOKIE_DOMAIN'),
+    'cookie_lifetime' => getenv('COOKIE_LIFETIME') === false ? 24 * 60 * 60 : getenv('COOKIE_LIFETIME'), // in seconds
+];
+
+$params['discovery'] = [
+    'url' => getenv('DISCOVERY_URL'),
+    'version' => 'v1',
+];
+
+// recaptcha domain registration: https://www.google.com/recaptcha/admin
+// "always pass" keys taken from https://developers.google.com/recaptcha/docs/faq
+$params['recaptcha'] = [
+  'sitekey' => getenv('RECAPTCHA_SITEKEY') ?: '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI',
+  'secretkey' => getenv('RECAPTCHA_SECRETKEY') ?: '6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe',
+];
+
+$params['honeypot'] = [
+  'name' => 'first_name',
+];
+
+$params['forceManualConsentApprove'] = false;

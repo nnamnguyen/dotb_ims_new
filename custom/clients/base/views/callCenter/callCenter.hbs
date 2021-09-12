@@ -1,0 +1,130 @@
+<div id="{{this.timenow}}" class="popover callbox custom-popover" style="display:block;width: 400px;padding:0">
+    <input type="hidden" id="id" value="{{this.currentData.id}}"/>
+    <input type="hidden" id="phoneNumber" value="{{this.currentData.phoneNumber}}"/>
+    <input type="hidden" id="callId" value=""/>
+    <input type="hidden" id="ext" value=""/>
+    <input type="hidden" id="direction" value="{{this.currentData.direction}}"/>
+    <input type="hidden" id="duration" value=""/>
+    <input type="hidden" id="start" value=""/>
+    <input type="hidden" id="start_timestamp" value=""/>
+    <input type="hidden" id="end" value=""/>
+    <input type="hidden" id="end_timestamp" value=""/>
+    <input type="hidden" id="source" value=""/>
+    <input type="hidden" id="recording" value=""/>
+    <input type="hidden" id="beanName" value="{{this.currentData.beanName}}"/>
+    <input type="hidden" class="callStatus_callbox" value="{{this.currentData.call_status}}"/>
+    <div class="popover-title" style="background-color: #203b6c;color:#fff;padding:0">
+        <div style="background-color: #132545;height: 20px;padding: 10px 15px 5px 15px;">
+            <div class="select_heading_callbox btn-group pull-left" style="color:#fff">
+                <i class="far fa-edit dropdown-toggle" rel="tooltip" data-original-title="Change/Create" data-toggle="dropdown" style="cursor: pointer;font-size:15px;"></i>
+                <ul class="dropdown-menu" id="list_change_bean_callbox" style="top:25px">
+                    {{#each this.data}}
+                        <li><a class="change_bean_callbox" data-id="{{this.id}}" style="font-size: small;padding:3px">[{{this.beanName}}] {{this.name}}</a></li>
+                    {{/each}}
+                    <li class="divider"></li>
+                    <li><a class="select_bean_callbox" data-bean-name="Contacts" style="font-size: small;padding:3px">Select from Contact</a></li>
+                    <li><a class="select_bean_callbox" data-bean-name="Accounts" style="font-size: small;padding:3px">Select from Account</a></li>
+                    <li><a class="select_bean_callbox" data-bean-name="Leads" style="font-size: small;padding:3px">Select from Lead</a></li>
+                    <li><a class="select_bean_callbox" data-bean-name="Prospects" style="font-size: small;padding:3px">Select from Target</a></li>
+                </ul>
+            </div>
+
+            <span class="pull-left beanName_displayheader" style="margin-left:5px;font-size: 15px">{{this.currentData.beanName}}</span>
+            <i class="far fa-times pull-right close-callbox" rel="tooltip" data-original-title="close" style="color: red !important;cursor: pointer;font-size:15px;margin-left:15px;outline: none"></i>
+            <i class="far fa-chevron-down pull-right mini-callbox" rel="tooltip" data-original-title="mini" style="cursor: pointer;font-size:15px;outline: none"></i>
+        </div>
+
+        <table id="table_info_callbox" style="background-color: #203b6c;margin-top:3px;width: 100%">
+            <tr>
+                <td style="vertical-align: middle;text-align: center;padding:5px;width:15%">
+                    <i style="font-size: 50px;color: #fff" class="far fa-phone-alt"></i>
+                </td>
+                <td style="width: 65%">
+                    <a class="link_to_bean" href="#{{this.currentData.beanName}}/{{this.currentData.id}}" style="font-size: 15px;color:#fff">
+                        <b>{{this.currentData.name}}</b>
+                    </a>
+                    <br/>
+                    <span>Status: <span id="callStatus">{{this.currentData.status}}</span></span><br/>
+                    <span>Phone: <span id="callPhoneNumber">{{this.currentData.phoneNumber}}</span></span><br/>
+                    <span>Address: <span id="callAddress">{{this.currentData.address.address_state}}, {{this.currentData.address.address_city}}</span></span>
+                </td>
+                <td nowrap style="vertical-align: middle;text-align: center;padding:5px;width:20%">
+                    <b>{{this.currentData.direction}}</b><br/>
+                    <label class="label call_status_callbox label-inverse" style="font-size: small">{{this.currentData.call_status}}</label><br/>
+                    <span class="duration_callbox">_ _:_ _</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="popover-content">
+        <div class="row-fluid">
+            <div class="span3" style="padding-top:5px">Purpose:</div>
+            <div class="span9">
+                <select class="purpose_callbox form-control" style="width: 100%;margin-bottom: 5px;">
+                    {{#each this.lang.call_purpose_options}}
+                        <option value="{{@key}}">{{this}}</option>
+                    {{/each}}
+                </select>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span3" style="padding-top:5px">Result:(*)</div>
+            <div class="span9">
+                <select class="result_callbox form-control" style="width: 100%;margin-bottom: 5px;">
+                    {{#each this.lang.call_result_options}}
+                        <option value="{{@key}}">{{this}}</option>
+                    {{/each}}
+                </select>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span3"></div>
+            <div class="span9" style="margin-bottom: 5px;">
+                <div class="row-fluid">
+                    <div class="span6">
+                        <label style="font-size: small"><input id="favorite_callbox" type="checkbox" style="float: left;margin-right:5px">Mark favorite</label>
+                    </div>
+                    <div class="span6">
+                        {{#ifEquals this.currentData.beanName 'Leads'}}
+                            <label style="font-size: small"><input id="deadlead_callbox" type="checkbox" style="float: left;margin-right: 5px">Mark dead Lead</label>
+                        {{/ifEquals}}
+                        {{#ifEquals this.currentData.beanName 'Prospects'}}
+                            <label style="font-size: small"><input id="deadlead_callbox" type="checkbox" style="float: left;margin-right: 5px">Mark dead Target</label>
+                        {{/ifEquals}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row-fluid recall">
+            <div class="span3" style="padding-top:5px;white-space: nowrap;">Callback:</div>
+            <div class="span9" style="margin-bottom: 5px;">
+                <select class="recall_callbox form-control" style="width: 100%;margin-bottom: 5px;">
+                    {{#each this.lang.calls_recall_options}}
+                        <option value="{{@key}}">{{this}}</option>
+                    {{/each}}
+                </select>
+            </div>
+        </div>
+        <div class="row-fluid timerecall_callbox" style="display: none">
+            <div class="span3" style="padding-top:5px;white-space: nowrap;">Time callback:</div>
+            <div class="span9" style="margin-bottom: 5px;">
+                <div class="input-append">
+                    <div class="date-wrapper">
+                        <input class="recall_at_callbox" type="text" style="width:95%">
+                        <span class="add-on"><i class="far fa-calendar"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row-fluid control-group">
+            <div class="controls span12">
+                <textarea data-saved="0" class="description_callbox" rows="3" placeholder="Description(*)"></textarea>
+            </div>
+        </div>
+        <div class="row-fluid feedback-footer">
+                <span class="span12">
+                        <button data-is-auto-save="0" disabled style="font-size:small" class="save_callbox btn btn-primary pull-right span12">Save</button>
+                </span>
+        </div>
+    </div>
+</div>

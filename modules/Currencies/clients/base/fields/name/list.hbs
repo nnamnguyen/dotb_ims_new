@@ -1,0 +1,18 @@
+{{#if value}}
+    {{#if ../ellipsis}}
+        <div class="ellipsis_inline" data-placement="bottom" title="{{value}}">
+    {{/if}}
+    {{#if def.link}}
+        {{#if model.isDefault}}
+            {{value}}
+        {{else}}
+            <a href="{{#if def.events}}javascript:void(0);{{else}}{{href}}{{/if}}">{{value}}</a>
+        {{/if}}
+    {{else}}
+        {{value}}
+    {{/if}}
+    {{#if ../ellipsis}}
+        </div>
+    {{/if}}
+{{/if}}
+

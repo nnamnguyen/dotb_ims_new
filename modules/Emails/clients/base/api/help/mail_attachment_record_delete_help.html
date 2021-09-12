@@ -1,0 +1,42 @@
+<h2>Overview</h2>
+<span class="lead">
+    Delete an updated email attachment (where :file_guid is the guid value returned from the /Mail/attachment API)
+</span>
+<div class="params">
+    <h2>Query Parameters:</h2>
+    This endpoint does not accept any parameters.
+</div>
+<div class="input">
+    <h2>Input Example:</h2>
+    This endpoint does not accept any input.
+</div>
+<div class="output">
+    <h2>Output Example:</h2>
+    If successful, the endpoint responds with a bool of <code class="codesample">true</code>.
+</div>
+<h2>Change Log</h2>
+<table class="table table-hover">
+    <tr>
+        <th>Version</th>
+        <th>Change</th>
+    </tr>
+    <tr>
+        <td>
+            v11
+        </td>
+        <td>
+            Last version in which <code>/Mail/attachment/:file_guid</code> DELETE is available. Use
+            <code>/Notes/:id/file/filename</code> DELETE to delete a file from the filesystem. Use
+            <code>/Emails/:record/link/attachments/:remote_id</code> DELETE to remove an attachment from an
+            email. Note that removing an attachment from an email will also delete it from the filesystem.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            v10
+        </td>
+        <td>
+            Added <code>/Mail/attachment/:file_guid</code> DELETE endpoint.
+        </td>
+    </tr>
+</table>

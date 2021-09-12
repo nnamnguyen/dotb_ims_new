@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Customer Self-Service Portal - Powered by DotbCRM.</title>
+        <meta name="viewport" content="initial-scale=1.0">
+        <meta charset="UTF-8">
+        <link rel="SHORTCUT ICON" href="../themes/default/images/logo.png">
+        <!-- CSS -->
+        <link rel="stylesheet" href="../styleguide/assets/css/loading.css" type="text/css">
+        <link rel="stylesheet" href="lib/jquery-ui/css/smoothness/jquery-ui-1.11.4.custom.min.css" type="text/css"/>
+    </head>
+    <body>
+        <div id="lumia">
+            <div id="portal">
+                <div id="alerts" class="alert-top">
+                    <div class="alert-wrapper">
+                        <div class="alert alert-process">
+                            <strong>
+                                <div class="loading">
+                                    Loading<i class="l1">&#46;</i><i class="l2">&#46;</i><i class="l3">&#46;</i>
+                                </div>
+                            </strong>
+                        </div>
+                    </div>
+                </div>
+                <div id="header"></div>
+                <div id="content"></div>
+                <div id="footer"></div>
+                <div id="drawers"></div>
+            </div>
+        </div>
+
+        <script src="../include/javascript/modernizr.js"></script>
+
+        <!-- Lumia Scripts -->
+        <script src="../lumia/minified/lumia.min.js"></script>
+        <script src="../cache/include/javascript/dotbcrm_moon.min.js"></script>
+
+        <!-- Portal specific JS -->
+        <script src="../cache/portal2/portal.min.js"></script>
+        <script src="../cache/javascript/dotbcrm8.js"></script>
+        <script src="config.js"></script>
+
+        <!-- App Scripts -->
+        <script src="../cache/portal2/dotb_portal.min.js"></script>
+
+        <script>
+            var syncResult, view, layout, html;
+            var App = DOTB.App.init({
+                el: '#lumia',
+                callback: function(app){
+                    $('#alerts').empty();
+                    app.start();
+                }
+            });
+            App.api.debug = App.config.debugDotbApi;
+        </script>
+    </body>
+</html>

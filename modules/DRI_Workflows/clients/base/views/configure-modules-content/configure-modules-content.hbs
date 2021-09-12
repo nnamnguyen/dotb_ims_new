@@ -1,0 +1,85 @@
+<div class="record-panel" style="margin: 0;">
+    <div class="record-panel-header" style="box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none;">
+        <h3>Step 1</h3>
+    </div>
+</div>
+
+<div class="record {{#notEq context.attributes.step 1}}hide{{/notEq}}">
+    <div class="config_container" style="margin-left: 30px; margin-right: 30px;">
+        <div class="clearfix">
+            <div class="pull-left" style="padding: 5px 0">
+                <div>{{str 'LBL_CONFIGURE_MODULES_CONTENT_DESCRIPTION' module}}.</div>
+            </div>
+            <div class="pull-right">
+                <a class="btn btn-primary" href="javascript:void(0);" name="save_button">{{str "LBL_SAVE_BUTTON_LABEL"}}</a>
+            </div>
+        </div>
+
+        <div class="config_values" style="margin: 10px 0;">
+            {{#each meta.fields}}
+                {{field ../this model=../configModel template="edit"}}
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+<div class="record-panel" style="margin: -1px 0;">
+    <div class="record-panel-header" style="box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none;">
+        <h3>Step 2</h3>
+    </div>
+</div>
+
+{{#eq context.attributes.step 2}}
+    {{#if missing_modules.modules.length}}
+    <h5 style="margin-left: 30px">Step 2.1 - Create package</h5>
+    <div class="record">
+        <div class="config_container" style="margin-left: 30px; margin-right: 30px;">
+            <div class="clearfix">
+                <div class="pull-left" style="width: 85%">
+                    <div>You have enabled the Customer Insight Plugin® for one or more modules that is not enabled by default or needs to be upgraded.
+                        Click on the download button to generate the code required to enable it for these modules.</div>
+
+                    <div style="margin-top: 15px; font-style: italic;">This action requires that your browser have access to the internet. If you don't have access,
+                        copy the following <a href="{{missing_modules.download_link}}">link</a> and download it from a browser that have access.</div>
+                </div>
+                <div class="pull-left">
+                    <a href="{{missing_modules.download_link}}">
+                        <button class="btn btn-primary">Download</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h5 style="margin-left: 30px">Step 2.2 - Install package</h5>
+    <div class="record">
+        <div class="config_container" style="margin-left: 30px; margin-right: 30px;">
+            {{#if missing_modules.modules.length}}
+                Go to the <a href="{{missing_modules.module_loader_link}}">Module Loader</a> and install the package you just downloaded.
+            {{/if}}
+        </div>
+    </div>
+    {{else}}
+        <div class="record">
+            <div class="config_container" style="margin-top: 10px">
+                <div class="clearfix" style="width: 300px; margin: auto">
+                    <div class="pull-left">
+                        <i class="fa fa-check" style="color: #6dbd1b; font-size: 25px" aria-hidden="true"></i>
+                    </div>
+                    <div class="pull-left" style="padding: 5px">
+                        All modules has been successfully configured.
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{/if}}
+{{/eq}}
+
+<style>
+    .config_container .config_values input {
+        width: 60%;
+    }
+    .config_container p {
+        margin: 0;
+    }
+</style>

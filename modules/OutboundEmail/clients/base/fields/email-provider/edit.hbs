@@ -1,0 +1,15 @@
+{{#eachOptions items}}
+<p class="email-provider{{#eq key 'other'}} other{{/eq}}">
+    <label>
+        <input tabindex="0" type="radio" aria-label="{{str LBL_EMAIL_PROVIDER ../module}} {{key}}" name="{{../name}}"
+               value="{{key}}"{{#if def.tabindex}}
+               tabindex="{{def.tabindex}}"{{/if}} {{#eq key ../value}}checked{{/eq}} />
+        {{#eq key 'other'}}
+        <span>Other</span>
+        {{else}}
+        <image src="include/images/{{key}}-logo.png"/>
+        {{/eq}}
+    </label>
+</p>
+{{/eachOptions}}
+{{#unless hideHelp}}{{#if def.help}}<p class="help-block">{{str def.help module}}</p>{{/if}}{{/unless}}

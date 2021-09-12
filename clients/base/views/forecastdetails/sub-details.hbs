@@ -1,0 +1,51 @@
+{{#if showTargetQuota}}
+    <div class="row-fluid">
+        <span class="span6">
+            {{str "LBL_QUOTA" "Forecasts"}}
+        </span>
+        <span class="span6 tright">
+            {{target_quota_amount_str}}
+        </span>
+    </div>
+{{/if}}
+
+<div class="row-fluid">
+    <span class="span6">
+        {{quota_label}}
+    </span>
+    <span class="span6 tright">
+        {{quota_amount_str}}
+    </span>
+</div>
+
+<div class="row-fluid">
+    <span class="span6">
+        {{str "LBL_CLOSED" "Forecasts"}}
+    </span>
+    <span class="span6 tright">
+        {{closed_amount_str}}
+    </span>
+</div>
+
+<div class="row-fluid deficitRow">
+    <span class="span6">
+        {{deficit_label}}
+    </span>
+    <span class="span6 tright">
+        {{deficit_amount_str}}
+    </span>
+</div>
+
+<div class="row-fluid bestNumbers">
+    {{#if show_details_worst}}
+        {{{worst_details}}}
+    {{/if}}
+
+    {{#if show_details_likely}}
+        {{{likely_details}}}
+    {{/if}}
+
+    {{#if show_details_best}}
+        {{{best_details}}}
+    {{/if}}
+</div>

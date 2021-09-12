@@ -1,0 +1,14 @@
+<div class="tooltip-header">
+    <b>{{key}}</b>
+</div>
+<div class="tooltip-grid">
+    <p><span>{{label}}</span> <span>{{value}}</span></p>
+{{#if percent}}
+    <p><span>{{str 'LBL_CHART_PERCENT'}}</span> <span>{{percent}}</span></p>
+{{/if}}
+</div>
+{{#if msg}}
+<div class="tooltip-status">
+    <i>{{msg}}</i>
+</div>
+{{/if}}

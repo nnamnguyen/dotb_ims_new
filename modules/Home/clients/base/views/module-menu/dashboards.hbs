@@ -1,0 +1,11 @@
+{{#each collection.models}}
+    <li{{#eq id ../active.id}} class="active"{{/eq}}>
+        <a class="ellipsis_inline" tabindex="-1" href="#{{buildRoute model=this}}" data-route="#{{buildRoute model=this}}">
+            {{#if this.attributes.default_dashboard}}
+                <i class="fa fas fa-dashboard-default"></i>
+            {{else}}
+                <i class="fa fa-th"></i>
+            {{/if}}
+            {{fieldValue this 'name'}}
+        </a></li>
+{{/each}}

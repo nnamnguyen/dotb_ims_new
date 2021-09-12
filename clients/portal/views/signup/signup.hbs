@@ -1,0 +1,26 @@
+<div class="welcome">
+    <div class="thumbnail signup">
+        <div class="tcenter">
+            <h2 class="brand"><img src="{{logoUrl}}" alt="DotBCRM"></h2>
+        </div>
+        <form name='{{name}}' class="tcenter">
+            {{#if _showSignupSuccess}}
+                <div class="alert alert-success tleft">
+                    <p><strong>{{str "LBL_PORTAL_SIGNUP_TITLE"}}</strong><p>
+                    <p>{{str "LBL_PORTAL_SIGNUP"}}</p>
+                </div>
+            {{else}}
+                {{#each meta.panels}}
+                    {{#each fields}}
+                    <div class="control-group">{{field ../../this model=../../model template="edit"}}</div>
+                    {{/each}}
+                {{/each}}
+            {{/if}}
+            <div class="signup-footer">
+                {{#each meta.buttons}}
+                   {{field ../this model=../model template="edit"}}
+                {{/each}}
+            </div>
+        </form>
+    </div>
+</div>

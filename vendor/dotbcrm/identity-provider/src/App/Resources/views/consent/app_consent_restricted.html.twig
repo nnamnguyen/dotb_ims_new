@@ -1,0 +1,17 @@
+{% extends "index.html.twig" %}
+
+{% block content %}
+    <div class="thumbnail idm-consent">
+        {% include 'logo.html.twig' %}
+        <section class="content">
+            <h3>Application not verified</h3>
+            This app hasn't been verified by DotbCRM admin yet and confirmed it's authentic.
+            Unverified apps may pose a threat to your personal data.
+        </section>
+        <nav class="nav tcenter">
+            <a href="{{ path('consentCancel') }}" id="app-consent-restricted-btn">
+                <button id="restricted_btn" class="btn btn-primary">Back to Safety</button>
+            </a>
+        </nav>
+    </div>
+{% endblock %}
